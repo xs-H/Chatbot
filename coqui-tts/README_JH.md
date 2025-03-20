@@ -19,7 +19,7 @@
   pip install -e .[all,dev,notebooks]  # Select the relevant extras
   ```
 
-  ![截屏2025-03-20 22.11.27](/Users/jihao/Library/Application Support/typora-user-images/截屏2025-03-20 22.11.27.png)
+  ![截屏2025-03-20 22.11.27](截屏2025-03-20 22.11.27.png)
 
 
 
