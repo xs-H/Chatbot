@@ -173,7 +173,26 @@ body {
     border: none;
     border-radius: 5px;
     background-color: #f0f0f0;
+    /* 新增：放大输入框字体 */
+    font-size: 16px; 
 }
+
+/* 新增：修改为textarea实现多行输入 */
+.chat-input textarea {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+    font-size: 16px;
+    resize: none;
+    min-height: 40px;
+    max-height: 120px;
+    overflow-y: auto;
+    line-height: 1.4;
+    font-family: Arial, sans-serif;
+}
+
 .icons {
     display: flex;
     justify-content: space-between;
@@ -188,4 +207,46 @@ body {
     color: #555;
     cursor: pointer;
     margin: 0 12px; /* 相邻 icon 间距 */
+}
+
+/* 新增样式 - 音频播放按钮 */
+.audio-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    padding: 5px 10px;
+    margin-top: 5px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    font-size: 14px;
+}
+
+.audio-button:hover {
+    background-color: #45a049;
+}
+
+.audio-button i {
+    margin-right: 5px;
+}
+
+/* 加载指示器 */
+.loading-indicator {
+    display: flex;
+    align-items: center;
+}
+
+.loading-indicator:after {
+    content: '...';
+    animation: dots 1.5s infinite;
+    width: 20px;
+    display: inline-block;
+    text-align: left;
+}
+
+@keyframes dots {
+    0%, 20% { content: '.'; }
+    40% { content: '..'; }
+    60%, 100% { content: '...'; }
 }
