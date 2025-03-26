@@ -1,10 +1,15 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, send_file
 from flask_cors import CORS
 import logging
 import os
+import time
+import torch
+
+import torchaudio
+from TTS.tts.configs.xtts_config import XttsConfig
+from TTS.tts.models.xtts import Xtts
 from chat import ChatSystem
-import pynvml
-handle = pynvml.nvmlDeviceGetHandleByIndex(0)
+import uuid
 
 # Configure logging
 if not os.path.exists('./log'):
@@ -14,6 +19,10 @@ logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s - %(levelname)s - %(message)s"
 )
+
+# 创建存放语音文件的目录
+if not os.path.exists('./tts/audio_output'):
+    os.makedirs('./tts/audio_output')
 
 app = Flask(__name__)
 CORS(app)  # Enable CORS for all routes
@@ -25,6 +34,67 @@ try:
     logging.info("Chat system initialized successfully")
 except Exception as e:
     logging.critical(f"Failed to initialize chat system: {str(e)}")
+
+# 初始化TTS模型
+tts_model = None
+try:
+    print("Loading TTS model...")
+    config = XttsConfig()
+    config.load_json(r"D:\HJG\500.Projects\chat-qwen-7B\model\model_TTS\config.json")
+    tts_model = Xtts.init_from_config(config)
+    tts_model.load_checkpoint(config,
+                              checkpoint_dir=r"D:\HJG\500.Projects\chat-qwen-7B\model\model_TTS",
+                              use_deepspeed=False,
+                              # weights_only=True
+                              )
+    # checkpoint_path = r"D:\HJG\500.Projects\chat-qwen-7B\model\model_TTS"
+    # state_dict = torch.load(checkpoint_path, weights_only=True)
+    # tts_model.load_state_dict(state_dict)
+    tts_model.cuda()
+
+    # 预先拟合对象特征
+    print("Computing speaker latents...")
+    gpt_cond_latent, speaker_embedding = tts_model.get_conditioning_latents(
+        audio_path=[r"D:\HJG\500.Projects\chat-qwen-7B\chat-v1\resource\NeZha.mp3"])
+
+    # 将说话人特征保存为全局变量供后续使用
+    app.config['GPT_COND_LATENT'] = gpt_cond_latent
+    app.config['SPEAKER_EMBEDDING'] = speaker_embedding
+
+    logging.info("TTS model initialized successfully")
+except Exception as e:
+    logging.critical(f"Failed to initialize TTS model: {str(e)}")
+
+
+def generate_speech(text):
+    """将文本转换为语音，并返回保存的文件路径"""
+    try:
+        if tts_model is None:
+            logging.error("TTS model not initialized")
+            return None
+
+        # 生成唯一的文件名
+        filename = f"speech_{uuid.uuid4()}.wav"
+        filepath = os.path.join('./tts/audio_output', filename)
+
+        time_start = time.perf_counter()
+        print("Speech generating...")
+        out = tts_model.inference(
+            text,
+            "zh-cn",
+            app.config['GPT_COND_LATENT'],
+            app.config['SPEAKER_EMBEDDING'],
+            temperature=0.7
+        )
+        print("Speech success generated")
+        torchaudio.save(filepath, torch.tensor(out["wav"]).unsqueeze(0), 24000)
+        time_end = time.perf_counter()
+
+        logging.info(f"Speech generated in {time_end - time_start} seconds: {filepath}")
+        return filepath
+    except Exception as e:
+        logging.error(f"Error generating speech: {str(e)}")
+        return None
 
 
 @app.route('/api/chat', methods=['POST'])
@@ -50,8 +120,6 @@ def chat():
             model=chat_system.model_name,
             messages=messages
         )
-        print(f"显存占用：{pynvml.nvmlDeviceGetMemoryInfo(handle).used/1024**3}GB")
-
 
         # Extract reply
         reply = response['message']['content'].lstrip('\n')
@@ -62,14 +130,39 @@ def chat():
             {'role': 'assistant', 'content': reply}
         ])
 
+        # 生成语音文件
+        speech_file = generate_speech(reply)
+
         # Log the interaction
         logging.info(f"Query: {user_message}")
         logging.info(f"Reply: {reply}")
 
-        return jsonify({"reply": reply})
+        response_data = {
+            "reply": reply
+        }
+
+        # 如果成功生成语音，添加语音文件路径到响应
+        if speech_file:
+            response_data["audio_path"] = f"/api/audio/{os.path.basename(speech_file)}"
+
+        return jsonify(response_data)
 
     except Exception as e:
         logging.error(f"Error processing chat request: {str(e)}")
+        return jsonify({"error": f"An error occurred: {str(e)}"}), 500
+
+
+@app.route('/api/audio/<filename>', methods=['GET'])
+def get_audio(filename):
+    """提供生成的音频文件下载"""
+    try:
+        filepath = os.path.join('./tts/audio_output', filename)
+        if os.path.exists(filepath):
+            return send_file(filepath, mimetype="audio/wav", as_attachment=True)
+        else:
+            return jsonify({"error": "Audio file not found"}), 404
+    except Exception as e:
+        logging.error(f"Error serving audio file: {str(e)}")
         return jsonify({"error": f"An error occurred: {str(e)}"}), 500
 
 
@@ -84,7 +177,4 @@ def reset_conversation():
 
 
 if __name__ == '__main__':
-    print("Starting server...")
-    app.run(host='0.0.0.0', port=3000, debug=True)
-    print("Server started")
-    # app.run(host='0.0.0.0', port=3000, debug=False)
+    app.run(host='0.0.0.0', port=3000, debug=False)

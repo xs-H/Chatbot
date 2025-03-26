@@ -30,7 +30,7 @@ class Config:
 # Logging Configuration
 logging.basicConfig(
     filename=os.path.join(Config.LOG_PATH, 'chat.log'),
-    level=logging.INFO, 
+    level=logging.INFO,
     format="%(asctime)s - %(levelname)s - %(message)s")
 
 

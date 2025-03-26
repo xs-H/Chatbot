@@ -4,6 +4,7 @@ import ollama
 import pynvml
 from rag import Config, TextEmbedding
 
+
 pynvml.nvmlInit()
 handle = pynvml.nvmlDeviceGetHandleByIndex(0)
 
