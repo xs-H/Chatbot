@@ -2,13 +2,14 @@ import datetime
 import os
 
 from django.conf import settings
-from django.http import JsonResponse
+from django.http import HttpResponse, JsonResponse
 from django.utils.decorators import method_decorator
 from django.views import View
 from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.http import require_GET
 
-from asr.services.transcribe import task
+from asr.models.TranscribeTask import TranscribeTask
+from asr.services import transcribe
 
 
 @require_GET
@@ -22,12 +23,22 @@ def health_check(request):
     )
 
 
+def bad_request(msg: str):
+    return JsonResponse(
+        {
+            "error": msg,
+        },
+        status=400,
+    )
+
+
 @method_decorator(csrf_exempt, name="dispatch")
 class TranscribeView(View):
     def post(self, request):
         file = request.FILES.get("file")
+
         if not file:
-            return JsonResponse({"error": "Missing 'file'"}, status=400)
+            return bad_request("Missing 'file'")
 
         task_id = datetime.datetime.now().strftime("%Y%m%d%H%M%S%f")
 
@@ -41,9 +52,27 @@ class TranscribeView(View):
             for chunk in file.chunks():
                 f.write(chunk)
 
-        task.TranscribeService(task_id, file_path)
+        task = TranscribeTask(task_id=task_id, file_path=file_path)
+        transcribe.TaskManager(task)
 
         return JsonResponse({"task_id": task_id}, status=201)
 
-    def get(self, request):
-        return JsonResponse({"message": "GET request for transcription"})
+    def get(self, request, task_id):
+        if not task_id:
+            return bad_request("Missing 'task_id'")
+
+        status = transcribe.TaskManager.get_task_status(task_id)
+
+        res = {}
+        res["task_id"] = task_id
+        res["status"] = status
+        res["text"] = transcribe.TaskManager.get_task_result(task_id)
+
+        if status == "not_found":
+            return HttpResponse(status=404)
+        elif status == "processing":
+            return HttpResponse(status=202)
+        elif status == "error":
+            return JsonResponse(res, status=500)
+        else:
+            return JsonResponse(res, status=200)
