@@ -30,7 +30,11 @@ DEBUG = os.getenv("DEBUG", "False") == "True"
 
 ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "").split(",")
 
-SAVE_DIR = "/home/kites/pro/Chatbot/asr_backend/data"
+SAVE_DIR = os.getenv("MEDIA_DIR", "./media")
+WHISPER_MODEL = os.getenv("WHISPER_MODEL", "small")
+
+#SAVE_DIR = "/home/kites/pro/Chatbot/asr_backend/playground/media"
+#WHISPER_MODEL = "/home/kites/pro/Chatbot/asr_backend/playground/whisper/small.pt"
 
 # Application definition
 
