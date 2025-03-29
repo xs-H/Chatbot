@@ -1,8 +1,11 @@
 import threading
 
 from asr.models.TranscribeTask import TranscribeTask
+from asr.services.transcribe.WhisperTranscriber import WhisperTranscriber
 
 task_store = {}
+
+whisper_transcriber = WhisperTranscriber()
 
 
 class TaskManager:
@@ -42,7 +45,7 @@ def whisper_transcribe(mgr: TaskManager):
     # Placeholder for the actual transcription logic
     # This should call the Whisper model or any other ASR model
     try:
-        text = f"Transcribed {mgr.task.file_path}"
+        text = whisper_transcriber.transcribe(audio_path=mgr.task.file_path)
         mgr.store(text)
     except Exception as e:
         mgr.store(f"__error: {str(e)}")
