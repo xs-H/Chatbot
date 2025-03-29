@@ -1,0 +1,6 @@
+asgiref==3.8.1
+Django==5.1.7
+dotenv==0.9.9
+python-dotenv==1.1.0
+pytz==2025.2
+sqlparse==0.5.3
