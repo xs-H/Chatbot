@@ -4,6 +4,3 @@ __pycache__/
 # IDEs
 .vscode/
 .idea/
-
-# conda auto env
-.conda.yml
