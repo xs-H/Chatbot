@@ -1,6 +1,9 @@
-# 忽略 model/模型目录
-model/model_LLM/
-model/model_TTS
-
-# 忽略所有 __pycache__ 目录
+# python
 __pycache__/
+
+# IDEs
+.vscode/
+.idea/
+
+# conda auto env
+.conda.yml
