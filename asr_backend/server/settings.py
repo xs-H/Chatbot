@@ -30,21 +30,19 @@ DEBUG = os.getenv("DEBUG", "False") == "True"
 
 ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "").split(",")
 
-SAVE_DIR = os.getenv("MEDIA_DIR", "./media")
+SAVE_MEDIA_DIR = os.getenv("MEDIA_DIR", "./tmp/media")
 WHISPER_MODEL = os.getenv("WHISPER_MODEL", "small")
-
-#SAVE_DIR = "/home/kites/pro/Chatbot/asr_backend/playground/media"
-#WHISPER_MODEL = "/home/kites/pro/Chatbot/asr_backend/playground/whisper/small.pt"
 
 # Application definition
 
 INSTALLED_APPS = [
     # 'django.contrib.admin',
-    # 'django.contrib.auth',
+    "django.contrib.auth",
     "django.contrib.contenttypes",
     # 'django.contrib.sessions',
     # 'django.contrib.messages',
     # 'django.contrib.staticfiles',
+    "rest_framework",
     "asr",
 ]
 
