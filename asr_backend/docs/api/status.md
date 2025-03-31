@@ -2,14 +2,14 @@
 
 ## 🛜 应用状态接口
 
-### `POST /api/v1/asr/status`
+### `POST /api/v1/asr`
 
 获取应用的当前状态和健康检查
 
 #### Request
 
 ```http
-GET /api/v1/asr/status
+GET /api/v1/asr
 ```
 
 #### Response
