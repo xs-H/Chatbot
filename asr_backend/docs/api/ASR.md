@@ -23,15 +23,29 @@ Content-Type: multipart/form-data
 
 #### Response
 
-```json
-201 Created
+*如果任务创建成功, 返回任务 ID:*
+
+```json5
+// 201 Created
 
 {
-  "task_id": "20250329173320"
+  "task_id": "20250331222301719319"
 }
 ```
 
 - `task_id`(string): 任务唯一 ID, 用于后续查询识别任务的状态和结果
+
+*没有提供音频文件:*
+
+
+```json5
+// 400 Bad Request
+
+{
+  "error": "Missing 'file'"
+}
+
+```
 
 ### `GET /api/v1/asr/task/{task_id}`
 
@@ -49,21 +63,88 @@ GET /api/v1/asr/task/{task_id}
 
 *如果任务已经完成, 返回识别结果:*
 
-```json
-200 OK
+```json5
+// 200 OK
 
 {
-  "task_id": "a1b2c3d4e5f6g7h8",
+  "task_id": "20250331222354939437",
   "status": "done",
-  "text": "那就是青藏高原"
+  // 下面是 Whisper 的识别结果
+  "result": {
+    "text": "都说印度是外资粉地但为什么谷歌还是偏偏不信邪的往里面砸钱呢",
+    "segments": [
+      {
+        "id": 0,
+        "seek": 0,
+        "start": 0.0,
+        "end": 1.48,
+        "text": "都说印度是外资粉地",
+        "tokens": [
+          50364, // etc, token IDs
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.20072998871674408,
+        "compression_ratio": 0.90625,
+        "no_speech_prob": 0.01584177277982235
+      },
+      {
+        "id": 1,
+        "seek": 0,
+        "start": 1.48,
+        "end": 4.48,
+        "text": "但为什么谷歌还是偏偏不信邪的往里面砸钱呢",
+        "tokens": [
+          50438, // etc, Token IDs
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.20072998871674408,
+        "compression_ratio": 0.90625,
+        "no_speech_prob": 0.01584177277982235
+      }
+    ],
+    "language": "zh"
+  }
 }
 ```
 
-*若任务正在处理中, 返回:*
+*其他情况:*
 
-```http
-202 Accepted
+- 任务正在处理中
+
+```json5
+// 202 Accepted
+
+{
+  "task_id": "20250331222354939437",
+  "status": "processing",
+  "result": ""
+}
 ```
+
+- 指定的任务 ID 不存在
+
+```json5
+// 404 Not Found
+
+{
+  "task_id": "20250331222354939437",
+  "status": "Task not found",
+  "result": ""
+}
+```
+
+- 任务出现错误
+
+```json5
+// 500 Internal Server Error
+
+{
+  "task_id": "20250331222354939437",
+  "status": "error",
+  "result": "Traceback info..."
+}
+```
+
 
 `status`参数情况和说明:
 
@@ -71,3 +152,5 @@ GET /api/v1/asr/task/{task_id}
 |-|-|
 | `done` | 任务已完成, 识别结果可用 |
 | `error` | 任务处理失败, 可能是音频文件格式不支持或内部错误 |
+| `processing` | 任务正在处理中, 识别结果尚不可用 |
+| `not_found` | 任务 ID 不存在, ID 错误或任务已被删除 |

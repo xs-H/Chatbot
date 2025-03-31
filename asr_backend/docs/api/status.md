@@ -20,7 +20,6 @@ GET /api/v1/asr/status
 {
   "status": "ok",
   "service": "asr-backend",
-  "version": "1.0.0",
-  "timestamp": "2025-03-29T12:34:56Z"
+  "version": "1.0"
 }
 ```
