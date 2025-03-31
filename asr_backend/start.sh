@@ -25,5 +25,7 @@ if [[ "$1" == "--prod" ]]; then
         --error-logfile -
 else
     echo "🚀 Start DEV mode(Django runserver)..."
+    export DEBUG=1
+    export ALLOWED_HOSTS=*
     python manage.py runserver 0.0.0.0:8001
 fi

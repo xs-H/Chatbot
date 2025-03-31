@@ -1,21 +1,26 @@
 import json
+import logging
 import os
 from typing import Any, Dict
 
 import whisper
 from django.conf import settings
 
+logger = logging.getLogger(__name__)
+
 
 class WhisperTranscriber:
     def __init__(self, model_name: str = settings.WHISPER_MODEL):
-        print(f"Loading Whisper model: {model_name}")
+        logger.info(f"Loading Whisper model: {model_name}")
         self.model_name = model_name
         self.model = whisper.load_model(model_name)
 
     def transcribe(self, audio_path: str) -> str:
         # 执行转写
+        logger.debug(f"Transcribing audio file: {audio_path}")
         result: Dict[str, Any] = self.model.transcribe(audio_path)
         text: str = result["text"]
+        logger.debug(f"Transcription result: {text}")
 
         # 生成保存路径
         audio_dir = os.path.dirname(audio_path)

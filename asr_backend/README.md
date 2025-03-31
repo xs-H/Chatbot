@@ -43,28 +43,15 @@
 
 ### Build Docker Image
 
-Change directory to `docker` and build the image:
-
-```bash
-❯ cd docker
-❯ ./build.sh
-```
-
-Then run the container:
-
-```bash
-❯ docker run -d \
-   --name asr_backend \
-    -p 8001:8001 \
-    -v ./playground:/app/data \
-    asr_backend:latest
-```
-
-### Docker Compose Run
-
-Or, use `docker-compose` to build and run the container:
+Use `docker compose` to build and run the container:
 
 ```bash
 ❯ cd docker
 ❯ docker compose up -d
+```
+
+To view logs, use the following command:
+
+```bash
+❯ docker compose logs -f
 ```
