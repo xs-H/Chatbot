@@ -5,12 +5,12 @@ services:
       context: ..
       dockerfile: ./docker/dev.Dockerfile
     environment:
-      - DEBUG=True
+      - DEBUG=1
       - ALLOWED_HOSTS=*
       - WHISPER_MODEL=/app/data/whisper/small.pt
       - MEDIA_DIR=/app/data/media
     ports:
       - 8001:8001
     volumes:
-      - ./playground:/app/data
+      - ./playground/data:/app/data
     
