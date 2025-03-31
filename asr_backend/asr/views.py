@@ -2,11 +2,11 @@ import datetime
 import os
 
 from django.conf import settings
-from django.http import HttpResponse, JsonResponse
-from django.utils.decorators import method_decorator
-from django.views import View
-from django.views.decorators.csrf import csrf_exempt
+from django.http import JsonResponse
 from django.views.decorators.http import require_GET
+from rest_framework import status as code
+from rest_framework.response import Response
+from rest_framework.views import APIView
 
 from asr.models.TranscribeTask import TranscribeTask
 from asr.services import transcribe
@@ -32,8 +32,7 @@ def bad_request(msg: str):
     )
 
 
-@method_decorator(csrf_exempt, name="dispatch")
-class TranscribeView(View):
+class TranscribeView(APIView):
     def post(self, request):
         file = request.FILES.get("file")
 
@@ -42,7 +41,7 @@ class TranscribeView(View):
 
         task_id = datetime.datetime.now().strftime("%Y%m%d%H%M%S%f")
 
-        save_dir = settings.SAVE_DIR
+        save_dir = settings.SAVE_MEDIA_DIR
         save_dir = os.path.join(save_dir, task_id)
 
         os.makedirs(save_dir, exist_ok=True)
@@ -55,7 +54,7 @@ class TranscribeView(View):
         task = TranscribeTask(task_id=task_id, file_path=file_path)
         transcribe.TaskManager(task)
 
-        return JsonResponse({"task_id": task_id}, status=201)
+        return Response({"task_id": task_id}, status=code.HTTP_201_CREATED)
 
     def get(self, request, task_id):
         if not task_id:
@@ -64,15 +63,27 @@ class TranscribeView(View):
         status = transcribe.TaskManager.get_task_status(task_id)
 
         res = {}
-        res["task_id"] = task_id
         res["status"] = status
-        res["text"] = transcribe.TaskManager.get_task_result(task_id)
 
         if status == "not_found":
-            return HttpResponse(status=404)
+            return Response({}, status=code.HTTP_404_NOT_FOUND)
         elif status == "processing":
-            return HttpResponse(status=202)
+            return Response({}, status=code.HTTP_202_ACCEPTED)
         elif status == "error":
-            return JsonResponse(res, status=500)
+            return Response(
+                {
+                    "task_id": task_id,
+                    "status": status,
+                    "text": transcribe.TaskManager.get_task_result(task_id),
+                },
+                status=code.HTTP_500_INTERNAL_SERVER_ERROR,
+            )
         else:
-            return JsonResponse(res, status=200)
+            return Response(
+                {
+                    "task_id": task_id,
+                    "status": status,
+                    "text": transcribe.TaskManager.get_task_result(task_id),
+                },
+                status=code.HTTP_200_OK,
+            )
