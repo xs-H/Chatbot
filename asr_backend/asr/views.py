@@ -2,7 +2,6 @@ import datetime
 import logging
 import os
 
-from django.conf import settings
 from django.http import JsonResponse
 from django.views.decorators.http import require_GET
 from rest_framework.response import Response
@@ -17,7 +16,7 @@ from rest_framework.status import (
 from rest_framework.views import APIView
 
 from asr.models.TranscribeTask import TranscribeTask
-from asr.services import transcribe
+from asr.services.transcribe.TaskManager import TaskManager
 
 
 @require_GET
@@ -52,11 +51,9 @@ class TranscribeView(APIView):
         TranscribeView.logger.debug(f"Received file: {file.name}")
 
         task_id = datetime.datetime.now().strftime("%Y%m%d%H%M%S%f")
-
-        save_dir = settings.SAVE_MEDIA_DIR
-        save_dir = os.path.join(save_dir, task_id)
-
+        save_dir = TaskManager.get_task_dir(task_id)
         os.makedirs(save_dir, exist_ok=True)
+
         file_path = os.path.join(save_dir, file.name)
 
         with open(file_path, "wb") as f:
@@ -66,7 +63,7 @@ class TranscribeView(APIView):
         TranscribeView.logger.debug(f"File saved to: {file_path}")
 
         task = TranscribeTask(task_id=task_id, file_path=file_path)
-        transcribe.TaskManager(task)
+        TaskManager(task)
 
         return Response({"task_id": task_id}, status=HTTP_201_CREATED)
 
@@ -76,26 +73,19 @@ class TranscribeView(APIView):
 
         TranscribeView.logger.debug(f"Received qurey task_id: {task_id}")
 
-        task_status = transcribe.TaskManager.get_task_status(task_id)
+        status, result = TaskManager.get_task_result(task_id)
 
-        TranscribeView.logger.debug(f"Task status: {task_status}")
+        TranscribeView.logger.debug(f"Task status: {status}")
 
-        if task_status == "not_found":
-            return Response(status=HTTP_404_NOT_FOUND)
-        elif task_status == "processing":
-            return Response(status=HTTP_202_ACCEPTED)
+        res = {"task_id": task_id, "status": status, "result": ""}
+
+        if status == "not_found":
+            return Response(res, status=HTTP_404_NOT_FOUND)
+        elif status == "processing":
+            return Response(res, status=HTTP_202_ACCEPTED)
         else:
-            res = {}
-            res["task_id"] = task_id
-            res["status"] = task_status
-            res["text"] = transcribe.TaskManager.get_task_result(task_id)
-
+            res["result"] = result
             res_code = (
-                HTTP_200_OK
-                if res["status"] == "done"
-                else HTTP_500_INTERNAL_SERVER_ERROR
+                HTTP_200_OK if status == "done" else HTTP_500_INTERNAL_SERVER_ERROR
             )
-            return Response(
-                res,
-                status=res_code,
-            )
+            return Response(res, status=res_code)
