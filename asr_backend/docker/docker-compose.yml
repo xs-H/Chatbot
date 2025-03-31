@@ -1,9 +1,10 @@
 services:
   ChatBot_asr_backend:
-    image: asr-backend
+    pull_policy: never
     build:
       context: ..
       dockerfile: ./docker/dev.Dockerfile
+    image: asr-backend
     environment:
       - DEBUG=1
       - ALLOWED_HOSTS=*

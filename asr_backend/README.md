@@ -49,3 +49,9 @@ Use `docker compose` to build and run the container:
 ❯ cd docker
 ❯ docker compose up -d
 ```
+
+To view logs, use the following command:
+
+```bash
+❯ docker compose logs -f
+```
