@@ -1,6 +1,7 @@
 import json
 import logging
 import os
+import time
 from typing import Any, Dict
 
 import whisper
@@ -18,9 +19,12 @@ class WhisperTranscriber:
     def transcribe(self, audio_path: str) -> str:
         # 执行转写
         logger.debug(f"Transcribing audio file: {audio_path}")
+        start_time = time.time()
         result: Dict[str, Any] = self.model.transcribe(audio_path)
         text: str = result["text"]
+        end_time = time.time()
         logger.debug(f"Transcription result: {text}")
+        logger.debug(f"Transcription time: {end_time - start_time:.2f} seconds")
 
         # 生成保存路径
         audio_dir = os.path.dirname(audio_path)
