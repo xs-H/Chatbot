@@ -36,7 +36,7 @@ if [[ "$1" == "--prod" ]]; then
     echo "🚀 Start PRODUCT mode(Gunicorn)..."
     exec gunicorn server.wsgi:application \
         --bind 0.0.0.0:8001 \
-        --workers 3 \
+        --workers 1 \
         --access-logfile - \
         --error-logfile -
 else
