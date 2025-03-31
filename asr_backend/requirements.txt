@@ -6,6 +6,7 @@ djangorestframework==3.16.0
 dotenv==0.9.9
 filelock==3.18.0
 fsspec==2025.3.0
+gunicorn==23.0.0
 idna==3.10
 Jinja2==3.1.6
 llvmlite==0.44.0
@@ -29,6 +30,7 @@ nvidia-nccl-cu12==2.21.5
 nvidia-nvjitlink-cu12==12.4.127
 nvidia-nvtx-cu12==12.4.127
 openai-whisper==20240930
+packaging==24.2
 python-dotenv==1.1.0
 pytz==2025.2
 regex==2024.11.6

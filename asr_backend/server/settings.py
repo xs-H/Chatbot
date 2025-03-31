@@ -30,7 +30,7 @@ DEBUG = os.getenv("DEBUG", "False") == "True"
 
 ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "").split(",")
 
-SAVE_MEDIA_DIR = os.getenv("MEDIA_DIR", "./tmp/media")
+SAVE_MEDIA_DIR = os.getenv("MEDIA_DIR", "./data/media")
 WHISPER_MODEL = os.getenv("WHISPER_MODEL", "small")
 
 # Application definition
@@ -114,7 +114,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = "en-us"
 
-TIME_ZONE = "UTC"
+TIME_ZONE = "Asia/Shanghai"
 
 USE_I18N = True
 
