@@ -13,6 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
     
     // ASR API基础URL
     const asrBaseUrl = "https://007.dev.xuan.pub/api/v1";
+    const localAsrBaseUrl = "http://localhost:8001/api/v1";
 
     // 初始化textarea
     initTextarea();
@@ -151,7 +152,7 @@ document.addEventListener("DOMContentLoaded", function () {
         async function checkASRStatus() {
             try {
                 // 更新为正确的API端点
-                const response = await fetch(`${asrBaseUrl}/asr/status`);
+                const response = await fetch(`${asrBaseUrl}/asr/`);
                 const data = await response.json();
                 return data.status === "ok";
             } catch (error) {
@@ -184,7 +185,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 const formData = new FormData();
                 formData.append("file", audioBlob);
                 
-                // 更新为正确的API端点
+                // 更新API端点
                 const response = await fetch(`${asrBaseUrl}/asr/task`, {
                     method: "POST",
                     body: formData
@@ -210,7 +211,7 @@ document.addEventListener("DOMContentLoaded", function () {
         // 轮询ASR结果
         async function pollASRResult(taskId) {
             try {
-                // 更新为正确的API端点
+                // 更新API端点
                 const response = await fetch(`${asrBaseUrl}/asr/task/${taskId}`);
                 
                 // 如果任务完成
@@ -223,9 +224,9 @@ document.addEventListener("DOMContentLoaded", function () {
                     }
                     
                     // 检查识别状态
-                    if (data.status === "done" && data.text) {
+                    if (data.status === "done" && data.result && data.result.text) {
                         // 将识别结果填入输入框
-                        chatInput.value = data.text;
+                        chatInput.value = data.result.text;
                         adjustTextareaHeight();
                     } else {
                         appendMessage("ai", "语音识别失败或未识别到文字。");
@@ -371,7 +372,7 @@ document.addEventListener("DOMContentLoaded", function () {
             messagesContainer.scrollTop = messagesContainer.scrollHeight;
         }
 
-        // 调用caht API
+        // 调用chat API
         fetch("http://localhost:3000/api/chat", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
