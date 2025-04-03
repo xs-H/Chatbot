@@ -28,6 +28,23 @@
 ### 后端更新
 - 加入了新的api：tts_api, chat_api
 - 换用模型后加入了cosy_voice.py
+- 项目结构：
+/backend/                  # 项目根目录
+├── start_apis.py             # 统一启动脚本
+├── tts_backend/              # TTS 服务目录
+│   ├── tts_api.py            # TTS API 入口
+│   ├── cosy_voice.py         # TTS 相关逻辑
+├── chat_backend/             # Chat 服务目录
+│   ├── chat_api.py           # Chat API 入口
+│   ├── chat.py               # Chat 逻辑
+│   ├── rag.py                # RAG 相关逻辑
+├── logs/                     # 存放 API 运行日志
+
 
 ### 如何运行
-具体内容参照tts分支中的cosyvoice部分
+1.环境配置tts分支中的cosyvoice部分
+2.运行：
+```
+cd /backend
+python start_apis.py
+```
