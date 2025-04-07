@@ -4,13 +4,18 @@ import logging
 import os
 import torchaudio
 import time
-from cosyvoice.cli.cosyvoice import CosyVoice2
+import sys
+
+dir_path=r"D:\HJG\500.Projects\chatbot-v1\backend\tts_backend\COSYVoice"
+sys.path.append(dir_path+r"\third_party\Matcha-TTS")
+sys.path.append(dir_path)
+from COSYVoice.cosyvoice.cli.cosyvoice import CosyVoice2
 
 # 配置日志
-if not os.path.exists('./log'):
-    os.makedirs('./log')
+if not os.path.exists('../../logs'):
+    os.makedirs('../../logs')
 logging.basicConfig(
-    filename='./log/tts_api.log',
+    filename='../../logs/tts_api.log',
     level=logging.INFO,
     format="%(asctime)s - %(levelname)s - %(message)s"
 )
@@ -20,7 +25,7 @@ CORS(app)  # 允许跨域请求
 
 # 初始化 CosyVoice2
 cosyvoice = CosyVoice2(
-    "E:\\CosyVoice\\pretrained_models\\CosyVoice2-0.5B",
+    dir_path + r"\pretrained_models\CosyVoice2-0.5B",
     load_jit=False,
     load_trt=False,
     fp16=False
