@@ -7,13 +7,16 @@ import pynvml
 handle = pynvml.nvmlDeviceGetHandleByIndex(0)
 
 # Configure logging
-if not os.path.exists('./log'):
-    os.makedirs('./log')
+if not os.path.exists('../../logs'):
+    os.makedirs('../../logs')
+
 logging.basicConfig(
-    filename='./log/api.log',
+    filename='../../logs/chat_api.log',
     level=logging.INFO,
-    format="%(asctime)s - %(levelname)s - %(message)s"
+    format="%(asctime)s - %(levelname)s - %(message)s",
+    encoding='utf-8'  # 明确指定编码
 )
+
 
 app = Flask(__name__)
 CORS(app)  # Enable CORS for all routes
@@ -50,7 +53,7 @@ def chat():
             model=chat_system.model_name,
             messages=messages
         )
-        print(f"显存占用：{pynvml.nvmlDeviceGetMemoryInfo(handle).used/1024**3}GB")
+        print(f"显存占用：{pynvml.nvmlDeviceGetMemoryInfo(handle).used/1024**3} GB")
 
 
         # Extract reply
@@ -62,9 +65,9 @@ def chat():
             {'role': 'assistant', 'content': reply}
         ])
 
-        # Log the interaction
-        logging.info(f"Query: {user_message}")
-        logging.info(f"Reply: {reply}")
+        # Log the interaction:解决乱码
+        logging.info(f"Query: {user_message.encode('utf-8').decode('utf-8')}")  # 确保 UTF-8
+        logging.info(f"Reply: {reply.encode('utf-8').decode('utf-8')}")
 
         return jsonify({"reply": reply})
 
