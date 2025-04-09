@@ -43,7 +43,7 @@ def chat():
             return jsonify({"error": "Empty message"}), 400
 
         # Get context for the query
-        context = chat_system.text_embedding._retrieve_context(f"{user_message}+哪吒台词")
+        context = chat_system.text_embedding._retrieve_context(f"{user_message}")
 
         # Format messages
         messages = chat_system._format_messages(user_message, context)
