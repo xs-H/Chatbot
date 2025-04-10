@@ -8,6 +8,9 @@ import sys
 from pathlib import  Path
 import onnxruntime
 
+
+onnxruntime.get_available_providers()
+
 dir_path = r".\COSYVoice"
 sys.path.append(dir_path+r"\third_party\Matcha-TTS")
 sys.path.append(dir_path)
