@@ -6,9 +6,23 @@
 body {
     display: flex;
     height: 100vh;
-    background-color: #f4f4f4; /* 页面背景色 */
-    font-family: Arial, sans-serif;
-    position: relative;
+    /* 保证页面结构 ↑ */
+    
+    /* 新增背景属性 ↓ */
+    background-image: url("data:image/svg+xml,%3Csvg width='52' height='26' viewBox='0 0 52 26' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10 10c0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6h2c0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4v2c-3.314 0-6-2.686-6-6 0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6zm25.464-1.95l8.486 8.486-1.414 1.414-8.486-8.486 1.414-1.414z' fill='%239C92AC' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+    background-blend-mode: multiply;
+    background-size: 400px;
+    background-attachment: fixed; /* 添加：固定背景图案 */
+    /* 通过背景色 alpha 通道控制透明度 */
+    background-color: rgba(240, 242, 245, 0.98);
+    background-repeat: repeat; /* 确保图案平铺 */
+
+    font-family: 'Noto Sans SC', Arial, sans-serif; /* 字体修改 */
+    position: relative; 
+}
+.intro-title {
+    font-family: 'Noto Sans SC', Arial; /*增加特殊字体标题*/
+    font-weight: 700;
 }
 .sidebar {
     width: 20%;
@@ -71,12 +85,15 @@ body {
     background-color: #e0e0e0; /* 按钮背景色 */
     border-radius: 10px;
     cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s; /* button中添加 */
 }
 .button i {
     margin-right: 10px; /* 按钮图标与文字间距 */
 }
 .button:hover {
     background-color: #d6d6d6;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 .profile {
     display: flex;
@@ -144,7 +161,7 @@ body {
     width: 80%; /* 聊天框宽度 */
     height: 50vh; /* 聊天框高度 */
     background-color: white;
-    border-radius: 10px;
+    /*border-radius: 10px;*/
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -152,6 +169,9 @@ body {
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     margin-top: 60px; /* 聊天框与上方距离 */
     transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.85);  /*增加玻璃效果*/
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
 }
 /* 聊天开始后的聊天框样式 */
 .chat-box.expanded {
@@ -191,6 +211,12 @@ body {
     overflow-y: auto;
     line-height: 1.4;
     font-family: Arial, sans-serif;
+}
+
+/* 新增聚焦效果  */
+.chat-input textarea:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.3);
 }
 
 .icons {
