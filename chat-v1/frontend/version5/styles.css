@@ -1,0 +1,515 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    display: flex;
+    background: linear-gradient(45deg, #D6E4FF, #FFE6E6, #E6FFED);
+    background-size: 200% 200%;
+    animation: gradientShift 15s ease infinite;
+    height: 100vh;
+    font-family: 'Noto Sans SC', Arial, sans-serif;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    body {
+        animation: none;
+        background: linear-gradient(45deg, #D6E4FF, #FFE6E6);
+    }
+}
+.intro-title {
+    font-family: 'Noto Sans SC', Arial; /*增加特殊字体标题*/
+    font-weight: 700;
+}
+.sidebar {
+    width: 20%;
+    padding: 20px;
+    background-color: #f8f9fa; /* 改为浅灰色背景 */
+    border-right: 1px solid rgba(0, 0, 0, 0.05); /* 添加极细分割线 */
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 20px; /* 控制左侧边栏间距 */
+    transition: width 0.3s ease;
+    overflow: hidden;
+}
+/* 侧边栏收起状态 */
+.sidebar.collapsed {
+    width: 60px;
+    padding: 20px 10px;
+}
+.sidebar.collapsed .logo-content,
+.sidebar.collapsed .button,
+.sidebar.collapsed .profile {
+    display: none;
+}
+.sidebar.collapsed .collapse-button-container {
+    width: 100%;
+    text-align: center;
+}
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    font-weight: bold;
+    justify-content: space-between;
+    width: 100%;
+}
+.logo-content {
+    display: flex;
+    align-items: center;
+}
+/* 修改logo-circle的样式，从div变为img */
+.logo-circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+    object-fit: cover; /* 确保图片填充整个圆形区域 */
+}
+.collapse-button-container {
+    cursor: pointer;
+}
+.collapse-button {
+    cursor: pointer;
+    font-size: 18px;
+    color: #6c757d; /* 中灰色 */
+}
+.button {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    width: 100%;
+    border-radius: 10px;
+    cursor: pointer;
+    
+    background-color: transparent; /* 透明背景 */
+    border: 1px solid rgba(0, 0, 0, 0.1); /* 添加细边框 */
+    color: #495057; /* 深灰色文字 */
+    transition: all 0.2s;
+}
+.button i {
+    margin-right: 10px; /* 按钮图标与文字间距 */
+}
+.button:hover {
+    background-color: #d6d6d6;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+/* 新增悬停效果 */
+.button:hover, 
+.collapse-button:hover {
+    color: #212529; /* 悬停加深文字颜色 */
+}
+.profile {
+    display: flex;
+    align-items: center;
+    margin-top: auto; /* 更改为自动边距，位于底部 */
+    padding-top: 20px;
+    border-top: 1px solid rgba(0, 0, 0, 0.08); /* 顶部细分割线 */
+}
+.profile .avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+}
+.divider {
+    width: 1px; /* 使分界线变细 */
+    background-color: #e0e0e0; /* 浅灰色 */
+    height: 100%;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.05); /* 添加轻微阴影增加立体感 */
+}
+.main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    position: relative;
+}
+.top-buttons {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    gap: 15px; /* 登录和注册按钮间距 */
+}
+.top-buttons .icon-button {
+    background-color: transparent; /* 移除背景色 */
+    border: 1px solid rgba(0, 0, 0, 0.12); /* 添加细边框 */
+    color: #495057; /* 深灰色文字 */
+    transition: all 0.2s ease;
+    box-shadow: none; /* 移除默认阴影 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.top-buttons .icon-button:hover {
+    background-color: rgba(0, 0, 0, 0.03); /* 悬停微背景 */
+    border-color: rgba(0, 0, 0, 0.2); /* 加深边框 */
+}
+.top-buttons i {
+    margin-right: 5px;
+}
+.top-buttons .icon-button i {
+    color: #6c757d; /* 图标中灰色 */
+}
+.top-buttons .icon-button:hover i {
+    color: #fff; /* 悬停时图标变白 */
+}
+.intro-text {
+    text-align: center;
+    max-width: 600px;
+}
+.intro-title {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.intro-subtitle {
+    font-size: 16px;
+    color: #333;
+}
+.chat-box {
+    width: 80%;
+    height: 50vh;
+    background: linear-gradient(45deg, rgba(200, 220, 255, 0.9), rgba(255, 200, 220, 0.9), rgba(220, 255, 200, 0.9));
+    background-size: 200% 200%;
+    animation: gradientFlow 10s ease infinite;
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 60px;
+    transition: all 0.3s ease;
+    
+}
+.chat-box.expanded {
+    width: 95%;
+    height: 80vh;
+    margin-top: 10px;
+}
+@keyframes gradientFlow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .chat-box {
+        animation: none;
+        background: linear-gradient(45deg, rgba(200, 220, 255, 0.9), rgba(255, 200, 220, 0.9));
+    }
+}
+/* 聊天开始后的聊天框样式 */
+.chat-box.expanded {
+    width: 95%;
+    height: 80vh;
+    margin-top: 10px;
+}
+.chat-input {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border-top: 1px solid #ddd;
+    position: relative;
+}
+.chat-input input {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #f8f9fa; /* 改为浅灰色背景 */
+    /* 新增：放大输入框字体 */
+    font-size: 16px; 
+}
+
+/* 新增：修改为textarea实现多行输入 */
+.chat-input textarea {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    resize: none;
+    min-height: 40px;
+    max-height: 120px;
+    overflow-y: auto;
+    line-height: 1.4;
+    font-family: Arial, sans-serif;
+    background-color: rgba(255, 255, 255, 0.9); /* 半透明白色 */
+    border: 1px solid rgba(0, 0, 0, 0.1); /* 浅灰色细边框 */
+    border-radius: 8px;
+    color: #495057; /* 深灰色文字 */
+    transition: all 0.2s ease;
+}
+
+/* 新增聚焦效果  */
+.chat-input textarea:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.3);
+}
+
+/* 占位符颜色调整 */
+.chat-input textarea::placeholder {
+    color: #adb5bd; /* 中灰色占位符 */
+}  
+
+.icons {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+}
+.icon {
+    font-size: 20px;
+    color: #555;
+    cursor: pointer;
+    margin: 0 12px; /* 相邻 icon 间距 */
+}
+/* 修改 styles.css 中的图标按钮 */
+.chat-input .icon {
+    color: #6c757d; /* 中灰色 */
+    font-size: 18px;
+    padding: 8px;
+    border-radius: 50%;
+    transition: all 0.2s ease;
+    background: transparent;
+    margin: 0 8px; /* 缩小间距 */
+}
+
+/* 悬停状态 */
+.chat-input .icon:hover {
+    color: #495057; /* 深灰色 */
+    background: rgba(0, 0, 0, 0.05); /* 圆形背景 */
+}
+
+/* 激活状态 */
+.chat-input .icon:active {
+    background: rgba(0, 0, 0, 0.08);
+}
+
+/* 发送按钮特殊状态 */
+.chat-input .fa-paper-plane {
+    color: #2b8aff; /* 品牌蓝色 */
+}
+
+.chat-input .fa-paper-plane:hover {
+    color: #006eff;
+    background: rgba(43, 138, 255, 0.1);
+}
+
+/* 语音录制特殊状态 */
+.chat-input .fa-microphone.recording {
+    color: #ff4d4d; /* 警示红色 */
+    animation: pulse 1.2s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+/* 新增样式 - 音频播放按钮 */
+.audio-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    padding: 5px 10px;
+    margin-top: 5px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    font-size: 14px;
+}
+
+.audio-button:hover {
+    background-color: #bdf0c0;
+}
+
+.audio-button i {
+    margin-right: 5px;
+}
+
+/* 加载指示器 */
+.loading-indicator {
+    display: flex;
+    align-items: center;
+}
+
+.loading-indicator:after {
+    content: '...';
+    animation: dots 1.5s infinite;
+    width: 20px;
+    display: inline-block;
+    text-align: left;
+}
+
+@keyframes dots {
+    0%, 20% { content: '.'; }
+    40% { content: '..'; }
+    60%, 100% { content: '...'; }
+}
+
+/* 新增：AI消息的头像和名字容器 */
+.ai-message-container {
+    display: flex;
+    align-items: flex-start;
+    margin: 10px 0;
+}
+
+/* 新增：AI头像样式 */
+.ai-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+    object-fit: cover;
+}
+
+/* 新增：AI名字样式 */
+.ai-name {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+/* 新增：AI消息内容容器 */
+.ai-message-content {
+    display: flex;
+    flex-direction: column;
+    max-width: calc(70% - 50px); /* 减去头像和间距的宽度 */
+}
+
+/* AI消息样式 */
+.ai-message {
+    background-color: #e0e0e0;
+    color: black;
+    padding: 8px;
+    border-radius: 5px;
+    word-wrap: break-word;
+}
+
+/* 增加艺术字内容 */
+.stereo-text {
+    font-family: 'Noto Sans SC', Arial, sans-serif;
+    font-size: 20px; /* Match existing .logo font-size */
+    font-weight: bold; /* Match existing .logo font-weight */
+    color: #333; /* Dark color for contrast on #c0c0c0 background */
+    position: relative; /* For pseudo-element positioning */
+    display: inline-block; /* Ensure transform works correctly */
+    text-shadow: 
+        1px 1px 0 #fff, /* Light highlight */
+        2px 2px 0 #e0e0e0, /* Mid-tone shadow */
+        3px 3px 0 #999; /* Deeper shadow */
+    transition: all 0.3s ease; /* Smooth hover effect */
+}
+
+.stereo-text::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #999; /* Darker "side" for depth */
+    transform: translate(3px, 3px); /* Offset to simulate thickness */
+    z-index: -1; /* Place behind main text */
+    text-shadow: none; /* Avoid duplicating shadows */
+}
+
+.stereo-text:hover {
+    transform: translate(-1px, -1px); /* Slight lift on hover */
+    text-shadow: 
+        2px 2px 0 #fff, 
+        3px 3px 0 #e0e0e0, 
+        4px 4px 0 #999; /* Enhanced shadows on hover */
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .stereo-text, .stereo-text::before {
+        transform: none;
+        text-shadow: none;
+        transition: none;
+    }
+}
+
+/* chatbox 文字提示 */
+.chat-box > p {
+    color: #666;  /* 调整为浅灰色 */
+    /* 或使用更浅的透明度 */
+    /* color: rgba(0, 0, 0, 0.6); */
+}
+
+/* 用户消息气泡 */
+.user-message {
+    background-color: #2b8aff; /* 品牌蓝色 */
+    color: white;
+    padding: 12px 16px;
+    border-radius: 15px 15px 3px 15px;
+    max-width: 70%;
+    align-self: flex-end;
+    margin: 8px 0;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    line-height: 1.5;
+}
+
+/* AI消息气泡 */
+.ai-message {
+    background-color: rgba(255, 255, 255, 0.95);
+    color: #495057;
+    padding: 12px 16px;
+    border-radius: 15px 15px 15px 3px;
+    max-width: 70%;
+    margin: 8px 0;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+    line-height: 1.5;
+}
+
+/* 消息容器排版优化 */
+.ai-message-container, .user-message-container {
+    width: 100%;
+    display: flex;
+}
+.user-message-container { justify-content: flex-end; }
+
+/* 时间戳样式 */
+.message-timestamp {
+    font-size: 12px;
+    color: #adb5bd;
+    margin: 4px 10px;
+    align-self: flex-end;
+}
+
+/* 加载状态优化 */
+.loading-indicator:after {
+    color: #6c757d;
+}
+
+/* 气泡悬停微交互 */
+.user-message:hover, .ai-message:hover {
+    transform: translateX(2px);
+    transition: all 0.2s ease;
+}
