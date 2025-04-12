@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>心语智友</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- 提取到 styles.css -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- 修改了HTML结构，为收起功能做准备 -->
+    <div class="sidebar">
+        <div class="logo">
+            <div class="logo-content">
+                <!-- 将空div替换为img标签 -->
+                <img class="logo-circle" src="images/logo.jpg" alt="Logo">
+                <span class="stereo-text" data-text="心语智友">心语智友</span>
+            </div>
+            <div class="collapse-button-container">
+                <i class="fa-solid fa-bars collapse-button"></i>
+            </div>
+        </div>
+        <div class="button"><i class="fa-solid fa-plus"></i> 开启新对话</div>
+        <div class="button"><i class="fa-solid fa-comments"></i> 最近对话</div>
+        <div class="profile">
+            <img class="avatar" src="images/avatar.jpg" alt="Avatar">
+            HJG
+        </div>
+    </div>
+    <div class="divider"></div>
+    <div class="main">
+        <div class="top-buttons">
+            <div class="icon-button"><i class="fa-solid fa-sign-in-alt"></i> 登录</div>
+            <div class="icon-button"><i class="fa-solid fa-user-plus"></i> 注册</div>
+        </div>
+        <div class="intro-text">
+            <p class="intro-title">我是心语智友，很高兴见到你！</p>
+            <p class="intro-subtitle">我可以与你聊天，写作等创意内容，还可以和你语音对话哦～</p>
+        </div>
+        <div class="chat-box">
+            <p>你可以问我任何问题...</p>
+            <div class="chat-input">
+                <i class="icon fa-regular fa-image"></i>
+                <i class="icon fa-solid fa-paperclip"></i>
+                <!-- 将input替换为textarea以支持多行输入 -->
+                <textarea placeholder="在这里输入内容..."></textarea>
+                <i class="icon fa-solid fa-microphone"></i>
+                <i class="icon fa-solid fa-paper-plane"></i>
+            </div>
+        </div>
+    </div>
+    <script src="chatbot_dynamic.js"></script>
+</body>
+</html>
