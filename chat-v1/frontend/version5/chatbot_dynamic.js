@@ -155,7 +155,7 @@ document.addEventListener("DOMContentLoaded", function () {
         async function checkASRStatus() {
             try {
                 // 更新为正确的API端点
-                const response = await fetch(`${asrBaseUrl}/asr/`);
+                const response = await fetch(`${localAsrBaseUrl}/asr/`);
                 const data = await response.json();
                 return data.status === "ok";
             } catch (error) {
@@ -346,7 +346,7 @@ document.addEventListener("DOMContentLoaded", function () {
             // 创建AI头像
             const aiAvatar = document.createElement("img");
             aiAvatar.className = "ai-avatar";
-            aiAvatar.src = "images/logo.jpg"; 
+            aiAvatar.src = "images/character.jpg"; 
             aiAvatar.alt = "哪吒";
     
             // 创建AI消息内容容器
