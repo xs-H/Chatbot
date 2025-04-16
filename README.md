@@ -9,3 +9,7 @@
 
 # frontend_v3
 更改tts模型后，更改了新的js文件，调用新的api：tts_api,chat_api，其他内容不做改变
+
+# frontend_v4
+- **优化css**
+- **成功加入tts与asr**
