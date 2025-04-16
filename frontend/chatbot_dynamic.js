@@ -288,7 +288,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ 
                     text: text,
-                    reference_text: ""  // 可以根据需要添加参考文本
+                    // reference_text: ""  // 可以根据需要添加参考文本
                 })
             });
             
@@ -297,14 +297,14 @@ document.addEventListener("DOMContentLoaded", function () {
             }
             
             const data = await response.json();
-            return data.audio_files && data.audio_files.length > 0 ? data.audio_files[0] : null;
+            return data.audio_files && data.audio_files.length > 0 ? data.audio_files : [];
         } catch (error) {
             console.error("TTS生成错误:", error);
-            return null;
+            return [];
         }
     }
 
-    function appendMessage(sender, message, audioPath = null) {
+    function appendMessage(sender, message, audioPaths = null) {
         // 第一次发送消息时，移除欢迎文字并调整聊天框大小
         if (!chatStarted) {
             welcomeText.style.display = "none";
@@ -364,23 +364,21 @@ document.addEventListener("DOMContentLoaded", function () {
             aiMessage.className = "ai-message";
             aiMessage.textContent = message;
     
-            // 如果有音频路径，添加播放按钮
-            if (audioPath) {
-                const audioButton = document.createElement("button");
-                audioButton.className = "audio-button";
-                audioButton.innerHTML = '<i class="fas fa-play"></i> 播放';
-    
-                audioButton.addEventListener("click", function() {
-                    const player = createAudioPlayer();
-                    player.src = audioPath;
-                    player.play();
-                });
-    
-                // 把播放按钮作为一个独立区块加在气泡下方
+            // 如果有音频路径，添加多个播放按钮
+            if (audioPaths && Array.isArray(audioPaths) && audioPaths.length > 0) {
                 const audioWrapper = document.createElement("div");
                 audioWrapper.className = "audio-wrapper";
-                audioWrapper.appendChild(audioButton);
-                // 将按钮直接添加到AI消息内容容器
+                audioPaths.forEach((audioPath, idx) => {
+                    const audioButton = document.createElement("button");
+                    audioButton.className = "audio-button";
+                    audioButton.innerHTML = `<i class="fas fa-play"></i> 播放${audioPaths.length > 1 ? idx + 1 : ""}`;
+                    audioButton.addEventListener("click", function() {
+                        const player = createAudioPlayer();
+                        player.src = audioPath;
+                        player.play();
+                    });
+                    audioWrapper.appendChild(audioButton);
+                });
                 aiMessageContent.appendChild(aiName);
                 aiMessageContent.appendChild(aiMessage);
                 aiMessageContent.appendChild(audioWrapper);
@@ -458,24 +456,34 @@ document.addEventListener("DOMContentLoaded", function () {
             }
             
             // 生成TTS音频
-            const audioFile = await generateTTS(aiReply);
-            
+            const audioFiles = await generateTTS(aiReply);
+
             // 移除TTS加载指示器
             if (chatBox.querySelector(".tts-loading-indicator")) {
                 chatBox.querySelector(".tts-loading-indicator").remove();
             }
-            
-            // 构建音频文件的完整URL
-            const audioUrl = audioFile ? `${ttsBaseUrl}/api/audio/${audioFile.split('/').pop()}` : null;
-            
-            // 添加消息和音频按钮
-            appendMessage("ai", aiReply, audioUrl);
-            
-            // 自动播放音频（如果有）
-            if (audioUrl) {
+
+            // 构建所有音频文件的完整URL数组
+            const audioUrls = audioFiles.map(file => `${ttsBaseUrl}/api/audio/${file.split('/').pop()}`);
+
+            // 添加消息和所有音频按钮
+            appendMessage("ai", aiReply, audioUrls);
+
+            // 自动播放第一个音频（如果有）
+            if (audioUrls.length > 0) {
                 const player = createAudioPlayer();
-                player.src = audioUrl;
+                let currentIdx = 0;
+                player.src = audioUrls[currentIdx];
                 player.play().catch(e => console.log("Auto-play prevented by browser. User interaction required."));
+                player.onended = function () {
+                    currentIdx++;
+                    if (currentIdx < audioUrls.length) {
+                        player.src = audioUrls[currentIdx];
+                        player.play();
+                    } else {
+                        player.onended = null; // 清理事件
+                    }
+                };
             }
         } catch (error) {
             console.error("Error:", error);

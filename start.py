@@ -10,7 +10,6 @@ def start_tts_api():
     # 设置 tts_api 的工作目录为 backend/tts_backend
     cwd = os.path.join("backend", "tts_backend")
     proc = subprocess.Popen([sys.executable, "tts_api.py"], cwd=cwd)
-    # proc = subprocess.Popen([sys.executable, "tts.py"], cwd=cwd)
     proc.wait()
 
 def start_chat_api():
