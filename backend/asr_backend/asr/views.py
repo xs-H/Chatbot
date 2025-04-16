@@ -3,7 +3,6 @@ import logging
 import os
 
 from django.http import JsonResponse
-from django.views.decorators.http import require_GET
 from rest_framework.response import Response
 from rest_framework.status import (
     HTTP_200_OK,
@@ -19,15 +18,9 @@ from asr.models.TranscribeTask import TranscribeTask
 from asr.services.transcribe.TaskManager import TaskManager
 
 
-@require_GET
-def health_check(request):
-    return JsonResponse(
-        {
-            "status": "ok",
-            "service": "asr-backend",
-            "version": "1.0",
-        }
-    )
+class HealthCheckView(APIView):
+    def get(self, request):
+        return Response({"status": "ok"}, status=HTTP_200_OK)
 
 
 def bad_request(msg: str):
