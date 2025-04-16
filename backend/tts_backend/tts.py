@@ -2,13 +2,8 @@ from flask import Flask, request, jsonify, send_file
 from flask_cors import CORS
 import logging
 import os
-from threading import Lock
-
-
-# 设置锁
-model_lock = Lock()
-
 os.environ["PYTORCH_CUDA_ALLOC_CONF"] = "expandable_segments:True"
+
 import torchaudio
 import torch
 torch.cuda.empty_cache()
@@ -18,42 +13,21 @@ import traceback
 from pathlib import Path
 import onnxruntime
 
-# 全局初始化ONNX会话
-# onnx_session = None
 
+dir_path = r".\COSYVoice"
+sys.path.append(dir_path + r"/third_party/Matcha-TTS")
+sys.path.append(dir_path)
 
-# def init_onnx_session():
-#     global onnx_session
-#     if onnx_session is None:
-#         onnx_session = onnxruntime.InferenceSession(
-#             onnx_model_path,
-#             providers=['CUDAExecutionProvider'],
-#             provider_options=[{'device_id': 0}]  # 明确指定设备
-#         )
+from COSYVoice.cosyvoice.cli.cosyvoice import CosyVoice2
+from COSYVoice.cosyvoice.utils.file_utils import load_wav
 
-
-cosyvoice = None
-
-def get_cosyvoice_instance():
-    global cosyvoice
-    if cosyvoice is None:
-        model_path = os.path.join(dir_path, 'pretrained_models/CosyVoice2-0.5B')
-        logging.info(f"Initializing CosyVoice2 with model path: {model_path}")
-
-        if not os.path.exists(model_path):
-            logging.error(f"Model directory not found at: {model_path}")
-            sys.exit(1)
-
-        cosyvoice = CosyVoice2(
-            model_path,
-            load_jit = False,
-            load_trt = False,
-            fp16 = False
-        )
-        logging
-    return cosyvoice
-
-
+cosyvoice = CosyVoice2(
+    dir_path + r"\pretrained_models\CosyVoice2-0.5B",
+    load_jit=True,  # 是否加载JIT编译加速
+    load_trt=False,  # 是否加载TensorRT加速
+    fp16=False,  # 设置为True可以减少显存占用，但是效果下降
+    # use_flow_cache=True
+)
 
 
 
@@ -130,9 +104,11 @@ try:
     # 尝试不同的路径找到参考音频
     possible_paths = [
         current_file.parents[2] / 'resource' / 'voice' / "NZ_angry.mp3",  # 项目根目录
-        # Path("./resource/voice/NeZha''.mp3"),  # 相对当前目录
-        # Path(os.path.abspath("../resource/voice/NeZha''.mp3")),  # 上一级目录
-        # Path(os.path.abspath("../../resource/voice/NeZha''.mp3")),  # 上两级目录
+        Path("./resource/voice/NeZha''.mp3"),  # 相对当前目录
+        Path(os.path.abspath("../resource/voice/NeZha''.mp3")),  # 上一级目录
+        Path(os.path.abspath("../../resource/voice/NeZha''.mp3")),  # 上两级目录
+        # 添加一个不含特殊字符的文件名尝试
+        current_file.parents[2] / 'resource' / 'voice' / "NeZha.mp3"
     ]
 
     mp3_path = None
@@ -166,7 +142,8 @@ except Exception as e:
 REFERENCE_TEXT = "拜个屁的师我什么都不学！修炼了出去捧那些白痴的臭脚，还不如在这睡大觉。"
 
 ######################### 初始化 CosyVoice2 #######################################
-get_cosyvoice_instance()
+# get_cosyvoice_instance()
+######################### 初始化 CosyVoice2 #######################################
 
 @app.route('/api/tts', methods=['POST'])
 def tts():
@@ -196,10 +173,10 @@ def tts():
         # print(type(text))
         # print(text)
         inference_result = cosyvoice.inference_zero_shot(
-            text,
-            REFERENCE_TEXT,
-            prompt_speech_16k,
-            stream=False
+                text,
+                REFERENCE_TEXT,
+                prompt_speech_16k,
+                stream=False
         )
         inference_result = list(inference_result)
 

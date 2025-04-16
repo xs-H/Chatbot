@@ -12,8 +12,9 @@ document.addEventListener("DOMContentLoaded", function () {
     let audioPlayer = null;
     
     // ASR API不同URL
-    const asrBaseUrl = "https://007.dev.xuan.pub/api/v1";
     const localAsrBaseUrl = "http://localhost:8001/api/v1";
+
+    const asrBaseUrl = localAsrBaseUrl;
     
     // TTS API基础URL
     const ttsBaseUrl = "http://localhost:5001";
@@ -155,8 +156,9 @@ document.addEventListener("DOMContentLoaded", function () {
         async function checkASRStatus() {
             try {
                 // 更新为正确的API端点
-                const response = await fetch(`${localAsrBaseUrl}/asr/`);
+                const response = await fetch(`${asrBaseUrl}/asr/`);
                 const data = await response.json();
+                console.debug(data)
                 return data.status === "ok";
             } catch (error) {
                 console.error("无法连接到ASR服务:", error);
@@ -220,6 +222,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 // 如果任务完成
                 if (response.status === 200) {
                     const data = await response.json();
+
+                    console.debug(data)
                     
                     // 移除加载指示器
                     if (chatBox.querySelector(".asr-loading-indicator")) {

@@ -16,8 +16,8 @@ class ChatSystem:
         # self.client_a = ollama.Client(host='http://localhost:11434')
         # self.model_name_a = 'qwen-assist:latest'
         # self.model_name = 'qwen-role-lora-new:latest' # fp16
-        self.model_name = 'qwen-role-new-8b:latest' # Q5_K_M
-        # self.model_name = 'qwen-role-Q8:latest' # Q8_0 # run不动
+        # self.model_name = 'qwen-role-new-8b:latest' # Q5_K_M
+        self.model_name = 'qwen-role-Q8:latest' # Q8_0 # run不动
         self.conversation_history = []
 
     def _format_messages(self, query, context):

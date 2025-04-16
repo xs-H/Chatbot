@@ -21,7 +21,7 @@ current_file = Path(__file__).resolve()
 # 项目根目录
 project_root = current_file.parents[2]  # cosy_voice.py -> tts_backend -> backend -> [chatbot-v1]
 # 构建目标 mp3 文件的路径
-mp3_path = project_root / 'resource' / 'voice' / "NeZha''.mp3"  # 参考的音频文件
+mp3_path = project_root / 'resource' / 'voice' / "NZ_angry.mp3"  # 参考的音频文件
 
 if __name__=="__main__":
 

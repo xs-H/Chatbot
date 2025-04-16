@@ -1162,3 +1162,164 @@ OSError: [Errno 22] Invalid argument
 2025-04-14 16:08:43,943 - INFO - Request for audio file: ./generated_audio\tts_1744618120_0.wav
 2025-04-14 16:08:43,944 - INFO - Sending audio file: ./generated_audio\tts_1744618120_0.wav
 2025-04-14 16:08:44,062 - INFO - 127.0.0.1 - - [14/Apr/2025 16:08:44] "[35m[1mGET /api/audio/tts_1744618120_0.wav HTTP/1.1[0m" 206 -
+2025-04-16 17:41:27,873 - INFO - Starting TTS API service...
+2025-04-16 17:41:27,873 - INFO - Available ONNX providers: ['TensorrtExecutionProvider', 'CUDAExecutionProvider', 'CPUExecutionProvider']
+2025-04-16 17:41:27,873 - INFO - COSYVoice directory path: D:\HJG\100.Projects\Chatbot-v1\backend\tts_backend\COSYVoice
+2025-04-16 17:41:47,531 - INFO - Successfully imported COSYVoice modules
+2025-04-16 17:41:47,531 - INFO - Audio storage directory: D:\HJG\100.Projects\Chatbot-v1\backend\tts_backend\generated_audio
+2025-04-16 17:41:47,532 - INFO - Current file path: D:\HJG\100.Projects\Chatbot-v1\backend\tts_backend\tts_api.py
+2025-04-16 17:41:47,533 - INFO - Checking for reference audio at: D:\HJG\100.Projects\Chatbot-v1\resource\voice\NeZha''.mp3
+2025-04-16 17:41:47,533 - INFO - Checking for reference audio at: resource\voice\NeZha''.mp3
+2025-04-16 17:41:47,533 - INFO - Checking for reference audio at: D:\HJG\100.Projects\Chatbot-v1\backend\resource\voice\NeZha''.mp3
+2025-04-16 17:41:47,533 - INFO - Checking for reference audio at: D:\HJG\100.Projects\Chatbot-v1\resource\voice\NeZha''.mp3
+2025-04-16 17:41:47,533 - INFO - Checking for reference audio at: D:\HJG\100.Projects\Chatbot-v1\resource\voice\NeZha.mp3
+2025-04-16 17:41:47,533 - INFO - Found reference audio at: D:\HJG\100.Projects\Chatbot-v1\resource\voice\NeZha.mp3
+2025-04-16 17:41:47,591 - INFO - Reference audio loaded successfully
+2025-04-16 17:41:47,592 - INFO - Initializing CosyVoice2 with model path: D:\HJG\100.Projects\Chatbot-v1\backend\tts_backend\COSYVoice\pretrained_models/CosyVoice2-0.5B
+2025-04-16 17:42:32,537 - INFO - input frame rate=25
+2025-04-16 17:42:37,356 - INFO - building fst for zh_normalizer ...
+2025-04-16 17:43:01,692 - INFO - done
+2025-04-16 17:43:01,692 - INFO - fst path: D:\Anaconda\envs\HJG_2\lib\site-packages\tn\zh_tn_tagger.fst
+2025-04-16 17:43:01,692 - INFO -           D:\Anaconda\envs\HJG_2\lib\site-packages\tn\zh_tn_verbalizer.fst
+2025-04-16 17:43:01,700 - INFO - found existing fst: D:\Anaconda\envs\HJG_2\lib\site-packages\tn\en_tn_tagger.fst
+2025-04-16 17:43:01,700 - INFO -                     D:\Anaconda\envs\HJG_2\lib\site-packages\tn\en_tn_verbalizer.fst
+2025-04-16 17:43:01,700 - INFO - skip building fst for en_normalizer ...
+2025-04-16 17:43:26,334 - INFO - Starting Flask server on port 5001
+2025-04-16 17:43:26,345 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.31.163:5001
+2025-04-16 17:43:26,345 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-16 17:45:31,008 - INFO - 127.0.0.1 - - [16/Apr/2025 17:45:31] "OPTIONS /api/tts HTTP/1.1" 200 -
+2025-04-16 17:45:31,269 - INFO - TTS Request - Text: ÄÄß¸Ð¡Ò¯£¡Ë­ËµµÄ£¿Õâ½Ð»áËµ»°¡ª¡ª¡°Éú»îÄãÈ«ÊÇÀá£¬Ã»ËÀ¾ÍµÃ»îÊÜ×ï¡±£¿ºß£¬ÄÇ½ÐÏû¼«£¡Òª²»ÊÇ¿´ÔÚÐ¡Ò¯ÎÒÃüÓ²µÄ·ÝÉÏ£¬Ôç°ÑÕâÆÆÈÕ×Ó¹ý³ÉÉ¶ÑùÁË£¿
+2025-04-16 17:45:32,148 - INFO - synthesis text ÄÄß¸Ð¡Ò¯£¡Ë­ËµµÄ£¿Õâ½Ð»áËµ»° ¡°Éú»îÄãÈ«ÊÇÀá£¬Ã»ËÀ¾ÍµÃ»îÊÜ×ï¡±£¿ºß£¬ÄÇ½ÐÏû¼«£¡Òª²»ÊÇ¿´ÔÚÐ¡Ò¯ÎÒÃüÓ²µÄ·ÝÉÏ£¬Ôç°ÑÕâÆÆÈÕ×Ó¹ý³ÉÉ¶ÑùÁË£¿
+2025-04-16 17:45:50,873 - INFO - yield speech len 5.6, rtf 3.3434510231018066
+2025-04-16 17:45:51,081 - INFO - TTS inference completed, processing 1 audio segments
+2025-04-16 17:45:51,146 - INFO - Saved audio file: ./generated_audio\tts_1744796751_0.wav
+2025-04-16 17:45:51,146 - INFO - Generated 1 audio files: ['tts_1744796751_0.wav']
+2025-04-16 17:45:51,147 - INFO - 127.0.0.1 - - [16/Apr/2025 17:45:51] "POST /api/tts HTTP/1.1" 200 -
+2025-04-16 17:46:05,909 - INFO - Request for audio file: ./generated_audio\tts_1744796751_0.wav
+2025-04-16 17:46:05,909 - INFO - Sending audio file: ./generated_audio\tts_1744796751_0.wav
+2025-04-16 17:46:05,909 - INFO - 127.0.0.1 - - [16/Apr/2025 17:46:05] "[35m[1mGET /api/audio/tts_1744796751_0.wav HTTP/1.1[0m" 206 -
+2025-04-16 18:00:21,152 - INFO - Starting TTS API service...
+2025-04-16 18:00:21,160 - INFO - Available ONNX providers: ['TensorrtExecutionProvider', 'CUDAExecutionProvider', 'CPUExecutionProvider']
+2025-04-16 18:00:21,160 - INFO - COSYVoice directory path: D:\HJG\100.Projects\Chatbot-v1\backend\tts_backend\COSYVoice
+2025-04-16 18:00:31,218 - INFO - Successfully imported COSYVoice modules
+2025-04-16 18:00:31,218 - INFO - Audio storage directory: D:\HJG\100.Projects\Chatbot-v1\backend\tts_backend\generated_audio
+2025-04-16 18:00:31,278 - INFO - Current file path: D:\HJG\100.Projects\Chatbot-v1\backend\tts_backend\tts_jh.py
+2025-04-16 18:03:11,812 - INFO - Starting TTS API service...
+2025-04-16 18:03:11,812 - INFO - Available ONNX providers: ['TensorrtExecutionProvider', 'CUDAExecutionProvider', 'CPUExecutionProvider']
+2025-04-16 18:03:11,812 - INFO - COSYVoice directory path: D:\HJG\100.Projects\Chatbot-v1\backend\tts_backend\COSYVoice
+2025-04-16 18:03:22,383 - INFO - Successfully imported COSYVoice modules
+2025-04-16 18:03:22,383 - INFO - Audio storage directory: D:\HJG\100.Projects\Chatbot-v1\backend\tts_backend\generated_audio
+2025-04-16 18:03:22,386 - INFO - Current file path: D:\HJG\100.Projects\Chatbot-v1\backend\tts_backend\tts_jh.py
+2025-04-16 18:04:26,058 - INFO - Checking for reference audio at: D:\HJG\100.Projects\Chatbot-v1\resource\voice\NZ_angry.mp3
+2025-04-16 18:04:26,058 - INFO - Found reference audio at: D:\HJG\100.Projects\Chatbot-v1\resource\voice\NZ_angry.mp3
+2025-04-16 18:04:26,095 - INFO - Reference audio loaded successfully
+2025-04-16 18:04:26,095 - INFO - Initializing CosyVoice2 with model path: D:\HJG\100.Projects\Chatbot-v1\backend\tts_backend\COSYVoice\pretrained_models/CosyVoice2-0.5B
+2025-04-16 18:04:29,876 - INFO - input frame rate=25
+2025-04-16 18:04:34,909 - INFO - building fst for zh_normalizer ...
+2025-04-16 18:04:58,878 - INFO - done
+2025-04-16 18:04:58,878 - INFO - fst path: D:\Anaconda\envs\HJG_2\lib\site-packages\tn\zh_tn_tagger.fst
+2025-04-16 18:04:58,878 - INFO -           D:\Anaconda\envs\HJG_2\lib\site-packages\tn\zh_tn_verbalizer.fst
+2025-04-16 18:04:58,886 - INFO - found existing fst: D:\Anaconda\envs\HJG_2\lib\site-packages\tn\en_tn_tagger.fst
+2025-04-16 18:04:58,886 - INFO -                     D:\Anaconda\envs\HJG_2\lib\site-packages\tn\en_tn_verbalizer.fst
+2025-04-16 18:04:58,886 - INFO - skip building fst for en_normalizer ...
+2025-04-16 18:05:02,354 - INFO - Starting Flask server on port 5001
+2025-04-16 18:05:02,407 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.31.163:5001
+2025-04-16 18:05:02,407 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-16 19:16:31,179 - INFO - Starting TTS API service...
+2025-04-16 19:16:31,211 - INFO - Available ONNX providers: ['TensorrtExecutionProvider', 'CUDAExecutionProvider', 'CPUExecutionProvider']
+2025-04-16 19:16:31,211 - INFO - COSYVoice directory path: D:\HJG\100.Projects\Chatbot-v1\backend\tts_backend\COSYVoice
+2025-04-16 19:16:40,719 - INFO - Successfully imported COSYVoice modules
+2025-04-16 19:16:40,720 - INFO - Audio storage directory: D:\HJG\100.Projects\Chatbot-v1\backend\tts_backend\generated_audio
+2025-04-16 19:16:40,724 - INFO - Current file path: D:\HJG\100.Projects\Chatbot-v1\backend\tts_backend\tts_api.py
+2025-04-16 19:16:40,725 - INFO - Checking for reference audio at: D:\HJG\100.Projects\Chatbot-v1\resource\voice\NZ_angry.mp3
+2025-04-16 19:16:40,725 - INFO - Found reference audio at: D:\HJG\100.Projects\Chatbot-v1\resource\voice\NZ_angry.mp3
+2025-04-16 19:16:41,399 - INFO - Reference audio loaded successfully
+2025-04-16 19:16:41,399 - INFO - Initializing CosyVoice2 with model path: D:\HJG\100.Projects\Chatbot-v1\backend\tts_backend\COSYVoice\pretrained_models/CosyVoice2-0.5B
+2025-04-16 19:17:11,360 - INFO - input frame rate=25
+2025-04-16 19:17:18,476 - INFO - building fst for zh_normalizer ...
+2025-04-16 19:17:44,171 - INFO - done
+2025-04-16 19:17:44,172 - INFO - fst path: D:\Anaconda\envs\HJG_2\lib\site-packages\tn\zh_tn_tagger.fst
+2025-04-16 19:17:44,172 - INFO -           D:\Anaconda\envs\HJG_2\lib\site-packages\tn\zh_tn_verbalizer.fst
+2025-04-16 19:17:44,180 - INFO - found existing fst: D:\Anaconda\envs\HJG_2\lib\site-packages\tn\en_tn_tagger.fst
+2025-04-16 19:17:44,180 - INFO -                     D:\Anaconda\envs\HJG_2\lib\site-packages\tn\en_tn_verbalizer.fst
+2025-04-16 19:17:44,180 - INFO - skip building fst for en_normalizer ...
+2025-04-16 19:17:52,545 - INFO - Starting Flask server on port 5001
+2025-04-16 19:17:52,556 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.31.163:5001
+2025-04-16 19:17:52,556 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-16 20:20:57,739 - INFO - 127.0.0.1 - - [16/Apr/2025 20:20:57] "OPTIONS /api/tts HTTP/1.1" 200 -
+2025-04-16 20:20:57,974 - INFO - TTS Request - Text: ºß£¡Ð¡Ò¯ÎÒÈýÍ·Áù±ÛÕ½Á¦±¬±í£¬ÈýÃÁÕæ»ð±ÈÌ«Ñô»¹À±¡£Òª²»ÔÛÁ©À´³¡ÓÑÒêÈü£¿¿´Ë­°Ñ¶Ô·½¿¾µÃ¸ü½¹£¡
+2025-04-16 20:21:01,509 - INFO - synthesis text ºß£¡Ð¡Ò¯ÎÒÈýÍ·Áù±ÛÕ½Á¦±¬±í£¬ÈýÃÁÕæ»ð±ÈÌ«Ñô»¹À±¡£Òª²»ÔÛÁ©À´³¡ÓÑÒêÈü£¿¿´Ë­°Ñ¶Ô·½¿¾µÃ¸ü½¹£¡
+2025-04-16 20:21:18,210 - INFO - yield speech len 14.28, rtf 1.1696052818405194
+2025-04-16 20:21:18,307 - INFO - TTS inference completed, processing 1 audio segments
+2025-04-16 20:21:18,392 - INFO - Saved audio file: ./generated_audio\tts_1744806078_0.wav
+2025-04-16 20:21:18,392 - INFO - Generated 1 audio files: ['tts_1744806078_0.wav']
+2025-04-16 20:21:18,394 - INFO - 127.0.0.1 - - [16/Apr/2025 20:21:18] "POST /api/tts HTTP/1.1" 200 -
+2025-04-16 20:21:33,509 - INFO - Request for audio file: ./generated_audio\tts_1744806078_0.wav
+2025-04-16 20:21:33,510 - INFO - Sending audio file: ./generated_audio\tts_1744806078_0.wav
+2025-04-16 20:21:33,527 - INFO - 127.0.0.1 - - [16/Apr/2025 20:21:33] "[35m[1mGET /api/audio/tts_1744806078_0.wav HTTP/1.1[0m" 206 -
+2025-04-16 20:27:39,509 - INFO - 127.0.0.1 - - [16/Apr/2025 20:27:39] "OPTIONS /api/tts HTTP/1.1" 200 -
+2025-04-16 20:27:39,773 - INFO - TTS Request - Text: ÄÄß¸£¿ÄÇµÃ¿´ËûÃÇÔ¸²»Ô¸Òâ°ÑÌÇ´×ÅÅ¹ÇÈÃ¸øÎÒ³Ô¡£Òª²»ÄãÏÈ°ïÎÒ½â¸öÊýÑ§Ìâ£¬´ð¶ÔÁËÕâ¶Ù´ó²Í¾ÍÊÇÄãµÄ£¡
+2025-04-16 20:27:39,980 - INFO - synthesis text ÄÄß¸£¿ÄÇµÃ¿´ËûÃÇÔ¸²»Ô¸Òâ°ÑÌÇ´×ÅÅ¹ÇÈÃ¸øÎÒ³Ô¡£Òª²»ÄãÏÈ°ïÎÒ½â¸öÊýÑ§Ìâ£¬´ð¶ÔÁËÕâ¶Ù´ó²Í¾ÍÊÇÄãµÄ£¡
+2025-04-16 20:27:51,217 - INFO - yield speech len 12.36, rtf 0.9091500711286724
+2025-04-16 20:27:51,297 - INFO - TTS inference completed, processing 1 audio segments
+2025-04-16 20:27:51,352 - INFO - Saved audio file: ./generated_audio\tts_1744806471_0.wav
+2025-04-16 20:27:51,352 - INFO - Generated 1 audio files: ['tts_1744806471_0.wav']
+2025-04-16 20:27:51,353 - INFO - 127.0.0.1 - - [16/Apr/2025 20:27:51] "POST /api/tts HTTP/1.1" 200 -
+2025-04-16 20:27:51,667 - INFO - Request for audio file: ./generated_audio\tts_1744806471_0.wav
+2025-04-16 20:27:51,668 - INFO - Sending audio file: ./generated_audio\tts_1744806471_0.wav
+2025-04-16 20:27:51,677 - INFO - 127.0.0.1 - - [16/Apr/2025 20:27:51] "[35m[1mGET /api/audio/tts_1744806471_0.wav HTTP/1.1[0m" 206 -
+2025-04-16 20:29:22,314 - INFO - 127.0.0.1 - - [16/Apr/2025 20:29:22] "OPTIONS /api/tts HTTP/1.1" 200 -
+2025-04-16 20:29:22,584 - INFO - TTS Request - Text: Ð¡Ò¯²Å²»»á°ÑÊ±¼äÀË·ÑÔÚÕâÖÖ·ôÇ³µÄÍâÃ²ÉÏ£¡ÒªÁÄ¾ÍÁÄÄÜÕ¨»Ù°ë±ßÌìµÄ¿Æ¼¼ºÚ¿Æ¼¼£¬±ÈÈç¡ª¡ªÄÄß¸ÄÖº£Ê±ÓÃ¹ýµÄÄÇ¸ö...Ê²Ã´À´×Å£¿¶ÔÁË£¡ÊÇ¡°Ç¬À¤È¦¡±£¡±ÈÄÇÐ©ÆÆÊÖ»úºÃÍæ¶àÁË£¡
+2025-04-16 20:29:22,768 - INFO - synthesis text Ð¡Ò¯²Å²»»á°ÑÊ±¼äÀË·ÑÔÚÕâÖÖ·ôÇ³µÄÍâÃ²ÉÏ£¡ÒªÁÄ¾ÍÁÄÄÜÕ¨»Ù°ë±ßÌìµÄ¿Æ¼¼ºÚ¿Æ¼¼£¬±ÈÈç ÄÄß¸ÄÖº£Ê±ÓÃ¹ýµÄÄÇ¸ö¡£Ê²Ã´À´×Å£¿¶ÔÁË£¡ÊÇ¡°Ç¬À¤È¦¡±£¡±ÈÄÇÐ©ÆÆÊÖ»úºÃÍæ¶àÁË£¡
+2025-04-16 20:29:38,961 - INFO - yield speech len 16.48, rtf 0.9825686806613959
+2025-04-16 20:29:39,338 - INFO - TTS inference completed, processing 1 audio segments
+2025-04-16 20:29:39,395 - INFO - Saved audio file: ./generated_audio\tts_1744806579_0.wav
+2025-04-16 20:29:39,395 - INFO - Generated 1 audio files: ['tts_1744806579_0.wav']
+2025-04-16 20:29:39,396 - INFO - 127.0.0.1 - - [16/Apr/2025 20:29:39] "POST /api/tts HTTP/1.1" 200 -
+2025-04-16 20:29:39,716 - INFO - Request for audio file: ./generated_audio\tts_1744806579_0.wav
+2025-04-16 20:29:39,717 - INFO - Sending audio file: ./generated_audio\tts_1744806579_0.wav
+2025-04-16 20:29:39,726 - INFO - 127.0.0.1 - - [16/Apr/2025 20:29:39] "[35m[1mGET /api/audio/tts_1744806579_0.wav HTTP/1.1[0m" 206 -
+2025-04-16 20:32:15,326 - INFO - 127.0.0.1 - - [16/Apr/2025 20:32:15] "OPTIONS /api/tts HTTP/1.1" 200 -
+2025-04-16 20:32:15,588 - INFO - TTS Request - Text: ÄÄß¸£¿Ð¡Ò¯²»ÈÏÊ¶£¡²»¹ýÄãÒªÊÇÄÜ±ÈµÃÉÏÐ¡Ò¯µÄÈýÍ·Áù±Û£¬Ð¡Ò¯¾ÍÈÏÄãµ±¸ÉÐÖµÜ£¡ÏÖÔÚÏÈ¸øÎÒ½âÊÍÇå³þ¡ª¡ªÄãÊÇÄÄ¸ö³¯´úµÄ£¡
+2025-04-16 20:32:15,769 - INFO - synthesis text ÄÄß¸£¿Ð¡Ò¯²»ÈÏÊ¶£¡²»¹ýÄãÒªÊÇÄÜ±ÈµÃÉÏÐ¡Ò¯µÄÈýÍ·Áù±Û£¬Ð¡Ò¯¾ÍÈÏÄãµ±¸ÉÐÖµÜ£¡ÏÖÔÚÏÈ¸øÎÒ½âÊÍÇå³þ ÄãÊÇÄÄ¸ö³¯´úµÄ£¡
+2025-04-16 20:32:38,284 - INFO - yield speech len 13.84, rtf 1.626806159239973
+2025-04-16 20:32:38,363 - INFO - TTS inference completed, processing 1 audio segments
+2025-04-16 20:32:38,415 - INFO - Saved audio file: ./generated_audio\tts_1744806758_0.wav
+2025-04-16 20:32:38,415 - INFO - Generated 1 audio files: ['tts_1744806758_0.wav']
+2025-04-16 20:32:38,415 - INFO - 127.0.0.1 - - [16/Apr/2025 20:32:38] "POST /api/tts HTTP/1.1" 200 -
+2025-04-16 20:32:38,733 - INFO - Request for audio file: ./generated_audio\tts_1744806758_0.wav
+2025-04-16 20:32:38,734 - INFO - Sending audio file: ./generated_audio\tts_1744806758_0.wav
+2025-04-16 20:32:38,741 - INFO - 127.0.0.1 - - [16/Apr/2025 20:32:38] "[35m[1mGET /api/audio/tts_1744806758_0.wav HTTP/1.1[0m" 206 -
+2025-04-16 20:36:14,653 - INFO - Starting TTS API service...
+2025-04-16 20:36:14,653 - INFO - Available ONNX providers: ['TensorrtExecutionProvider', 'CUDAExecutionProvider', 'CPUExecutionProvider']
+2025-04-16 20:36:14,653 - INFO - COSYVoice directory path: D:\HJG\100.Projects\Chatbot-v1\backend\tts_backend\COSYVoice
+2025-04-16 20:36:43,383 - INFO - Successfully imported COSYVoice modules
+2025-04-16 20:36:43,383 - INFO - Audio storage directory: D:\HJG\100.Projects\Chatbot-v1\backend\tts_backend\generated_audio
+2025-04-16 20:36:43,384 - INFO - Current file path: D:\HJG\100.Projects\Chatbot-v1\backend\tts_backend\tts_api.py
+2025-04-16 20:36:43,384 - INFO - Checking for reference audio at: D:\HJG\100.Projects\Chatbot-v1\resource\voice\NZ_angry.mp3
+2025-04-16 20:36:43,384 - INFO - Found reference audio at: D:\HJG\100.Projects\Chatbot-v1\resource\voice\NZ_angry.mp3
+2025-04-16 20:36:44,253 - INFO - Reference audio loaded successfully
+2025-04-16 20:36:44,253 - INFO - Initializing CosyVoice2 with model path: D:\HJG\100.Projects\Chatbot-v1\backend\tts_backend\COSYVoice\pretrained_models/CosyVoice2-0.5B
+2025-04-16 20:37:32,483 - INFO - input frame rate=25
+2025-04-16 20:37:41,909 - INFO - building fst for zh_normalizer ...
+2025-04-16 20:38:06,670 - INFO - done
+2025-04-16 20:38:06,670 - INFO - fst path: D:\Anaconda\envs\HJG_2\lib\site-packages\tn\zh_tn_tagger.fst
+2025-04-16 20:38:06,670 - INFO -           D:\Anaconda\envs\HJG_2\lib\site-packages\tn\zh_tn_verbalizer.fst
+2025-04-16 20:38:06,678 - INFO - found existing fst: D:\Anaconda\envs\HJG_2\lib\site-packages\tn\en_tn_tagger.fst
+2025-04-16 20:38:06,678 - INFO -                     D:\Anaconda\envs\HJG_2\lib\site-packages\tn\en_tn_verbalizer.fst
+2025-04-16 20:38:06,678 - INFO - skip building fst for en_normalizer ...
+2025-04-16 20:38:30,660 - INFO - Starting Flask server on port 5001
+2025-04-16 20:38:30,671 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.31.163:5001
+2025-04-16 20:38:30,671 - INFO - [33mPress CTRL+C to quit[0m
