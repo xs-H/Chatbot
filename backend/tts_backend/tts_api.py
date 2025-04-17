@@ -100,9 +100,6 @@ try:
     # 尝试不同的路径找到参考音频
     possible_paths = [
         current_file.parents[2] / 'resource' / 'voice' / "NZ_angry.mp3",  # 项目根目录
-        # Path("./resource/voice/NeZha''.mp3"),  # 相对当前目录
-        # Path(os.path.abspath("../resource/voice/NeZha''.mp3")),  # 上一级目录
-        # Path(os.path.abspath("../../resource/voice/NeZha''.mp3")),  # 上两级目录
     ]
 
     mp3_path = None

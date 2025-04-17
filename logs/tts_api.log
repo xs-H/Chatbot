@@ -310,3 +310,74 @@
 2025-04-17 01:18:17,897 - INFO - Request for audio file: ./generated_audio\tts_1744823897_0.wav
 2025-04-17 01:18:17,898 - INFO - Sending audio file: ./generated_audio\tts_1744823897_0.wav
 2025-04-17 01:18:18,297 - INFO - 127.0.0.1 - - [17/Apr/2025 01:18:18] "[35m[1mGET /api/audio/tts_1744823897_0.wav HTTP/1.1[0m" 206 -
+2025-04-17 09:41:09,423 - INFO - Starting TTS API service...
+2025-04-17 09:41:09,424 - INFO - Available ONNX providers: ['TensorrtExecutionProvider', 'CUDAExecutionProvider', 'CPUExecutionProvider']
+2025-04-17 09:41:09,424 - INFO - COSYVoice directory path: D:\HJG\100.Projects\Chatbot-v1\backend\tts_backend\COSYVoice
+2025-04-17 09:41:36,059 - INFO - Successfully imported COSYVoice modules
+2025-04-17 09:41:36,059 - INFO - Audio storage directory: D:\HJG\100.Projects\Chatbot-v1\backend\tts_backend\generated_audio
+2025-04-17 09:41:36,061 - INFO - Current file path: D:\HJG\100.Projects\Chatbot-v1\backend\tts_backend\tts_api.py
+2025-04-17 09:41:36,061 - INFO - Checking for reference audio at: D:\HJG\100.Projects\Chatbot-v1\resource\voice\NZ_angry.mp3
+2025-04-17 09:41:36,061 - INFO - Found reference audio at: D:\HJG\100.Projects\Chatbot-v1\resource\voice\NZ_angry.mp3
+2025-04-17 09:41:37,220 - INFO - Reference audio loaded successfully
+2025-04-17 09:41:37,220 - INFO - Initializing CosyVoice2 with model path: D:\HJG\100.Projects\Chatbot-v1\backend\tts_backend\COSYVoice\pretrained_models/CosyVoice2-0.5B
+2025-04-17 09:42:25,248 - INFO - input frame rate=25
+2025-04-17 09:42:36,270 - INFO - building fst for zh_normalizer ...
+2025-04-17 09:43:03,809 - INFO - done
+2025-04-17 09:43:03,809 - INFO - fst path: D:\Anaconda\envs\HJG_2\lib\site-packages\tn\zh_tn_tagger.fst
+2025-04-17 09:43:03,809 - INFO -           D:\Anaconda\envs\HJG_2\lib\site-packages\tn\zh_tn_verbalizer.fst
+2025-04-17 09:43:03,816 - INFO - found existing fst: D:\Anaconda\envs\HJG_2\lib\site-packages\tn\en_tn_tagger.fst
+2025-04-17 09:43:03,816 - INFO -                     D:\Anaconda\envs\HJG_2\lib\site-packages\tn\en_tn_verbalizer.fst
+2025-04-17 09:43:03,816 - INFO - skip building fst for en_normalizer ...
+2025-04-17 09:43:28,940 - INFO - Starting Flask server on port 5001
+2025-04-17 09:43:28,950 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.31.163:5001
+2025-04-17 09:43:28,950 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-17 09:47:22,694 - INFO - 127.0.0.1 - - [17/Apr/2025 09:47:22] "OPTIONS /api/tts HTTP/1.1" 200 -
+2025-04-17 09:47:22,945 - INFO - TTS Request - Text: ºß¹ş£¡ÄÄß¸ÈıÌ«×ÓÊÇÒ²£¡Ğ¡Ò¯ÔÚÓ¢¹úÓĞ¸ö¸ü¿áµÄ·­Òë¡ª¡ª¡°ÄÄß¸ÎÒ¡±£¡ÒªÉ¶½éÉÜ£¿¿´Ğ¡Ò¯ÕâÉíĞĞÍ·£¬¾ÍÖªµÀ²»ÊÇ·²ÈË¡£±ğ¹ÜÄÇĞ©ÉñÉñß¶ß¶µÄ±³¾°¹ÊÊÂ£¬Ğ¡Ò¯¾ÍÊÇÄÇ¸ö¸Ò¶¥ÌìÁ¢µØ¡¢í¡Ììí¡µØµÄĞ¡Ä§Í¯£¡
+2025-04-17 09:47:26,790 - INFO - synthesis text ºß¹ş£¡ÄÄß¸ÈıÌ«×ÓÊÇÒ²£¡Ğ¡Ò¯ÔÚÓ¢¹úÓĞ¸ö¸ü¿áµÄ·­Òë ¡°ÄÄß¸ÎÒ¡±£¡ÒªÉ¶½éÉÜ£¿¿´Ğ¡Ò¯ÕâÉíĞĞÍ·£¬¾ÍÖªµÀ²»ÊÇ·²ÈË¡£±ğ¹ÜÄÇĞ©ÉñÉñß¶ß¶µÄ±³¾°¹ÊÊÂ£¬Ğ¡Ò¯¾ÍÊÇÄÇ¸ö¸Ò¶¥ÌìÁ¢µØ¡¢í¡Ììí¡µØµÄĞ¡Ä§Í¯£¡
+2025-04-17 09:47:52,032 - INFO - yield speech len 18.44, rtf 1.3688236927520685
+2025-04-17 09:47:52,130 - INFO - TTS inference completed, processing 1 audio segments
+2025-04-17 09:47:52,207 - INFO - Saved audio file: ./generated_audio\tts_1744854472_0.wav
+2025-04-17 09:47:52,207 - INFO - Generated 1 audio files: ['tts_1744854472_0.wav']
+2025-04-17 09:47:52,207 - INFO - 127.0.0.1 - - [17/Apr/2025 09:47:52] "POST /api/tts HTTP/1.1" 200 -
+2025-04-17 09:47:52,606 - INFO - Request for audio file: ./generated_audio\tts_1744854472_0.wav
+2025-04-17 09:47:52,606 - INFO - Sending audio file: ./generated_audio\tts_1744854472_0.wav
+2025-04-17 09:47:52,613 - INFO - 127.0.0.1 - - [17/Apr/2025 09:47:52] "[35m[1mGET /api/audio/tts_1744854472_0.wav HTTP/1.1[0m" 206 -
+2025-04-17 09:51:15,204 - INFO - 127.0.0.1 - - [17/Apr/2025 09:51:15] "OPTIONS /api/tts HTTP/1.1" 200 -
+2025-04-17 09:51:15,471 - INFO - TTS Request - Text: ºß£¡Ğ¡Ò¯ÄÄß¸¿É²»ÊÇÒ»°ãÈË¡£ÈıËêÄÇÄê±»·âÎª¡°Ñı¡±£¬´Ó´Ë³ÉÁËĞ¡»ï°éÃÇµÄĞ¦±ú¡£µ«Ğ¡Ò¯ĞÄ±ÈÌì¸ß£¬²»·şÊäÊÇÄÄß¸µÄ±¾ĞÔ¡£ÒªÂÛµ·µ°£¬Ã»ÈË¸ÒËµµÚ¶ş¾ä£»ÒªËµ·´¿¹£¬ÌìÍ¥ÄÇĞ©ÀÏ¹Å¶­µÃ¸øÎÒÈÃÈı·Ö£¡
+
+ËäÈ»ÄÚĞÄÓĞÊ±ºò»áĞ¡Î¯Çü¡ª¡ªË­ÈÃÎÒÉúÀ´¾ÍÊÇÄ§£¿µ«Ğ¡Ò¯²»ĞÅÃü£¬Æ«ÒªÖ¤Ã÷×Ô¼ºÒ²ÄÜ×öºÃÈË¡£Å¼¶ûÔÚÅóÓÑÃæÇ°ÓĞµãĞ¡×Ô±°£¬µ«ÕâÄÄÄÜÄÑµ¹ÎÒÄÄß¸ÈıÌ«×Ó£¡
+2025-04-17 09:51:15,693 - INFO - synthesis text ºß£¡Ğ¡Ò¯ÄÄß¸¿É²»ÊÇÒ»°ãÈË¡£ÈıËêÄÇÄê±»·âÎª¡°Ñı¡±£¬´Ó´Ë³ÉÁËĞ¡»ï°éÃÇµÄĞ¦±ú¡£µ«Ğ¡Ò¯ĞÄ±ÈÌì¸ß£¬²»·şÊäÊÇÄÄß¸µÄ±¾ĞÔ¡£ÒªÂÛµ·µ°£¬Ã»ÈË¸ÒËµµÚ¶ş¾ä£»
+2025-04-17 09:51:35,783 - INFO - yield speech len 18.56, rtf 1.0824376652980674
+2025-04-17 09:51:36,055 - INFO - synthesis text ÒªËµ·´¿¹£¬ÌìÍ¥ÄÇĞ©ÀÏ¹Å¶­µÃ¸øÎÒÈÃÈı·Ö£¡ËäÈ»ÄÚĞÄÓĞÊ±ºò»áĞ¡Î¯Çü Ë­ÈÃÎÒÉúÀ´¾ÍÊÇÄ§£¿µ«Ğ¡Ò¯²»ĞÅÃü£¬Æ«ÒªÖ¤Ã÷×Ô¼ºÒ²ÄÜ×öºÃÈË¡£
+2025-04-17 09:51:52,836 - INFO - yield speech len 18.12, rtf 0.9261143654913828
+2025-04-17 09:51:53,096 - INFO - synthesis text Å¼¶ûÔÚÅóÓÑÃæÇ°ÓĞµãĞ¡×Ô±°£¬µ«ÕâÄÄÄÜÄÑµ¹ÎÒÄÄß¸ÈıÌ«×Ó£¡
+2025-04-17 09:52:00,661 - INFO - yield speech len 6.88, rtf 1.099448564440705
+2025-04-17 09:52:00,711 - INFO - TTS inference completed, processing 3 audio segments
+2025-04-17 09:52:00,777 - INFO - Saved audio file: ./generated_audio\tts_1744854720_0.wav
+2025-04-17 09:52:00,824 - INFO - Saved audio file: ./generated_audio\tts_1744854720_1.wav
+2025-04-17 09:52:00,862 - INFO - Saved audio file: ./generated_audio\tts_1744854720_2.wav
+2025-04-17 09:52:00,862 - INFO - Generated 3 audio files: ['tts_1744854720_0.wav', 'tts_1744854720_1.wav', 'tts_1744854720_2.wav']
+2025-04-17 09:52:00,863 - INFO - 127.0.0.1 - - [17/Apr/2025 09:52:00] "POST /api/tts HTTP/1.1" 200 -
+2025-04-17 09:52:01,227 - INFO - Request for audio file: ./generated_audio\tts_1744854720_0.wav
+2025-04-17 09:52:01,227 - INFO - Sending audio file: ./generated_audio\tts_1744854720_0.wav
+2025-04-17 09:52:01,236 - INFO - 127.0.0.1 - - [17/Apr/2025 09:52:01] "[35m[1mGET /api/audio/tts_1744854720_0.wav HTTP/1.1[0m" 206 -
+2025-04-17 09:52:19,894 - INFO - Request for audio file: ./generated_audio\tts_1744854720_1.wav
+2025-04-17 09:52:19,894 - INFO - Sending audio file: ./generated_audio\tts_1744854720_1.wav
+2025-04-17 09:52:19,894 - INFO - 127.0.0.1 - - [17/Apr/2025 09:52:19] "[35m[1mGET /api/audio/tts_1744854720_1.wav HTTP/1.1[0m" 206 -
+2025-04-17 09:52:38,366 - INFO - Request for audio file: ./generated_audio\tts_1744854720_2.wav
+2025-04-17 09:52:38,367 - INFO - Sending audio file: ./generated_audio\tts_1744854720_2.wav
+2025-04-17 09:52:38,368 - INFO - 127.0.0.1 - - [17/Apr/2025 09:52:38] "[35m[1mGET /api/audio/tts_1744854720_2.wav HTTP/1.1[0m" 206 -
+2025-04-17 09:53:14,876 - INFO - 127.0.0.1 - - [17/Apr/2025 09:53:14] "OPTIONS /api/tts HTTP/1.1" 200 -
+2025-04-17 09:53:15,138 - INFO - TTS Request - Text: Sure thing, Xi Xiaodian£¡Ğ¡Ò¯ÄÄß¸¿É²»ÊÇËæ±ã½»ÅóÓÑµÄÄÇÖÖ¡ª¡ªµÃÖ¤Ã÷Äã¹»¸ñ²ÅĞĞ¡£Òª²»ÕâÑù£¬ÔÛÁ©ÏÈÌß»áë¦×Ó£¿¿´Ë­ÄÜ°ÑĞ¡Ò¯ÁÌµ¹£¡ÒªÊÇÄÜ×·ÉÏĞ¡Ò¯µÄËÙ¶È£¬ºßßêºßßê´­ÆøµÄÑù×Ó³¬¿É°®µÄ£¡
+2025-04-17 09:53:15,350 - INFO - synthesis text Sure thing, Xi Xiaodian£¡Ğ¡Ò¯ÄÄß¸¿É²»ÊÇËæ±ã½»ÅóÓÑµÄÄÇÖÖ µÃÖ¤Ã÷Äã¹»¸ñ²ÅĞĞ¡£Òª²»ÕâÑù£¬ÔÛÁ©ÏÈÌß»áë¦×Ó£¿¿´Ë­ÄÜ°ÑĞ¡Ò¯ÁÌµ¹£¡
+2025-04-17 09:56:20,025 - INFO - yield speech len 18.24, rtf 10.124759807398446
+2025-04-17 09:56:20,585 - INFO - synthesis text ÒªÊÇÄÜ×·ÉÏĞ¡Ò¯µÄËÙ¶È£¬ºßßêºßßê´­ÆøµÄÑù×Ó³¬¿É°®µÄ£¡
+2025-04-17 09:56:29,984 - INFO - yield speech len 6.92, rtf 1.3582601023547223
+2025-04-17 09:56:30,034 - INFO - TTS inference completed, processing 2 audio segments
+2025-04-17 09:56:30,091 - INFO - Saved audio file: ./generated_audio\tts_1744854990_0.wav
+2025-04-17 09:56:30,129 - INFO - Saved audio file: ./generated_audio\tts_1744854990_1.wav
+2025-04-17 09:56:30,129 - INFO - Generated 2 audio files: ['tts_1744854990_0.wav', 'tts_1744854990_1.wav']
+2025-04-17 09:56:30,130 - INFO - 127.0.0.1 - - [17/Apr/2025 09:56:30] "POST /api/tts HTTP/1.1" 200 -
