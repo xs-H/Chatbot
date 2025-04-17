@@ -18,19 +18,6 @@ import traceback
 from pathlib import Path
 import onnxruntime
 
-# 全局初始化ONNX会话
-# onnx_session = None
-
-
-# def init_onnx_session():
-#     global onnx_session
-#     if onnx_session is None:
-#         onnx_session = onnxruntime.InferenceSession(
-#             onnx_model_path,
-#             providers=['CUDAExecutionProvider'],
-#             provider_options=[{'device_id': 0}]  # 明确指定设备
-#         )
-
 
 cosyvoice = None
 
@@ -101,23 +88,6 @@ AUDIO_DIR = "./generated_audio"
 os.makedirs(AUDIO_DIR, exist_ok=True)
 logging.info(f"Audio storage directory: {os.path.abspath(AUDIO_DIR)}")
 
-# 初始化ONNX会话
-# try:
-#     onnx_model_path = os.path.join(dir_path, "pretrained_models/CosyVoice2-0.5B/speech_tokenizer_v2.onnx")
-#     logging.info(f"Loading ONNX model from: {onnx_model_path}")
-
-#     if not os.path.exists(onnx_model_path):
-#         logging.error(f"ONNX model file not found at: {onnx_model_path}")
-#         sys.exit(1)
-
-#     # onnxruntime.InferenceSession(onnx_model_path, providers=["CUDAExecutionProvider"])
-#     init_onnx_session()
-
-#     logging.info("ONNX model loaded successfully")
-# except Exception as e:
-#     logging.error(f"Error loading ONNX model: {str(e)}")
-#     logging.error(traceback.format_exc())
-#     sys.exit(1)
 
 app = Flask(__name__)
 CORS(app)  # 允许跨域请求
@@ -167,6 +137,7 @@ REFERENCE_TEXT = "拜个屁的师我什么都不学！修炼了出去捧那些�
 
 ######################### 初始化 CosyVoice2 #######################################
 get_cosyvoice_instance()
+######################### 初始化 CosyVoice2 #######################################
 
 @app.route('/api/tts', methods=['POST'])
 def tts():

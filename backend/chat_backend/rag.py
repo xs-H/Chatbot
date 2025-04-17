@@ -19,9 +19,9 @@ class Config:
     MODEL_NAME = "./text2vec-large-chinese"
 
     # 检索参数
-    min_similarity = 0.6  # 相似度阈值
+    min_similarity = 0.8  # 相似度阈值
     default_k = 5  # 默认返回结果数
-    search_multiplier = 3  # 搜索扩展倍数
+    search_multiplier = 10  # 搜索扩展倍数
 
     # 对话参数
     max_history = 20  # 保留的历史消息数
@@ -66,29 +66,6 @@ def _try_common_encodings(data):
         except UnicodeDecodeError:
             continue
     return 'utf-8'  # 默认回退
-
-# def extract_text(d):
-#     if isinstance(d, str):
-#         return [d]
-#     elif isinstance(d, list):
-#         # 如果列表所有元素都不是容器，则视为最底层，直接拼接
-#         if all(not isinstance(item, (list, dict)) for item in d):
-#             return [" ".join(str(item) for item in d)]
-#         else:
-#             texts = []
-#             for item in d:
-#                 texts.extend(extract_text(item))
-#             return texts
-#     elif isinstance(d, dict):
-#         # 如果字典所有值都不是容器，则视为最底层，直接拼接键值对
-#         if all(not isinstance(value, (list, dict)) for value in d.values()):
-#             return [" ".join(f"{k}: {v}" for k, v in d.items())]
-#         else:
-#             texts = []
-#             for key, value in d.items():
-#                 texts.extend(extract_text(value))
-#             return texts
-#     return []
 
 
 def process_value(value):
@@ -179,7 +156,7 @@ class TextEmbedding:
         return db
 
     def _retrieve_context(self, query):
-        logging.info(f"Enhanced_Query: {query}")
+        logging.info(f"Query: {query}")
         results = self.db.similarity_search(query, Config.default_k)
         for i, result in enumerate(results):
             logging.info(f"结果 {i+1}: {result.page_content}")

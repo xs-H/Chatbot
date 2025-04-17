@@ -15,9 +15,9 @@ class ChatSystem:
         self.client = ollama.Client(host='http://localhost:11434')
         # self.client_a = ollama.Client(host='http://localhost:11434')
         # self.model_name_a = 'qwen-assist:latest'
-        # self.model_name = 'qwen-role-lora-new:latest' # fp16
-        # self.model_name = 'qwen-role-new-8b:latest' # Q5_K_M
-        self.model_name = 'qwen-role-Q8:latest' # Q8_0 # run不动
+        # self.model_name = 'qwen-role-lora:latest' # FP16 16GB显存
+        # self.model_name = 'qwen-role-Q5:latest' # Q5_K_M 6GB显存
+        self.model_name = 'qwen-role-Q8:latest' # Q8_0 10GB 显存
         self.conversation_history = []
 
     def _format_messages(self, query, context):
@@ -28,8 +28,8 @@ class ChatSystem:
 
         return [
             *history,
-            {'role': 'user', 'content': f"可参考角色的资料：{context_str}"
-                                        f"\n{query}"}
+            {'role': 'user', 'content': f"用户询问：{query}\n 请适当参考你的经历：{context_str}\n"
+                                        f"回复用户的聊天对话：{query}"}
         ]
 
     def _query_enhance(self, query):
