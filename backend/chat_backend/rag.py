@@ -21,7 +21,7 @@ class Config:
     # 检索参数
     min_similarity = 0.8  # 相似度阈值
     default_k = 5  # 默认返回结果数
-    search_multiplier = 10  # 搜索扩展倍数
+    search_multiplier = 5  # 搜索扩展倍数
 
     # 对话参数
     max_history = 20  # 保留的历史消息数
