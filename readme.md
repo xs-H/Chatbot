@@ -258,7 +258,7 @@
 
 - 示例：哪吒
     
-    ![示例](attachment:bbac353d-49e4-4759-aabf-700aea9e82c8:屏幕截图_2025-04-17_101127.png)
+    ![示例](https://github.com/xs-H/Chatbot/blob/main/sample%20of%20use.png)
     
 1. 语音输入：自动语音识别（ASR）功能已完成封装，若需要使用该功能，须运行Docker镜像。用户可使用ASR功能进行多语种输入（点击右下角-麦克风图标，完成语音输入后点击终止图标，即可自动实现语音转文本）
 2. 聊天对话：与常见LLM相同，模型支持多语种对话，用户可按照resource/database目录下的角色知识库构建示例自行构建任意角色的文本资料，注意：需要删除原知识库文件，否则无法自动构建知识库。修改backend/chat_backend/chat.py中的如下内容，可更换语言模型，模型名需要与Ollama list中的模型列表名保持一致。
