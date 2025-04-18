@@ -15,3 +15,5 @@
 - **成功接入asr**
 - **增加细节：自动播放按钮与ai头像**
 
+## v1页面展示
+![presentation](frontend/images/web.png)
