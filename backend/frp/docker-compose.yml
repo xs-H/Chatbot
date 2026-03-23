@@ -1,9 +1,0 @@
-services:
-  natfrp-launcher:
-    image: natfrp.com/launcher
-    container_name: natfrp-launcher-container
-    network_mode: host
-    restart: on-failure:5
-    volumes:
-      - ./data:/run/FrpcWorkingDirectory
-    # Port = 7102
