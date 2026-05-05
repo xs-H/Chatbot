@@ -252,9 +252,28 @@
     docker compose up -d
     docker compose logs -f
     ```
-    
+## 四、启动项目（端-云版）
+### 1. 环境配置
+- 参考 requirements.txt 和 project_structure.txt 文件，完成环境配置和模型下载（CosyVoice 和 Text2vec）
+### 2. 云端服务器启动项目进程
+- 激活虚拟环境后，在虚拟环境中执行以下指令（需要提前修改 config 中的 Ollama 中的模型名)：
+    ```bash
+    ollama serve
+    ```
+    ```bash
+    cd path/to/Chatbot
+    python main.py
+    ```
+### 3. 终端端启动监听
+- 激活虚拟环境后，在 Jetson 系统中执行 jetson_client.py ，需要替换为真实服务器 ssh 连接IP和端口：
+  ```bash
+  ssh -CNg -L 6008:127.0.0.1:6008 root@XXXXXXX.com -p XXXXX
+  ```
+  ```bash
+  python jetson_client.py
+  ```
 
-## 四、网页功能介绍
+## 五、网页功能介绍
 
 - 示例：哪吒
     
