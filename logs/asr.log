@@ -1,0 +1,149 @@
+2026-04-21 17:47:23  INFO      [services.asr]  ASR 服务已初始化（模型：small，语言：zh），Whisper 模型将在首次请求时加载。
+2026-04-21 19:25:48  INFO      [services.asr]  ASR 服务已初始化（模型：small，语言：zh），Whisper 模型将在首次请求时加载。
+2026-04-21 19:33:00  INFO      [services.asr]  ASR 服务已初始化（模型：small，语言：zh），Whisper 模型将在首次请求时加载。
+2026-04-21 19:40:06  INFO      [services.asr]  ASR 服务已初始化（模型：small，语言：zh），Whisper 模型将在首次请求时加载。
+2026-04-21 19:41:08  INFO      [services.asr]  ASR 服务已初始化（模型：small，语言：zh），Whisper 模型将在首次请求时加载。
+2026-04-21 19:41:46  INFO      [services.asr]  ASR 服务已初始化（模型：small，语言：zh），Whisper 模型将在首次请求时加载。
+2026-04-21 19:46:20  INFO      [services.asr]  ASR 服务已初始化（模型：small，语言：zh），Whisper 模型将在首次请求时加载。
+2026-04-21 19:47:21  INFO      [services.asr]  ASR 服务已初始化（模型：small，语言：zh），Whisper 模型将在首次请求时加载。
+2026-04-21 19:50:25  INFO      [services.asr]  ASR 服务已初始化（模型：small，语言：zh），Whisper 模型将在首次请求时加载。
+2026-04-21 19:52:40  INFO      [services.asr]  ASR 服务已初始化（模型：small，语言：zh），Whisper 模型将在首次请求时加载。
+2026-04-21 19:53:29  INFO      [services.asr]  ASR 服务已初始化（模型：small，语言：zh），Whisper 模型将在首次请求时加载。
+2026-04-21 19:55:09  INFO      [services.asr]  ASR 服务已初始化（模型：small，语言：zh），Whisper 模型将在首次请求时加载。
+2026-04-21 19:55:34  INFO      [services.asr]  ASR 服务已初始化（模型：small，语言：zh），Whisper 模型将在首次请求时加载。
+2026-04-21 19:59:33  INFO      [services.asr]  ASR 服务已初始化（模型：small，语言：zh），Whisper 模型将在首次请求时加载。
+2026-04-21 20:09:32  INFO      [services.asr]  ASR 服务已初始化（模型：small，语言：zh），Whisper 模型将在首次请求时加载。
+2026-04-21 20:25:20  INFO      [services.asr]  首次加载 Whisper 模型 [small]…
+2026-04-21 20:25:52  INFO      [services.asr]  Whisper 模型加载完成。
+2026-04-21 20:25:53  INFO      [services.asr]  ASR 识别结果：我乃哪这三太子,小爷我天下无敌!
+2026-04-21 20:26:33  INFO      [services.asr]  ASR 识别结果：我乃挪着三太子小爷我天下无敌
+2026-04-21 20:39:30  INFO      [services.asr]  ASR 服务已初始化（模型：small，语言：zh），Whisper 模型将在首次请求时加载。
+2026-04-21 20:39:53  INFO      [services.asr]  首次加载 Whisper 模型 [small]…
+2026-04-21 20:39:57  INFO      [services.asr]  Whisper 模型加载完成。
+2026-04-21 20:39:57  INFO      [services.asr]  ASR 识别结果：服務為一社
+2026-04-21 20:45:41  INFO      [services.asr]  ASR 服务已初始化（模型：small，语言：zh），Whisper 模型将在首次请求时加载。
+2026-04-21 20:45:58  INFO      [services.asr]  首次加载 Whisper 模型 [small]…
+2026-04-21 20:46:01  INFO      [services.asr]  Whisper 模型加载完成。
+2026-04-21 20:46:02  INFO      [services.asr]  ASR 识别结果：我乃挣扎三太子小野我天下无敌
+2026-04-21 22:10:42  INFO      [services.asr]  ASR 服务已初始化（模型：small，语言：zh），Whisper 模型将在首次请求时加载。
+2026-04-21 22:17:32  INFO      [services.asr]  ASR 服务已初始化（模型：small，语言：zh），Whisper 模型将在首次请求时加载。
+2026-04-21 22:19:57  INFO      [services.asr]  ASR 服务已初始化（模型：small，语言：zh），Whisper 模型将在首次请求时加载。
+2026-04-21 22:50:07  INFO      [services.asr]  ASR 服务已初始化（模型：small，语言：zh），Whisper 模型将在首次请求时加载。
+2026-04-21 23:04:13  INFO      [services.asr]  ASR 服务已初始化（模型：small，语言：zh），Whisper 模型将在首次请求时加载。
+2026-04-21 23:10:57  INFO      [services.asr]  ASR 服务已初始化（模型：small，语言：zh），Whisper 模型将在首次请求时加载。
+2026-04-22 06:47:53  INFO      [services.asr]  ASR 服务已初始化（模型：small，语言：zh），Whisper 模型将在首次请求时加载。
+2026-04-22 08:26:15  INFO      [services.asr]  首次加载 Whisper 模型 [small]…
+2026-04-22 08:26:19  INFO      [services.asr]  Whisper 模型加载完成。
+2026-04-22 08:26:20  INFO      [services.asr]  ASR 识别结果：有ふふ muchís studio no三歐洲慢慢又有我知道歐洲我我
+2026-04-22 08:26:20  INFO      [services.asr]  ASR 识别结果：你好 我是胡锦光
+2026-04-22 08:26:59  INFO      [services.asr]  ASR 识别结果：字幕by索兰娅
+2026-04-22 08:27:06  INFO      [services.asr]  ASR 识别结果：
+2026-04-22 10:00:24  INFO      [services.asr]  ASR 服务已初始化（模型：small，语言：zh），Whisper 模型将在首次请求时加载。
+2026-04-22 10:01:42  INFO      [services.asr]  首次加载 Whisper 模型 [small]…
+2026-04-22 10:01:45  INFO      [services.asr]  Whisper 模型加载完成。
+2026-04-22 10:01:46  INFO      [services.asr]  ASR 识别结果：字幕by索兰娅
+2026-04-22 10:01:54  INFO      [services.asr]  ASR 识别结果：真的是पुआउ
+2026-04-22 10:01:54  INFO      [services.asr]  ASR 识别结果：你好,我叫张哥凯,请问你是谁?
+2026-04-22 10:02:02  INFO      [services.asr]  ASR 识别结果：你好我叫张哥凯请问你是谁
+2026-04-22 10:02:43  INFO      [services.asr]  ASR 识别结果：开门了 开门了 开门了
+2026-04-22 19:54:50  INFO      [services.asr]  ASR 服务已初始化（模型：small，语言：zh），Whisper 模型将在首次请求时加载。
+2026-04-22 19:57:01  INFO      [services.asr]  首次加载 Whisper 模型 [small]…
+2026-04-22 19:57:04  INFO      [services.asr]  Whisper 模型加载完成。
+2026-04-22 19:57:05  INFO      [services.asr]  ASR 识别结果：字幕製作人Zither Harp
+2026-04-22 19:57:12  INFO      [services.asr]  ASR 识别结果：张哥凯你是个小猪
+2026-04-22 19:57:37  INFO      [services.asr]  ASR 识别结果：
+2026-04-22 19:57:50  INFO      [services.asr]  ASR 识别结果：我的室友叫张哥凯你认识他吗
+2026-04-22 20:00:29  INFO      [services.asr]  ASR 识别结果：字幕製作人Zither Harp
+2026-04-22 20:00:37  INFO      [services.asr]  ASR 识别结果：字幕製作人Zither Harp
+2026-04-22 20:01:03  INFO      [services.asr]  ASR 识别结果：我们就专门用来怼承煦园吧小爷要是知道是谁在背后捣鬼先让三位真火教训他们一下
+2026-04-22 21:03:47  INFO      [services.asr]  ASR 识别结果：字幕by索兰娅
+2026-04-22 21:04:38  INFO      [services.asr]  ASR 识别结果：字幕製作人Zither Harp
+2026-04-22 21:05:41  INFO      [services.asr]  ASR 识别结果：
+2026-04-22 21:06:09  INFO      [services.asr]  ASR 识别结果：再裝個台
+2026-04-22 21:06:44  INFO      [services.asr]  ASR 识别结果：哎呀,挪扎可不是那种背后捅刀子的人要装台就明说,小爷可以现场指导怎么用前关圈当灯炮支架不过,你得先给我准备好风火轮滑袋等会儿测试的时候,小爷得试试能不能把特效带…
+2026-04-22 21:06:47  INFO      [services.asr]  ASR 识别结果：我是張哥凱,我是大傻瓜
+2026-04-22 21:07:57  INFO      [services.asr]  ASR 识别结果：
+2026-04-22 21:08:15  INFO      [services.asr]  ASR 识别结果：他挺不见
+2026-04-22 21:08:44  INFO      [services.asr]  ASR 识别结果：等会儿哪家出场看你能不能招架当住
+2026-04-22 21:14:03  INFO      [services.asr]  ASR 服务已初始化（模型：small，语言：zh），Whisper 模型将在首次请求时加载。
+2026-04-22 21:17:34  INFO      [services.asr]  首次加载 Whisper 模型 [small]…
+2026-04-22 21:17:37  INFO      [services.asr]  Whisper 模型加载完成。
+2026-04-22 21:17:38  INFO      [services.asr]  ASR 识别结果：
+2026-04-22 21:18:06  INFO      [services.asr]  ASR 识别结果：字幕製作人Zither Harp
+2026-04-22 21:18:37  INFO      [services.asr]  ASR 识别结果：你认识张可凯吗
+2026-04-22 21:19:08  INFO      [services.asr]  ASR 识别结果：专开发行纸,加飞项别再整理你的发行了
+2026-04-22 21:19:43  INFO      [services.asr]  ASR 识别结果：这样是有些会被反悔
+2026-04-22 21:20:11  INFO      [services.asr]  ASR 识别结果：
+2026-04-22 21:20:14  INFO      [services.asr]  ASR 识别结果：
+2026-04-22 21:20:21  INFO      [services.asr]  ASR 识别结果：你认识冯志恒吗
+2026-04-22 21:20:48  INFO      [services.asr]  ASR 识别结果：我说做个因为在剪理上
+2026-04-22 21:20:51  INFO      [services.asr]  ASR 识别结果：
+2026-04-22 21:21:21  INFO      [services.asr]  ASR 识别结果：女人喜歡過羊嗎
+2026-04-22 21:21:49  INFO      [services.asr]  ASR 识别结果：你认识我们班的王伯扬吗
+2026-04-22 21:22:21  INFO      [services.asr]  ASR 识别结果：哈哈哈哈你认识唐白虎吗
+2026-04-22 21:22:53  INFO      [services.asr]  ASR 识别结果：你认识杨文博吗
+2026-04-22 21:23:21  INFO      [services.asr]  ASR 识别结果：你的父亲是谁
+2026-04-22 21:23:48  INFO      [services.asr]  ASR 识别结果：你和太子正在什么关系
+2026-04-22 21:24:27  INFO      [services.asr]  ASR 识别结果：你能不能给我讲讲刘邦的故事
+2026-04-22 21:25:00  INFO      [services.asr]  ASR 识别结果：你认识海信吗
+2026-04-22 21:25:30  INFO      [services.asr]  ASR 识别结果：有点搞笑
+2026-04-22 21:26:05  INFO      [services.asr]  ASR 识别结果：我們的英文字幕有時間
+2026-04-22 21:27:16  INFO      [services.asr]  ASR 识别结果：给我讲个故事呗
+2026-04-22 21:27:59  INFO      [services.asr]  ASR 识别结果：
+2026-04-22 21:28:10  INFO      [services.asr]  ASR 识别结果：我跟张哥凯是好朋友但是我不喜欢他
+2026-04-22 21:28:45  INFO      [services.asr]  ASR 识别结果：刚刚还找到你朋友吗
+2026-04-22 21:29:18  INFO      [services.asr]  ASR 识别结果：OK
+2026-04-22 21:29:27  INFO      [services.asr]  ASR 识别结果：你现在说话就行他能听到
+2026-04-22 21:29:54  INFO      [services.asr]  ASR 识别结果：
+2026-04-22 21:32:23  INFO      [services.asr]  ASR 识别结果：
+2026-04-22 21:34:37  INFO      [services.asr]  ASR 识别结果：
+2026-04-22 21:36:01  INFO      [services.asr]  ASR 识别结果：张哥凯天天打游戏不学习我该怎么教育他
+2026-04-22 21:36:34  INFO      [services.asr]  ASR 识别结果：
+2026-04-22 21:43:16  INFO      [services.asr]  ASR 识别结果：三個卡
+2026-04-22 21:43:53  INFO      [services.asr]  ASR 识别结果：你好可爱啊
+2026-04-22 21:44:59  INFO      [services.asr]  ASR 识别结果：好吧 再见
+2026-04-22 22:36:21  INFO      [services.asr]  ASR 服务已初始化（模型：small，语言：zh），Whisper 模型将在首次请求时加载。
+2026-04-22 22:50:26  INFO      [services.asr]  首次加载 Whisper 模型 [small]…
+2026-04-22 22:50:29  INFO      [services.asr]  Whisper 模型加载完成。
+2026-04-22 22:50:30  INFO      [services.asr]  ASR 识别结果：
+2026-04-22 22:50:31  INFO      [services.asr]  ASR 识别结果：萌拉,你好
+2026-04-22 22:52:17  INFO      [services.asr]  ASR 识别结果：和私人愛互聯我的別別別別別
+2026-04-22 22:58:55  INFO      [services.asr]  ASR 识别结果：你是谁
+2026-04-22 23:09:37  INFO      [services.asr]  ASR 识别结果：你好你是谁
+2026-04-22 23:22:47  INFO      [services.asr]  ASR 识别结果：你連了幾個的音響幹嘛
+2026-04-22 23:23:19  INFO      [services.asr]  ASR 识别结果：这么高级
+2026-04-22 23:23:50  INFO      [services.asr]  ASR 识别结果：他把这个文字输入进去以后
+2026-04-22 23:24:21  INFO      [services.asr]  ASR 识别结果：我就打打到12点我要睡觉我不能
+2026-04-22 23:24:24  INFO      [services.asr]  ASR 识别结果：帶大家去雙不好意思史最古陽我就有念雪有念雪啊我們會下去這裡面有比較大的這裡面比較大嗯
+2026-04-22 23:25:11  INFO      [services.asr]  ASR 识别结果：所以你把它的音频输入和输出的那个渠道
+2026-04-22 23:25:14  INFO      [services.asr]  ASR 识别结果：这个其实很好换
+2026-04-22 23:25:56  INFO      [services.asr]  ASR 识别结果：空不它嘛 對吧然後空它給它調好以後你其實就關了
+2026-04-23 23:14:25  INFO      [services.asr]  ASR 服务已初始化（模型：small，语言：zh），Whisper 模型将在首次请求时加载。
+2026-04-23 23:16:44  INFO      [services.asr]  首次加载 Whisper 模型 [small]…
+2026-04-23 23:16:47  INFO      [services.asr]  Whisper 模型加载完成。
+2026-04-23 23:16:48  INFO      [services.asr]  ASR 识别结果：字幕by索兰娅
+2026-04-23 23:20:35  INFO      [services.asr]  ASR 识别结果：字幕製作人Zither Harp
+2026-04-23 23:22:24  INFO      [services.asr]  ASR 识别结果：你好
+2026-04-23 23:23:59  INFO      [services.asr]  ASR 识别结果：字幕製作人Zither Harp
+2026-04-23 23:25:59  INFO      [services.asr]  ASR 识别结果：字幕製作人Zither Harp
+2026-04-23 23:26:50  INFO      [services.asr]  ASR 识别结果：这号人是什么人
+2026-04-23 23:27:40  INFO      [services.asr]  ASR 识别结果：这些好人是什么人
+2026-04-23 23:28:36  INFO      [services.asr]  ASR 识别结果：听不到你说话感觉粉质痕的屁股大不大
+2026-04-23 23:29:11  INFO      [services.asr]  ASR 识别结果：
+2026-04-23 23:29:16  INFO      [services.asr]  ASR 识别结果：總之好像屁股大不大
+2026-04-23 23:30:43  INFO      [services.asr]  ASR 服务已初始化（模型：small，语言：zh），Whisper 模型将在首次请求时加载。
+2026-04-23 23:30:50  INFO      [services.asr]  首次加载 Whisper 模型 [small]…
+2026-04-23 23:30:53  INFO      [services.asr]  Whisper 模型加载完成。
+2026-04-23 23:30:54  INFO      [services.asr]  ASR 识别结果：
+2026-04-23 23:30:54  INFO      [services.asr]  ASR 识别结果：只有缝织痕 屁股大
+2026-04-23 23:31:26  INFO      [services.asr]  ASR 识别结果：这些号然是什么人
+2026-04-23 23:32:07  INFO      [services.asr]  ASR 识别结果：你叫什么名字
+2026-04-23 23:32:36  INFO      [services.asr]  ASR 识别结果：
+2026-04-23 23:32:38  INFO      [services.asr]  ASR 识别结果：
+2026-04-23 23:33:00  INFO      [services.asr]  ASR 识别结果：我要錄像了,別說話
+2026-04-23 23:33:44  INFO      [services.asr]  ASR 识别结果：
+2026-04-23 23:33:47  INFO      [services.asr]  ASR 识别结果：字幕by索兰娅
+2026-04-23 23:34:20  INFO      [services.asr]  ASR 识别结果：
+2026-04-23 23:34:21  INFO      [services.asr]  ASR 识别结果：
+2026-04-24 10:20:00  INFO      [services.asr]  ASR 服务已初始化（模型：small，语言：zh），Whisper 模型将在首次请求时加载。
+2026-04-24 10:21:16  INFO      [services.asr]  ASR 服务已初始化（模型：small，语言：zh），Whisper 模型将在首次请求时加载。

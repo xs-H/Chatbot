@@ -1,0 +1,622 @@
+2026-04-21 17:47:17  INFO      [main]  ════════════════════════════════════════════════════════════
+2026-04-21 17:47:17  INFO      [main]  ChatBot 后端启动中…
+2026-04-21 17:47:17  INFO      [main]  ════════════════════════════════════════════════════════════
+2026-04-21 17:47:23  ERROR     [main]  RAG 服务初始化失败：
+Traceback (most recent call last):
+  File "/root/autodl-tmp/Chatbot-new/main.py", line 46, in lifespan
+    app.state.rag_service = RAGService()
+  File "/root/autodl-tmp/Chatbot-new/services/rag_service.py", line 75, in __init__
+    self._embeddings = HuggingFaceEmbeddings(
+  File "/root/miniconda3/envs/CHATBOT/lib/python3.10/site-packages/langchain_huggingface/embeddings/huggingface.py", line 59, in __init__
+    self._client = sentence_transformers.SentenceTransformer(
+  File "/root/miniconda3/envs/CHATBOT/lib/python3.10/site-packages/sentence_transformers/SentenceTransformer.py", line 296, in __init__
+    raise FileNotFoundError(f"Path {model_name_or_path} not found")
+FileNotFoundError: Path /root/autodl-tmp/Chatbot-new/text2vec-large-chinese not found
+
+2026-04-21 17:47:23  WARNING   [main]  RAG 服务不可用，Chat 服务跳过初始化
+2026-04-21 17:47:23  ERROR     [main]  TTS 服务初始化失败：
+Traceback (most recent call last):
+  File "/root/autodl-tmp/Chatbot-new/main.py", line 65, in lifespan
+    app.state.tts_service = TTSService()
+  File "/root/autodl-tmp/Chatbot-new/services/tts_service.py", line 47, in __init__
+    raise RuntimeError("COSYVoice 未能正确导入，TTS 服务无法启动")
+RuntimeError: COSYVoice 未能正确导入，TTS 服务无法启动
+
+2026-04-21 17:47:23  INFO      [main]  ── 服务启动状态 ──
+2026-04-21 17:47:23  INFO      [main]    RAG    ❌ 不可用
+2026-04-21 17:47:23  INFO      [main]    Chat   ❌ 不可用
+2026-04-21 17:47:23  INFO      [main]    TTS    ❌ 不可用
+2026-04-21 17:47:23  INFO      [main]    ASR    ✅ 就绪
+2026-04-21 17:47:23  INFO      [main]  ════════════════════════════════════════════════════════════
+2026-04-21 18:04:14  INFO      [main]  ════════════════════════════════════════════════════════════
+2026-04-21 18:04:14  INFO      [main]  ChatBot 后端启动中…
+2026-04-21 18:04:14  INFO      [main]  ════════════════════════════════════════════════════════════
+2026-04-21 18:04:19  ERROR     [main]  RAG 服务初始化失败：
+Traceback (most recent call last):
+  File "/root/autodl-tmp/Chatbot-new/main.py", line 46, in lifespan
+    app.state.rag_service = RAGService()
+  File "/root/autodl-tmp/Chatbot-new/services/rag_service.py", line 75, in __init__
+    self._embeddings = HuggingFaceEmbeddings(
+  File "/root/miniconda3/envs/CHATBOT/lib/python3.10/site-packages/langchain_huggingface/embeddings/huggingface.py", line 59, in __init__
+    self._client = sentence_transformers.SentenceTransformer(
+  File "/root/miniconda3/envs/CHATBOT/lib/python3.10/site-packages/sentence_transformers/SentenceTransformer.py", line 321, in __init__
+    modules = self._load_auto_model(
+  File "/root/miniconda3/envs/CHATBOT/lib/python3.10/site-packages/sentence_transformers/SentenceTransformer.py", line 1600, in _load_auto_model
+    transformer_model = Transformer(
+  File "/root/miniconda3/envs/CHATBOT/lib/python3.10/site-packages/sentence_transformers/models/Transformer.py", line 81, in __init__
+    self._load_model(model_name_or_path, config, cache_dir, backend, is_peft_model, **model_args)
+  File "/root/miniconda3/envs/CHATBOT/lib/python3.10/site-packages/sentence_transformers/models/Transformer.py", line 181, in _load_model
+    self.auto_model = AutoModel.from_pretrained(
+  File "/root/miniconda3/envs/CHATBOT/lib/python3.10/site-packages/transformers/models/auto/auto_factory.py", line 571, in from_pretrained
+    return model_class.from_pretrained(
+  File "/root/miniconda3/envs/CHATBOT/lib/python3.10/site-packages/transformers/modeling_utils.py", line 279, in _wrapper
+    return func(*args, **kwargs)
+  File "/root/miniconda3/envs/CHATBOT/lib/python3.10/site-packages/transformers/modeling_utils.py", line 4260, in from_pretrained
+    checkpoint_files, sharded_metadata = _get_resolved_checkpoint_files(
+  File "/root/miniconda3/envs/CHATBOT/lib/python3.10/site-packages/transformers/modeling_utils.py", line 952, in _get_resolved_checkpoint_files
+    raise EnvironmentError(
+OSError: Error no file named pytorch_model.bin, model.safetensors, tf_model.h5, model.ckpt.index or flax_model.msgpack found in directory /root/autodl-tmp/Chatbot-new/modules/Text2Vec.
+
+2026-04-21 18:04:19  WARNING   [main]  RAG 服务不可用，Chat 服务跳过初始化
+2026-04-21 18:04:20  ERROR     [main]  TTS 服务初始化失败：
+Traceback (most recent call last):
+  File "/root/autodl-tmp/Chatbot-new/main.py", line 65, in lifespan
+    app.state.tts_service = TTSService()
+  File "/root/autodl-tmp/Chatbot-new/services/tts_service.py", line 47, in __init__
+    raise RuntimeError("COSYVoice 未能正确导入，TTS 服务无法启动")
+RuntimeError: COSYVoice 未能正确导入，TTS 服务无法启动
+
+2026-04-21 18:04:20  ERROR     [main]  ASR 服务初始化失败：
+Traceback (most recent call last):
+  File "/root/autodl-tmp/Chatbot-new/main.py", line 72, in lifespan
+    from services.asr_service import ASRService
+  File "/root/autodl-tmp/Chatbot-new/services/asr_service.py", line 13, in <module>
+    import whisper
+  File "/root/miniconda3/envs/CHATBOT/lib/python3.10/site-packages/whisper/__init__.py", line 13, in <module>
+    from .model import ModelDimensions, Whisper
+  File "/root/miniconda3/envs/CHATBOT/lib/python3.10/site-packages/whisper/model.py", line 14, in <module>
+    from .transcribe import transcribe as transcribe_function
+  File "/root/miniconda3/envs/CHATBOT/lib/python3.10/site-packages/whisper/transcribe.py", line 21, in <module>
+    from .timing import add_word_timestamps
+  File "/root/miniconda3/envs/CHATBOT/lib/python3.10/site-packages/whisper/timing.py", line 7, in <module>
+    import numba
+  File "/root/miniconda3/envs/CHATBOT/lib/python3.10/site-packages/numba/__init__.py", line 59, in <module>
+    _ensure_critical_deps()
+  File "/root/miniconda3/envs/CHATBOT/lib/python3.10/site-packages/numba/__init__.py", line 45, in _ensure_critical_deps
+    raise ImportError(msg)
+ImportError: Numba needs NumPy 2.1 or less. Got NumPy 2.2.
+
+2026-04-21 18:04:20  INFO      [main]  ── 服务启动状态 ──
+2026-04-21 18:04:20  INFO      [main]    RAG    ❌ 不可用
+2026-04-21 18:04:20  INFO      [main]    Chat   ❌ 不可用
+2026-04-21 18:04:20  INFO      [main]    TTS    ❌ 不可用
+2026-04-21 18:04:20  INFO      [main]    ASR    ❌ 不可用
+2026-04-21 18:04:20  INFO      [main]  ════════════════════════════════════════════════════════════
+2026-04-21 18:45:32  INFO      [main]  ChatBot 后端正在关闭…
+2026-04-21 18:45:45  INFO      [main]  ════════════════════════════════════════════════════════════
+2026-04-21 18:45:45  INFO      [main]  ChatBot 后端启动中…
+2026-04-21 18:45:45  INFO      [main]  ════════════════════════════════════════════════════════════
+2026-04-21 18:45:50  ERROR     [main]  RAG 服务初始化失败：
+Traceback (most recent call last):
+  File "/root/autodl-tmp/Chatbot-new/main.py", line 46, in lifespan
+    app.state.rag_service = RAGService()
+  File "/root/autodl-tmp/Chatbot-new/services/rag_service.py", line 75, in __init__
+    self._embeddings = HuggingFaceEmbeddings(
+  File "/root/miniconda3/envs/CHATBOT/lib/python3.10/site-packages/langchain_huggingface/embeddings/huggingface.py", line 59, in __init__
+    self._client = sentence_transformers.SentenceTransformer(
+  File "/root/miniconda3/envs/CHATBOT/lib/python3.10/site-packages/sentence_transformers/SentenceTransformer.py", line 321, in __init__
+    modules = self._load_auto_model(
+  File "/root/miniconda3/envs/CHATBOT/lib/python3.10/site-packages/sentence_transformers/SentenceTransformer.py", line 1600, in _load_auto_model
+    transformer_model = Transformer(
+  File "/root/miniconda3/envs/CHATBOT/lib/python3.10/site-packages/sentence_transformers/models/Transformer.py", line 81, in __init__
+    self._load_model(model_name_or_path, config, cache_dir, backend, is_peft_model, **model_args)
+  File "/root/miniconda3/envs/CHATBOT/lib/python3.10/site-packages/sentence_transformers/models/Transformer.py", line 181, in _load_model
+    self.auto_model = AutoModel.from_pretrained(
+  File "/root/miniconda3/envs/CHATBOT/lib/python3.10/site-packages/transformers/models/auto/auto_factory.py", line 571, in from_pretrained
+    return model_class.from_pretrained(
+  File "/root/miniconda3/envs/CHATBOT/lib/python3.10/site-packages/transformers/modeling_utils.py", line 279, in _wrapper
+    return func(*args, **kwargs)
+  File "/root/miniconda3/envs/CHATBOT/lib/python3.10/site-packages/transformers/modeling_utils.py", line 4260, in from_pretrained
+    checkpoint_files, sharded_metadata = _get_resolved_checkpoint_files(
+  File "/root/miniconda3/envs/CHATBOT/lib/python3.10/site-packages/transformers/modeling_utils.py", line 952, in _get_resolved_checkpoint_files
+    raise EnvironmentError(
+OSError: Error no file named pytorch_model.bin, model.safetensors, tf_model.h5, model.ckpt.index or flax_model.msgpack found in directory /root/autodl-tmp/Chatbot-new/modules/Text2Vec.
+
+2026-04-21 18:45:50  WARNING   [main]  RAG 服务不可用，Chat 服务跳过初始化
+2026-04-21 18:45:50  ERROR     [main]  TTS 服务初始化失败：
+Traceback (most recent call last):
+  File "/root/autodl-tmp/Chatbot-new/main.py", line 65, in lifespan
+    app.state.tts_service = TTSService()
+  File "/root/autodl-tmp/Chatbot-new/services/tts_service.py", line 47, in __init__
+    raise RuntimeError("COSYVoice 未能正确导入，TTS 服务无法启动")
+RuntimeError: COSYVoice 未能正确导入，TTS 服务无法启动
+
+2026-04-21 18:45:50  ERROR     [main]  ASR 服务初始化失败：
+Traceback (most recent call last):
+  File "/root/autodl-tmp/Chatbot-new/main.py", line 72, in lifespan
+    from services.asr_service import ASRService
+  File "/root/autodl-tmp/Chatbot-new/services/asr_service.py", line 13, in <module>
+    import whisper
+  File "/root/miniconda3/envs/CHATBOT/lib/python3.10/site-packages/whisper/__init__.py", line 13, in <module>
+    from .model import ModelDimensions, Whisper
+  File "/root/miniconda3/envs/CHATBOT/lib/python3.10/site-packages/whisper/model.py", line 14, in <module>
+    from .transcribe import transcribe as transcribe_function
+  File "/root/miniconda3/envs/CHATBOT/lib/python3.10/site-packages/whisper/transcribe.py", line 21, in <module>
+    from .timing import add_word_timestamps
+  File "/root/miniconda3/envs/CHATBOT/lib/python3.10/site-packages/whisper/timing.py", line 7, in <module>
+    import numba
+  File "/root/miniconda3/envs/CHATBOT/lib/python3.10/site-packages/numba/__init__.py", line 59, in <module>
+    _ensure_critical_deps()
+  File "/root/miniconda3/envs/CHATBOT/lib/python3.10/site-packages/numba/__init__.py", line 45, in _ensure_critical_deps
+    raise ImportError(msg)
+ImportError: Numba needs NumPy 2.1 or less. Got NumPy 2.2.
+
+2026-04-21 18:45:50  INFO      [main]  ── 服务启动状态 ──
+2026-04-21 18:45:50  INFO      [main]    RAG    ❌ 不可用
+2026-04-21 18:45:50  INFO      [main]    Chat   ❌ 不可用
+2026-04-21 18:45:50  INFO      [main]    TTS    ❌ 不可用
+2026-04-21 18:45:50  INFO      [main]    ASR    ❌ 不可用
+2026-04-21 18:45:50  INFO      [main]  ════════════════════════════════════════════════════════════
+2026-04-21 19:22:59  INFO      [main]  ChatBot 后端正在关闭…
+2026-04-21 19:23:01  INFO      [main]  ════════════════════════════════════════════════════════════
+2026-04-21 19:23:01  INFO      [main]  ChatBot 后端启动中…
+2026-04-21 19:23:01  INFO      [main]  ════════════════════════════════════════════════════════════
+2026-04-21 19:23:08  ERROR     [main]  RAG 服务初始化失败：
+Traceback (most recent call last):
+  File "/root/miniconda3/envs/CHATBOT/lib/python3.10/site-packages/langchain_community/vectorstores/faiss.py", line 56, in dependable_faiss_import
+    import faiss
+  File "/root/miniconda3/envs/CHATBOT/lib/python3.10/site-packages/faiss/__init__.py", line 18, in <module>
+    from .loader import *
+  File "/root/miniconda3/envs/CHATBOT/lib/python3.10/site-packages/faiss/loader.py", line 65, in <module>
+    from .swigfaiss import *
+  File "/root/miniconda3/envs/CHATBOT/lib/python3.10/site-packages/faiss/swigfaiss.py", line 13, in <module>
+    from . import _swigfaiss
+ImportError: numpy.core.multiarray failed to import
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/autodl-tmp/Chatbot-new/main.py", line 46, in lifespan
+    app.state.rag_service = RAGService()
+  File "/root/autodl-tmp/Chatbot-new/services/rag_service.py", line 78, in __init__
+    self._db: FAISS = self._load_or_build_index()
+  File "/root/autodl-tmp/Chatbot-new/services/rag_service.py", line 101, in _load_or_build_index
+    return self._build_index(current, hash_file)
+  File "/root/autodl-tmp/Chatbot-new/services/rag_service.py", line 122, in _build_index
+    db = FAISS.from_documents(docs, self._embeddings)
+  File "/root/miniconda3/envs/CHATBOT/lib/python3.10/site-packages/langchain_core/vectorstores/base.py", line 847, in from_documents
+    return cls.from_texts(texts, embedding, metadatas=metadatas, **kwargs)
+  File "/root/miniconda3/envs/CHATBOT/lib/python3.10/site-packages/langchain_community/vectorstores/faiss.py", line 1044, in from_texts
+    return cls.__from(
+  File "/root/miniconda3/envs/CHATBOT/lib/python3.10/site-packages/langchain_community/vectorstores/faiss.py", line 996, in __from
+    faiss = dependable_faiss_import()
+  File "/root/miniconda3/envs/CHATBOT/lib/python3.10/site-packages/langchain_community/vectorstores/faiss.py", line 58, in dependable_faiss_import
+    raise ImportError(
+ImportError: Could not import faiss python package. Please install it with `pip install faiss-gpu` (for CUDA supported GPU) or `pip install faiss-cpu` (depending on Python version).
+
+2026-04-21 19:23:08  WARNING   [main]  RAG 服务不可用，Chat 服务跳过初始化
+2026-04-21 19:23:08  ERROR     [main]  TTS 服务初始化失败：
+Traceback (most recent call last):
+  File "/root/autodl-tmp/Chatbot-new/main.py", line 65, in lifespan
+    app.state.tts_service = TTSService()
+  File "/root/autodl-tmp/Chatbot-new/services/tts_service.py", line 47, in __init__
+    raise RuntimeError("COSYVoice 未能正确导入，TTS 服务无法启动")
+RuntimeError: COSYVoice 未能正确导入，TTS 服务无法启动
+
+2026-04-21 19:23:08  ERROR     [main]  ASR 服务初始化失败：
+Traceback (most recent call last):
+  File "/root/autodl-tmp/Chatbot-new/main.py", line 72, in lifespan
+    from services.asr_service import ASRService
+  File "/root/autodl-tmp/Chatbot-new/services/asr_service.py", line 13, in <module>
+    import whisper
+  File "/root/miniconda3/envs/CHATBOT/lib/python3.10/site-packages/whisper/__init__.py", line 13, in <module>
+    from .model import ModelDimensions, Whisper
+  File "/root/miniconda3/envs/CHATBOT/lib/python3.10/site-packages/whisper/model.py", line 14, in <module>
+    from .transcribe import transcribe as transcribe_function
+  File "/root/miniconda3/envs/CHATBOT/lib/python3.10/site-packages/whisper/transcribe.py", line 21, in <module>
+    from .timing import add_word_timestamps
+  File "/root/miniconda3/envs/CHATBOT/lib/python3.10/site-packages/whisper/timing.py", line 7, in <module>
+    import numba
+  File "/root/miniconda3/envs/CHATBOT/lib/python3.10/site-packages/numba/__init__.py", line 59, in <module>
+    _ensure_critical_deps()
+  File "/root/miniconda3/envs/CHATBOT/lib/python3.10/site-packages/numba/__init__.py", line 45, in _ensure_critical_deps
+    raise ImportError(msg)
+ImportError: Numba needs NumPy 2.1 or less. Got NumPy 2.2.
+
+2026-04-21 19:23:08  INFO      [main]  ── 服务启动状态 ──
+2026-04-21 19:23:08  INFO      [main]    RAG    ❌ 不可用
+2026-04-21 19:23:08  INFO      [main]    Chat   ❌ 不可用
+2026-04-21 19:23:08  INFO      [main]    TTS    ❌ 不可用
+2026-04-21 19:23:08  INFO      [main]    ASR    ❌ 不可用
+2026-04-21 19:23:08  INFO      [main]  ════════════════════════════════════════════════════════════
+2026-04-21 19:24:29  INFO      [main]  ChatBot 后端正在关闭…
+2026-04-21 19:25:33  INFO      [main]  ════════════════════════════════════════════════════════════
+2026-04-21 19:25:33  INFO      [main]  ChatBot 后端启动中…
+2026-04-21 19:25:33  INFO      [main]  ════════════════════════════════════════════════════════════
+2026-04-21 19:25:48  INFO      [main]  ── 服务启动状态 ──
+2026-04-21 19:25:48  INFO      [main]    RAG    ✅ 就绪
+2026-04-21 19:25:48  INFO      [main]    Chat   ✅ 就绪
+2026-04-21 19:25:48  INFO      [main]    TTS    ✅ 就绪
+2026-04-21 19:25:48  INFO      [main]    ASR    ✅ 就绪
+2026-04-21 19:25:48  INFO      [main]  ════════════════════════════════════════════════════════════
+2026-04-21 19:32:30  INFO      [main]  ChatBot 后端正在关闭…
+2026-04-21 19:32:44  INFO      [main]  ════════════════════════════════════════════════════════════
+2026-04-21 19:32:44  INFO      [main]  ChatBot 后端启动中…
+2026-04-21 19:32:44  INFO      [main]  ════════════════════════════════════════════════════════════
+2026-04-21 19:33:00  INFO      [main]  ── 服务启动状态 ──
+2026-04-21 19:33:00  INFO      [main]    RAG    ✅ 就绪
+2026-04-21 19:33:00  INFO      [main]    Chat   ✅ 就绪
+2026-04-21 19:33:00  INFO      [main]    TTS    ✅ 就绪
+2026-04-21 19:33:00  INFO      [main]    ASR    ✅ 就绪
+2026-04-21 19:33:00  INFO      [main]  ════════════════════════════════════════════════════════════
+2026-04-21 19:39:48  INFO      [main]  ChatBot 后端正在关闭…
+2026-04-21 19:39:51  INFO      [main]  ════════════════════════════════════════════════════════════
+2026-04-21 19:39:51  INFO      [main]  ChatBot 后端启动中…
+2026-04-21 19:39:51  INFO      [main]  ════════════════════════════════════════════════════════════
+2026-04-21 19:40:06  INFO      [main]  ── 服务启动状态 ──
+2026-04-21 19:40:06  INFO      [main]    RAG    ✅ 就绪
+2026-04-21 19:40:06  INFO      [main]    Chat   ✅ 就绪
+2026-04-21 19:40:06  INFO      [main]    TTS    ✅ 就绪
+2026-04-21 19:40:06  INFO      [main]    ASR    ✅ 就绪
+2026-04-21 19:40:06  INFO      [main]  ════════════════════════════════════════════════════════════
+2026-04-21 19:40:49  INFO      [main]  ChatBot 后端正在关闭…
+2026-04-21 19:40:53  INFO      [main]  ════════════════════════════════════════════════════════════
+2026-04-21 19:40:53  INFO      [main]  ChatBot 后端启动中…
+2026-04-21 19:40:53  INFO      [main]  ════════════════════════════════════════════════════════════
+2026-04-21 19:41:08  INFO      [main]  ── 服务启动状态 ──
+2026-04-21 19:41:08  INFO      [main]    RAG    ✅ 就绪
+2026-04-21 19:41:08  INFO      [main]    Chat   ✅ 就绪
+2026-04-21 19:41:08  INFO      [main]    TTS    ✅ 就绪
+2026-04-21 19:41:08  INFO      [main]    ASR    ✅ 就绪
+2026-04-21 19:41:08  INFO      [main]  ════════════════════════════════════════════════════════════
+2026-04-21 19:41:26  INFO      [main]  ChatBot 后端正在关闭…
+2026-04-21 19:41:30  INFO      [main]  ════════════════════════════════════════════════════════════
+2026-04-21 19:41:30  INFO      [main]  ChatBot 后端启动中…
+2026-04-21 19:41:30  INFO      [main]  ════════════════════════════════════════════════════════════
+2026-04-21 19:41:46  INFO      [main]  ── 服务启动状态 ──
+2026-04-21 19:41:46  INFO      [main]    RAG    ✅ 就绪
+2026-04-21 19:41:46  INFO      [main]    Chat   ✅ 就绪
+2026-04-21 19:41:46  INFO      [main]    TTS    ✅ 就绪
+2026-04-21 19:41:46  INFO      [main]    ASR    ✅ 就绪
+2026-04-21 19:41:46  INFO      [main]  ════════════════════════════════════════════════════════════
+2026-04-21 19:46:00  INFO      [main]  ChatBot 后端正在关闭…
+2026-04-21 19:46:04  INFO      [main]  ════════════════════════════════════════════════════════════
+2026-04-21 19:46:04  INFO      [main]  ChatBot 后端启动中…
+2026-04-21 19:46:04  INFO      [main]  ════════════════════════════════════════════════════════════
+2026-04-21 19:46:20  INFO      [main]  ── 服务启动状态 ──
+2026-04-21 19:46:20  INFO      [main]    RAG    ✅ 就绪
+2026-04-21 19:46:20  INFO      [main]    Chat   ✅ 就绪
+2026-04-21 19:46:20  INFO      [main]    TTS    ✅ 就绪
+2026-04-21 19:46:20  INFO      [main]    ASR    ✅ 就绪
+2026-04-21 19:46:20  INFO      [main]  ════════════════════════════════════════════════════════════
+2026-04-21 19:47:04  INFO      [main]  ChatBot 后端正在关闭…
+2026-04-21 19:47:07  INFO      [main]  ════════════════════════════════════════════════════════════
+2026-04-21 19:47:07  INFO      [main]  ChatBot 后端启动中…
+2026-04-21 19:47:07  INFO      [main]  ════════════════════════════════════════════════════════════
+2026-04-21 19:47:21  INFO      [main]  ── 服务启动状态 ──
+2026-04-21 19:47:21  INFO      [main]    RAG    ✅ 就绪
+2026-04-21 19:47:21  INFO      [main]    Chat   ✅ 就绪
+2026-04-21 19:47:21  INFO      [main]    TTS    ✅ 就绪
+2026-04-21 19:47:21  INFO      [main]    ASR    ✅ 就绪
+2026-04-21 19:47:21  INFO      [main]  ════════════════════════════════════════════════════════════
+2026-04-21 19:50:09  INFO      [main]  ════════════════════════════════════════════════════════════
+2026-04-21 19:50:09  INFO      [main]  ChatBot 后端启动中…
+2026-04-21 19:50:09  INFO      [main]  ════════════════════════════════════════════════════════════
+2026-04-21 19:50:25  INFO      [main]  ── 服务启动状态 ──
+2026-04-21 19:50:25  INFO      [main]    RAG    ✅ 就绪
+2026-04-21 19:50:25  INFO      [main]    Chat   ✅ 就绪
+2026-04-21 19:50:25  INFO      [main]    TTS    ✅ 就绪
+2026-04-21 19:50:25  INFO      [main]    ASR    ✅ 就绪
+2026-04-21 19:50:25  INFO      [main]  ════════════════════════════════════════════════════════════
+2026-04-21 19:52:20  INFO      [main]  ChatBot 后端正在关闭…
+2026-04-21 19:52:24  INFO      [main]  ════════════════════════════════════════════════════════════
+2026-04-21 19:52:24  INFO      [main]  ChatBot 后端启动中…
+2026-04-21 19:52:24  INFO      [main]  ════════════════════════════════════════════════════════════
+2026-04-21 19:52:31  ERROR     [main]  Chat 服务初始化失败：
+Traceback (most recent call last):
+  File "/root/autodl-tmp/Chatbot-new/main.py", line 54, in lifespan
+    from services.chat_service import ChatService
+  File "/root/autodl-tmp/Chatbot-new/services/chat_service.py", line 108
+    if isinstance(models, dict):
+    ^^
+SyntaxError: invalid syntax
+
+2026-04-21 19:52:40  INFO      [main]  ── 服务启动状态 ──
+2026-04-21 19:52:40  INFO      [main]    RAG    ✅ 就绪
+2026-04-21 19:52:40  INFO      [main]    Chat   ❌ 不可用
+2026-04-21 19:52:40  INFO      [main]    TTS    ✅ 就绪
+2026-04-21 19:52:40  INFO      [main]    ASR    ✅ 就绪
+2026-04-21 19:52:40  INFO      [main]  ════════════════════════════════════════════════════════════
+2026-04-21 19:52:40  INFO      [main]  ChatBot 后端正在关闭…
+2026-04-21 19:53:12  INFO      [main]  ════════════════════════════════════════════════════════════
+2026-04-21 19:53:12  INFO      [main]  ChatBot 后端启动中…
+2026-04-21 19:53:12  INFO      [main]  ════════════════════════════════════════════════════════════
+2026-04-21 19:53:29  INFO      [main]  ── 服务启动状态 ──
+2026-04-21 19:53:29  INFO      [main]    RAG    ✅ 就绪
+2026-04-21 19:53:29  INFO      [main]    Chat   ✅ 就绪
+2026-04-21 19:53:29  INFO      [main]    TTS    ✅ 就绪
+2026-04-21 19:53:29  INFO      [main]    ASR    ✅ 就绪
+2026-04-21 19:53:29  INFO      [main]  ════════════════════════════════════════════════════════════
+2026-04-21 19:53:39  INFO      [main]  ChatBot 后端正在关闭…
+2026-04-21 19:54:53  INFO      [main]  ════════════════════════════════════════════════════════════
+2026-04-21 19:54:53  INFO      [main]  ChatBot 后端启动中…
+2026-04-21 19:54:53  INFO      [main]  ════════════════════════════════════════════════════════════
+2026-04-21 19:55:09  INFO      [main]  ── 服务启动状态 ──
+2026-04-21 19:55:09  INFO      [main]    RAG    ✅ 就绪
+2026-04-21 19:55:09  INFO      [main]    Chat   ✅ 就绪
+2026-04-21 19:55:09  INFO      [main]    TTS    ✅ 就绪
+2026-04-21 19:55:09  INFO      [main]    ASR    ✅ 就绪
+2026-04-21 19:55:09  INFO      [main]  ════════════════════════════════════════════════════════════
+2026-04-21 19:55:15  INFO      [main]  ChatBot 后端正在关闭…
+2026-04-21 19:55:18  INFO      [main]  ════════════════════════════════════════════════════════════
+2026-04-21 19:55:18  INFO      [main]  ChatBot 后端启动中…
+2026-04-21 19:55:18  INFO      [main]  ════════════════════════════════════════════════════════════
+2026-04-21 19:55:34  INFO      [main]  ── 服务启动状态 ──
+2026-04-21 19:55:34  INFO      [main]    RAG    ✅ 就绪
+2026-04-21 19:55:34  INFO      [main]    Chat   ✅ 就绪
+2026-04-21 19:55:34  INFO      [main]    TTS    ✅ 就绪
+2026-04-21 19:55:34  INFO      [main]    ASR    ✅ 就绪
+2026-04-21 19:55:34  INFO      [main]  ════════════════════════════════════════════════════════════
+2026-04-21 19:55:40  ERROR     [main]  未处理异常 [http://localhost:8000/api/chat]：type object 'RAGConfig' has no attribute 'MAX_HISTORY'
+Traceback (most recent call last):
+  File "/root/miniconda3/envs/CHATBOT/lib/python3.10/site-packages/starlette/middleware/errors.py", line 165, in __call__
+    await self.app(scope, receive, _send)
+  File "/root/miniconda3/envs/CHATBOT/lib/python3.10/site-packages/starlette/middleware/cors.py", line 85, in __call__
+    await self.app(scope, receive, send)
+  File "/root/miniconda3/envs/CHATBOT/lib/python3.10/site-packages/starlette/middleware/exceptions.py", line 62, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/root/miniconda3/envs/CHATBOT/lib/python3.10/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/root/miniconda3/envs/CHATBOT/lib/python3.10/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/root/miniconda3/envs/CHATBOT/lib/python3.10/site-packages/starlette/routing.py", line 715, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/root/miniconda3/envs/CHATBOT/lib/python3.10/site-packages/starlette/routing.py", line 735, in app
+    await route.handle(scope, receive, send)
+  File "/root/miniconda3/envs/CHATBOT/lib/python3.10/site-packages/starlette/routing.py", line 288, in handle
+    await self.app(scope, receive, send)
+  File "/root/miniconda3/envs/CHATBOT/lib/python3.10/site-packages/starlette/routing.py", line 76, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/root/miniconda3/envs/CHATBOT/lib/python3.10/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/root/miniconda3/envs/CHATBOT/lib/python3.10/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/root/miniconda3/envs/CHATBOT/lib/python3.10/site-packages/starlette/routing.py", line 73, in app
+    response = await f(request)
+  File "/root/miniconda3/envs/CHATBOT/lib/python3.10/site-packages/fastapi/routing.py", line 301, in app
+    raw_response = await run_endpoint_function(
+  File "/root/miniconda3/envs/CHATBOT/lib/python3.10/site-packages/fastapi/routing.py", line 212, in run_endpoint_function
+    return await dependant.call(**values)
+  File "/root/autodl-tmp/Chatbot-new/routers/chat_router.py", line 49, in chat
+    reply = svc.chat(body.message, session_id=body.session_id)
+  File "/root/autodl-tmp/Chatbot-new/services/chat_service.py", line 85, in chat
+    messages = self._build_messages(query, context, history)
+  File "/root/autodl-tmp/Chatbot-new/services/chat_service.py", line 65, in _build_messages
+    trimmed = history[-RAGConfig.MAX_HISTORY:]
+AttributeError: type object 'RAGConfig' has no attribute 'MAX_HISTORY'
+
+2026-04-21 19:55:40  ERROR     [main]  未处理异常 [http://localhost:8000/api/chat]：type object 'RAGConfig' has no attribute 'MAX_HISTORY'
+Traceback (most recent call last):
+  File "/root/miniconda3/envs/CHATBOT/lib/python3.10/site-packages/starlette/middleware/errors.py", line 165, in __call__
+    await self.app(scope, receive, _send)
+  File "/root/miniconda3/envs/CHATBOT/lib/python3.10/site-packages/starlette/middleware/cors.py", line 85, in __call__
+    await self.app(scope, receive, send)
+  File "/root/miniconda3/envs/CHATBOT/lib/python3.10/site-packages/starlette/middleware/exceptions.py", line 62, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/root/miniconda3/envs/CHATBOT/lib/python3.10/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/root/miniconda3/envs/CHATBOT/lib/python3.10/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/root/miniconda3/envs/CHATBOT/lib/python3.10/site-packages/starlette/routing.py", line 715, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/root/miniconda3/envs/CHATBOT/lib/python3.10/site-packages/starlette/routing.py", line 735, in app
+    await route.handle(scope, receive, send)
+  File "/root/miniconda3/envs/CHATBOT/lib/python3.10/site-packages/starlette/routing.py", line 288, in handle
+    await self.app(scope, receive, send)
+  File "/root/miniconda3/envs/CHATBOT/lib/python3.10/site-packages/starlette/routing.py", line 76, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/root/miniconda3/envs/CHATBOT/lib/python3.10/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/root/miniconda3/envs/CHATBOT/lib/python3.10/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/root/miniconda3/envs/CHATBOT/lib/python3.10/site-packages/starlette/routing.py", line 73, in app
+    response = await f(request)
+  File "/root/miniconda3/envs/CHATBOT/lib/python3.10/site-packages/fastapi/routing.py", line 301, in app
+    raw_response = await run_endpoint_function(
+  File "/root/miniconda3/envs/CHATBOT/lib/python3.10/site-packages/fastapi/routing.py", line 212, in run_endpoint_function
+    return await dependant.call(**values)
+  File "/root/autodl-tmp/Chatbot-new/routers/chat_router.py", line 49, in chat
+    reply = svc.chat(body.message, session_id=body.session_id)
+  File "/root/autodl-tmp/Chatbot-new/services/chat_service.py", line 85, in chat
+    messages = self._build_messages(query, context, history)
+  File "/root/autodl-tmp/Chatbot-new/services/chat_service.py", line 65, in _build_messages
+    trimmed = history[-RAGConfig.MAX_HISTORY:]
+AttributeError: type object 'RAGConfig' has no attribute 'MAX_HISTORY'
+
+2026-04-21 19:59:14  INFO      [main]  ChatBot 后端正在关闭…
+2026-04-21 19:59:17  INFO      [main]  ════════════════════════════════════════════════════════════
+2026-04-21 19:59:17  INFO      [main]  ChatBot 后端启动中…
+2026-04-21 19:59:17  INFO      [main]  ════════════════════════════════════════════════════════════
+2026-04-21 19:59:33  INFO      [main]  ── 服务启动状态 ──
+2026-04-21 19:59:33  INFO      [main]    RAG    ✅ 就绪
+2026-04-21 19:59:33  INFO      [main]    Chat   ✅ 就绪
+2026-04-21 19:59:33  INFO      [main]    TTS    ✅ 就绪
+2026-04-21 19:59:33  INFO      [main]    ASR    ✅ 就绪
+2026-04-21 19:59:33  INFO      [main]  ════════════════════════════════════════════════════════════
+2026-04-21 20:09:06  INFO      [main]  ChatBot 后端正在关闭…
+2026-04-21 20:09:16  INFO      [main]  ════════════════════════════════════════════════════════════
+2026-04-21 20:09:16  INFO      [main]  ChatBot 后端启动中…
+2026-04-21 20:09:16  INFO      [main]  ════════════════════════════════════════════════════════════
+2026-04-21 20:09:32  INFO      [main]  ── 服务启动状态 ──
+2026-04-21 20:09:32  INFO      [main]    RAG    ✅ 就绪
+2026-04-21 20:09:32  INFO      [main]    Chat   ✅ 就绪
+2026-04-21 20:09:32  INFO      [main]    TTS    ✅ 就绪
+2026-04-21 20:09:32  INFO      [main]    ASR    ✅ 就绪
+2026-04-21 20:09:32  INFO      [main]  ════════════════════════════════════════════════════════════
+2026-04-21 20:39:05  INFO      [main]  ChatBot 后端正在关闭…
+2026-04-21 20:39:14  INFO      [main]  ════════════════════════════════════════════════════════════
+2026-04-21 20:39:14  INFO      [main]  ChatBot 后端启动中…
+2026-04-21 20:39:14  INFO      [main]  ════════════════════════════════════════════════════════════
+2026-04-21 20:39:30  INFO      [main]  ── 服务启动状态 ──
+2026-04-21 20:39:30  INFO      [main]    RAG    ✅ 就绪
+2026-04-21 20:39:30  INFO      [main]    Chat   ✅ 就绪
+2026-04-21 20:39:30  INFO      [main]    TTS    ✅ 就绪
+2026-04-21 20:39:30  INFO      [main]    ASR    ✅ 就绪
+2026-04-21 20:39:30  INFO      [main]  ════════════════════════════════════════════════════════════
+2026-04-21 20:45:20  INFO      [main]  ChatBot 后端正在关闭…
+2026-04-21 20:45:24  INFO      [main]  ════════════════════════════════════════════════════════════
+2026-04-21 20:45:24  INFO      [main]  ChatBot 后端启动中…
+2026-04-21 20:45:24  INFO      [main]  ════════════════════════════════════════════════════════════
+2026-04-21 20:45:41  INFO      [main]  ── 服务启动状态 ──
+2026-04-21 20:45:41  INFO      [main]    RAG    ✅ 就绪
+2026-04-21 20:45:41  INFO      [main]    Chat   ✅ 就绪
+2026-04-21 20:45:41  INFO      [main]    TTS    ✅ 就绪
+2026-04-21 20:45:41  INFO      [main]    ASR    ✅ 就绪
+2026-04-21 20:45:41  INFO      [main]  ════════════════════════════════════════════════════════════
+2026-04-21 22:10:23  INFO      [main]  ════════════════════════════════════════════════════════════
+2026-04-21 22:10:23  INFO      [main]  ChatBot 后端启动中…
+2026-04-21 22:10:23  INFO      [main]  ════════════════════════════════════════════════════════════
+2026-04-21 22:10:42  INFO      [main]  ── 服务启动状态 ──
+2026-04-21 22:10:42  INFO      [main]    RAG    ✅ 就绪
+2026-04-21 22:10:42  INFO      [main]    Chat   ✅ 就绪
+2026-04-21 22:10:42  INFO      [main]    TTS    ✅ 就绪
+2026-04-21 22:10:42  INFO      [main]    ASR    ✅ 就绪
+2026-04-21 22:10:42  INFO      [main]  ════════════════════════════════════════════════════════════
+2026-04-21 22:17:13  INFO      [main]  ════════════════════════════════════════════════════════════
+2026-04-21 22:17:13  INFO      [main]  ChatBot 后端启动中…
+2026-04-21 22:17:13  INFO      [main]  ════════════════════════════════════════════════════════════
+2026-04-21 22:17:32  INFO      [main]  ── 服务启动状态 ──
+2026-04-21 22:17:32  INFO      [main]    RAG    ✅ 就绪
+2026-04-21 22:17:32  INFO      [main]    Chat   ✅ 就绪
+2026-04-21 22:17:32  INFO      [main]    TTS    ✅ 就绪
+2026-04-21 22:17:32  INFO      [main]    ASR    ✅ 就绪
+2026-04-21 22:17:32  INFO      [main]  ════════════════════════════════════════════════════════════
+2026-04-21 22:17:32  INFO      [main]  ChatBot 后端正在关闭…
+2026-04-21 22:19:36  INFO      [main]  ════════════════════════════════════════════════════════════
+2026-04-21 22:19:36  INFO      [main]  ChatBot 后端启动中…
+2026-04-21 22:19:36  INFO      [main]  ════════════════════════════════════════════════════════════
+2026-04-21 22:19:57  INFO      [main]  ── 服务启动状态 ──
+2026-04-21 22:19:57  INFO      [main]    RAG    ✅ 就绪
+2026-04-21 22:19:57  INFO      [main]    Chat   ✅ 就绪
+2026-04-21 22:19:57  INFO      [main]    TTS    ✅ 就绪
+2026-04-21 22:19:57  INFO      [main]    ASR    ✅ 就绪
+2026-04-21 22:19:57  INFO      [main]  ════════════════════════════════════════════════════════════
+2026-04-21 22:49:17  INFO      [main]  ChatBot 后端正在关闭…
+2026-04-21 22:49:49  INFO      [main]  ════════════════════════════════════════════════════════════
+2026-04-21 22:49:49  INFO      [main]  ChatBot 后端启动中…
+2026-04-21 22:49:49  INFO      [main]  ════════════════════════════════════════════════════════════
+2026-04-21 22:50:07  INFO      [main]  ── 服务启动状态 ──
+2026-04-21 22:50:07  INFO      [main]    RAG    ✅ 就绪
+2026-04-21 22:50:07  INFO      [main]    Chat   ✅ 就绪
+2026-04-21 22:50:07  INFO      [main]    TTS    ✅ 就绪
+2026-04-21 22:50:07  INFO      [main]    ASR    ✅ 就绪
+2026-04-21 22:50:07  INFO      [main]  ════════════════════════════════════════════════════════════
+2026-04-21 23:03:50  INFO      [main]  ChatBot 后端正在关闭…
+2026-04-21 23:03:55  INFO      [main]  ════════════════════════════════════════════════════════════
+2026-04-21 23:03:55  INFO      [main]  ChatBot 后端启动中…
+2026-04-21 23:03:55  INFO      [main]  ════════════════════════════════════════════════════════════
+2026-04-21 23:04:13  INFO      [main]  ── 服务启动状态 ──
+2026-04-21 23:04:13  INFO      [main]    RAG    ✅ 就绪
+2026-04-21 23:04:13  INFO      [main]    Chat   ✅ 就绪
+2026-04-21 23:04:13  INFO      [main]    TTS    ✅ 就绪
+2026-04-21 23:04:13  INFO      [main]    ASR    ✅ 就绪
+2026-04-21 23:04:13  INFO      [main]  ════════════════════════════════════════════════════════════
+2026-04-21 23:10:34  INFO      [main]  ChatBot 后端正在关闭…
+2026-04-21 23:10:39  INFO      [main]  ════════════════════════════════════════════════════════════
+2026-04-21 23:10:39  INFO      [main]  ChatBot 后端启动中…
+2026-04-21 23:10:39  INFO      [main]  ════════════════════════════════════════════════════════════
+2026-04-21 23:10:57  INFO      [main]  ── 服务启动状态 ──
+2026-04-21 23:10:57  INFO      [main]    RAG    ✅ 就绪
+2026-04-21 23:10:57  INFO      [main]    Chat   ✅ 就绪
+2026-04-21 23:10:57  INFO      [main]    TTS    ✅ 就绪
+2026-04-21 23:10:57  INFO      [main]    ASR    ✅ 就绪
+2026-04-21 23:10:57  INFO      [main]  ════════════════════════════════════════════════════════════
+2026-04-22 06:47:37  INFO      [main]  ════════════════════════════════════════════════════════════
+2026-04-22 06:47:37  INFO      [main]  ChatBot 后端启动中…
+2026-04-22 06:47:37  INFO      [main]  ════════════════════════════════════════════════════════════
+2026-04-22 06:47:53  INFO      [main]  ── 服务启动状态 ──
+2026-04-22 06:47:53  INFO      [main]    RAG    ✅ 就绪
+2026-04-22 06:47:53  INFO      [main]    Chat   ✅ 就绪
+2026-04-22 06:47:53  INFO      [main]    TTS    ✅ 就绪
+2026-04-22 06:47:53  INFO      [main]    ASR    ✅ 就绪
+2026-04-22 06:47:53  INFO      [main]  ════════════════════════════════════════════════════════════
+2026-04-22 10:00:03  INFO      [main]  ChatBot 后端正在关闭…
+2026-04-22 10:00:07  INFO      [main]  ════════════════════════════════════════════════════════════
+2026-04-22 10:00:07  INFO      [main]  ChatBot 后端启动中…
+2026-04-22 10:00:07  INFO      [main]  ════════════════════════════════════════════════════════════
+2026-04-22 10:00:24  INFO      [main]  ── 服务启动状态 ──
+2026-04-22 10:00:24  INFO      [main]    RAG    ✅ 就绪
+2026-04-22 10:00:24  INFO      [main]    Chat   ✅ 就绪
+2026-04-22 10:00:24  INFO      [main]    TTS    ✅ 就绪
+2026-04-22 10:00:24  INFO      [main]    ASR    ✅ 就绪
+2026-04-22 10:00:24  INFO      [main]  ════════════════════════════════════════════════════════════
+2026-04-22 19:54:35  INFO      [main]  ════════════════════════════════════════════════════════════
+2026-04-22 19:54:35  INFO      [main]  ChatBot 后端启动中…
+2026-04-22 19:54:35  INFO      [main]  ════════════════════════════════════════════════════════════
+2026-04-22 19:54:50  INFO      [main]  ── 服务启动状态 ──
+2026-04-22 19:54:50  INFO      [main]    RAG    ✅ 就绪
+2026-04-22 19:54:50  INFO      [main]    Chat   ✅ 就绪
+2026-04-22 19:54:50  INFO      [main]    TTS    ✅ 就绪
+2026-04-22 19:54:50  INFO      [main]    ASR    ✅ 就绪
+2026-04-22 19:54:50  INFO      [main]  ════════════════════════════════════════════════════════════
+2026-04-22 21:13:43  INFO      [main]  ChatBot 后端正在关闭…
+2026-04-22 21:13:47  INFO      [main]  ════════════════════════════════════════════════════════════
+2026-04-22 21:13:47  INFO      [main]  ChatBot 后端启动中…
+2026-04-22 21:13:47  INFO      [main]  ════════════════════════════════════════════════════════════
+2026-04-22 21:14:03  INFO      [main]  ── 服务启动状态 ──
+2026-04-22 21:14:03  INFO      [main]    RAG    ✅ 就绪
+2026-04-22 21:14:03  INFO      [main]    Chat   ✅ 就绪
+2026-04-22 21:14:03  INFO      [main]    TTS    ✅ 就绪
+2026-04-22 21:14:03  INFO      [main]    ASR    ✅ 就绪
+2026-04-22 21:14:03  INFO      [main]  ════════════════════════════════════════════════════════════
+2026-04-22 22:35:59  INFO      [main]  ChatBot 后端正在关闭…
+2026-04-22 22:36:04  INFO      [main]  ════════════════════════════════════════════════════════════
+2026-04-22 22:36:04  INFO      [main]  ChatBot 后端启动中…
+2026-04-22 22:36:04  INFO      [main]  ════════════════════════════════════════════════════════════
+2026-04-22 22:36:21  INFO      [main]  ── 服务启动状态 ──
+2026-04-22 22:36:21  INFO      [main]    RAG    ✅ 就绪
+2026-04-22 22:36:21  INFO      [main]    Chat   ✅ 就绪
+2026-04-22 22:36:21  INFO      [main]    TTS    ✅ 就绪
+2026-04-22 22:36:21  INFO      [main]    ASR    ✅ 就绪
+2026-04-22 22:36:21  INFO      [main]  ════════════════════════════════════════════════════════════
+2026-04-22 23:29:13  INFO      [main]  ChatBot 后端正在关闭…
+2026-04-23 23:14:05  INFO      [main]  ════════════════════════════════════════════════════════════
+2026-04-23 23:14:05  INFO      [main]  ChatBot 后端启动中…
+2026-04-23 23:14:05  INFO      [main]  ════════════════════════════════════════════════════════════
+2026-04-23 23:14:25  INFO      [main]  ── 服务启动状态 ──
+2026-04-23 23:14:25  INFO      [main]    RAG    ✅ 就绪
+2026-04-23 23:14:25  INFO      [main]    Chat   ✅ 就绪
+2026-04-23 23:14:25  INFO      [main]    TTS    ✅ 就绪
+2026-04-23 23:14:25  INFO      [main]    ASR    ✅ 就绪
+2026-04-23 23:14:25  INFO      [main]  ════════════════════════════════════════════════════════════
+2026-04-23 23:30:19  INFO      [main]  ChatBot 后端正在关闭…
+2026-04-23 23:30:24  INFO      [main]  ════════════════════════════════════════════════════════════
+2026-04-23 23:30:24  INFO      [main]  ChatBot 后端启动中…
+2026-04-23 23:30:24  INFO      [main]  ════════════════════════════════════════════════════════════
+2026-04-23 23:30:43  INFO      [main]  ── 服务启动状态 ──
+2026-04-23 23:30:43  INFO      [main]    RAG    ✅ 就绪
+2026-04-23 23:30:43  INFO      [main]    Chat   ✅ 就绪
+2026-04-23 23:30:43  INFO      [main]    TTS    ✅ 就绪
+2026-04-23 23:30:43  INFO      [main]    ASR    ✅ 就绪
+2026-04-23 23:30:43  INFO      [main]  ════════════════════════════════════════════════════════════
+2026-04-24 10:19:40  INFO      [main]  ChatBot 后端正在关闭…
+2026-04-24 10:19:44  INFO      [main]  ════════════════════════════════════════════════════════════
+2026-04-24 10:19:44  INFO      [main]  ChatBot 后端启动中…
+2026-04-24 10:19:44  INFO      [main]  ════════════════════════════════════════════════════════════
+2026-04-24 10:20:00  INFO      [main]  ── 服务启动状态 ──
+2026-04-24 10:20:00  INFO      [main]    RAG    ✅ 就绪
+2026-04-24 10:20:00  INFO      [main]    Chat   ✅ 就绪
+2026-04-24 10:20:00  INFO      [main]    TTS    ✅ 就绪
+2026-04-24 10:20:00  INFO      [main]    ASR    ✅ 就绪
+2026-04-24 10:20:00  INFO      [main]  ════════════════════════════════════════════════════════════
+2026-04-24 10:20:51  INFO      [main]  ChatBot 后端正在关闭…
+2026-04-24 10:20:58  INFO      [main]  ════════════════════════════════════════════════════════════
+2026-04-24 10:20:58  INFO      [main]  ChatBot 后端启动中…
+2026-04-24 10:20:58  INFO      [main]  ════════════════════════════════════════════════════════════
+2026-04-24 10:21:16  INFO      [main]  ── 服务启动状态 ──
+2026-04-24 10:21:16  INFO      [main]    RAG    ✅ 就绪
+2026-04-24 10:21:16  INFO      [main]    Chat   ✅ 就绪
+2026-04-24 10:21:16  INFO      [main]    TTS    ✅ 就绪
+2026-04-24 10:21:16  INFO      [main]    ASR    ✅ 就绪
+2026-04-24 10:21:16  INFO      [main]  ════════════════════════════════════════════════════════════
+2026-04-24 11:48:08  INFO      [main]  ChatBot 后端正在关闭…

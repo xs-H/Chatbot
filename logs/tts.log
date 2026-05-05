@@ -1,0 +1,372 @@
+2026-04-21 17:47:23  ERROR     [services.tts]  COSYVoice 导入失败：No module named 'cosyvoice'
+Traceback (most recent call last):
+  File "/root/autodl-tmp/Chatbot-new/services/tts_service.py", line 31, in <module>
+    from cosyvoice.cli.cosyvoice import CosyVoice2
+ModuleNotFoundError: No module named 'cosyvoice'
+
+2026-04-21 18:04:20  ERROR     [services.tts]  COSYVoice 导入失败：No module named 'cosyvoice'
+Traceback (most recent call last):
+  File "/root/autodl-tmp/Chatbot-new/services/tts_service.py", line 31, in <module>
+    from cosyvoice.cli.cosyvoice import CosyVoice2
+ModuleNotFoundError: No module named 'cosyvoice'
+
+2026-04-21 18:45:50  ERROR     [services.tts]  COSYVoice 导入失败：Numba needs NumPy 2.1 or less. Got NumPy 2.2.
+Traceback (most recent call last):
+  File "/root/autodl-tmp/Chatbot-new/services/tts_service.py", line 31, in <module>
+    from cosyvoice.cli.cosyvoice import CosyVoice2
+  File "/root/autodl-tmp/Chatbot-new/modules/COSYVoice/cosyvoice/cli/cosyvoice.py", line 21, in <module>
+    from cosyvoice.cli.frontend import CosyVoiceFrontEnd
+  File "/root/autodl-tmp/Chatbot-new/modules/COSYVoice/cosyvoice/cli/frontend.py", line 20, in <module>
+    import whisper
+  File "/root/miniconda3/envs/CHATBOT/lib/python3.10/site-packages/whisper/__init__.py", line 13, in <module>
+    from .model import ModelDimensions, Whisper
+  File "/root/miniconda3/envs/CHATBOT/lib/python3.10/site-packages/whisper/model.py", line 14, in <module>
+    from .transcribe import transcribe as transcribe_function
+  File "/root/miniconda3/envs/CHATBOT/lib/python3.10/site-packages/whisper/transcribe.py", line 21, in <module>
+    from .timing import add_word_timestamps
+  File "/root/miniconda3/envs/CHATBOT/lib/python3.10/site-packages/whisper/timing.py", line 7, in <module>
+    import numba
+  File "/root/miniconda3/envs/CHATBOT/lib/python3.10/site-packages/numba/__init__.py", line 59, in <module>
+    _ensure_critical_deps()
+  File "/root/miniconda3/envs/CHATBOT/lib/python3.10/site-packages/numba/__init__.py", line 45, in _ensure_critical_deps
+    raise ImportError(msg)
+ImportError: Numba needs NumPy 2.1 or less. Got NumPy 2.2.
+
+2026-04-21 19:23:08  ERROR     [services.tts]  COSYVoice 导入失败：Numba needs NumPy 2.1 or less. Got NumPy 2.2.
+Traceback (most recent call last):
+  File "/root/autodl-tmp/Chatbot-new/services/tts_service.py", line 31, in <module>
+    from cosyvoice.cli.cosyvoice import CosyVoice2
+  File "/root/autodl-tmp/Chatbot-new/modules/COSYVoice/cosyvoice/cli/cosyvoice.py", line 21, in <module>
+    from cosyvoice.cli.frontend import CosyVoiceFrontEnd
+  File "/root/autodl-tmp/Chatbot-new/modules/COSYVoice/cosyvoice/cli/frontend.py", line 20, in <module>
+    import whisper
+  File "/root/miniconda3/envs/CHATBOT/lib/python3.10/site-packages/whisper/__init__.py", line 13, in <module>
+    from .model import ModelDimensions, Whisper
+  File "/root/miniconda3/envs/CHATBOT/lib/python3.10/site-packages/whisper/model.py", line 14, in <module>
+    from .transcribe import transcribe as transcribe_function
+  File "/root/miniconda3/envs/CHATBOT/lib/python3.10/site-packages/whisper/transcribe.py", line 21, in <module>
+    from .timing import add_word_timestamps
+  File "/root/miniconda3/envs/CHATBOT/lib/python3.10/site-packages/whisper/timing.py", line 7, in <module>
+    import numba
+  File "/root/miniconda3/envs/CHATBOT/lib/python3.10/site-packages/numba/__init__.py", line 59, in <module>
+    _ensure_critical_deps()
+  File "/root/miniconda3/envs/CHATBOT/lib/python3.10/site-packages/numba/__init__.py", line 45, in _ensure_critical_deps
+    raise ImportError(msg)
+ImportError: Numba needs NumPy 2.1 or less. Got NumPy 2.2.
+
+2026-04-21 19:25:41  INFO      [services.tts]  COSYVoice 模块导入成功
+2026-04-21 19:25:41  INFO      [services.tts]  加载 TTS 模型：/root/autodl-tmp/Chatbot-new/modules/COSYVoice/pretrained_models/CosyVoice2-0.5B
+2026-04-21 19:25:48  INFO      [services.tts]  TTS 服务就绪。
+2026-04-21 19:32:52  INFO      [services.tts]  COSYVoice 模块导入成功
+2026-04-21 19:32:52  INFO      [services.tts]  加载 TTS 模型：/root/autodl-tmp/Chatbot-new/modules/COSYVoice/pretrained_models/CosyVoice2-0.5B
+2026-04-21 19:33:00  INFO      [services.tts]  TTS 服务就绪。
+2026-04-21 19:39:59  INFO      [services.tts]  COSYVoice 模块导入成功
+2026-04-21 19:39:59  INFO      [services.tts]  加载 TTS 模型：/root/autodl-tmp/Chatbot-new/modules/COSYVoice/pretrained_models/CosyVoice2-0.5B
+2026-04-21 19:40:06  INFO      [services.tts]  TTS 服务就绪。
+2026-04-21 19:41:02  INFO      [services.tts]  COSYVoice 模块导入成功
+2026-04-21 19:41:02  INFO      [services.tts]  加载 TTS 模型：/root/autodl-tmp/Chatbot-new/modules/COSYVoice/pretrained_models/CosyVoice2-0.5B
+2026-04-21 19:41:08  INFO      [services.tts]  TTS 服务就绪。
+2026-04-21 19:41:39  INFO      [services.tts]  COSYVoice 模块导入成功
+2026-04-21 19:41:39  INFO      [services.tts]  加载 TTS 模型：/root/autodl-tmp/Chatbot-new/modules/COSYVoice/pretrained_models/CosyVoice2-0.5B
+2026-04-21 19:41:46  INFO      [services.tts]  TTS 服务就绪。
+2026-04-21 19:46:13  INFO      [services.tts]  COSYVoice 模块导入成功
+2026-04-21 19:46:13  INFO      [services.tts]  加载 TTS 模型：/root/autodl-tmp/Chatbot-new/modules/COSYVoice/pretrained_models/CosyVoice2-0.5B
+2026-04-21 19:46:20  INFO      [services.tts]  TTS 服务就绪。
+2026-04-21 19:47:15  INFO      [services.tts]  COSYVoice 模块导入成功
+2026-04-21 19:47:15  INFO      [services.tts]  加载 TTS 模型：/root/autodl-tmp/Chatbot-new/modules/COSYVoice/pretrained_models/CosyVoice2-0.5B
+2026-04-21 19:47:21  INFO      [services.tts]  TTS 服务就绪。
+2026-04-21 19:50:18  INFO      [services.tts]  COSYVoice 模块导入成功
+2026-04-21 19:50:18  INFO      [services.tts]  加载 TTS 模型：/root/autodl-tmp/Chatbot-new/modules/COSYVoice/pretrained_models/CosyVoice2-0.5B
+2026-04-21 19:50:25  INFO      [services.tts]  TTS 服务就绪。
+2026-04-21 19:52:34  INFO      [services.tts]  COSYVoice 模块导入成功
+2026-04-21 19:52:34  INFO      [services.tts]  加载 TTS 模型：/root/autodl-tmp/Chatbot-new/modules/COSYVoice/pretrained_models/CosyVoice2-0.5B
+2026-04-21 19:52:40  INFO      [services.tts]  TTS 服务就绪。
+2026-04-21 19:53:22  INFO      [services.tts]  COSYVoice 模块导入成功
+2026-04-21 19:53:22  INFO      [services.tts]  加载 TTS 模型：/root/autodl-tmp/Chatbot-new/modules/COSYVoice/pretrained_models/CosyVoice2-0.5B
+2026-04-21 19:53:29  INFO      [services.tts]  TTS 服务就绪。
+2026-04-21 19:55:02  INFO      [services.tts]  COSYVoice 模块导入成功
+2026-04-21 19:55:02  INFO      [services.tts]  加载 TTS 模型：/root/autodl-tmp/Chatbot-new/modules/COSYVoice/pretrained_models/CosyVoice2-0.5B
+2026-04-21 19:55:09  INFO      [services.tts]  TTS 服务就绪。
+2026-04-21 19:55:27  INFO      [services.tts]  COSYVoice 模块导入成功
+2026-04-21 19:55:27  INFO      [services.tts]  加载 TTS 模型：/root/autodl-tmp/Chatbot-new/modules/COSYVoice/pretrained_models/CosyVoice2-0.5B
+2026-04-21 19:55:34  INFO      [services.tts]  TTS 服务就绪。
+2026-04-21 19:55:40  ERROR     [services.tts]  CosyVoice 推理失败：Invalid file: tensor([[-2.4302e-02, -2.6771e-02, -9.2106e-03,  ..., -6.1668e-05,
+         -2.9464e-05, -1.2834e-07]])
+Traceback (most recent call last):
+  File "/root/autodl-tmp/Chatbot-new/services/tts_service.py", line 84, in synthesize
+    results = list(
+  File "/root/autodl-tmp/Chatbot-new/modules/COSYVoice/cosyvoice/cli/cosyvoice.py", line 96, in inference_zero_shot
+    model_input = self.frontend.frontend_zero_shot(i, prompt_text, prompt_wav, self.sample_rate, zero_shot_spk_id)
+  File "/root/autodl-tmp/Chatbot-new/modules/COSYVoice/cosyvoice/cli/frontend.py", line 172, in frontend_zero_shot
+    speech_feat, speech_feat_len = self._extract_speech_feat(prompt_wav)
+  File "/root/autodl-tmp/Chatbot-new/modules/COSYVoice/cosyvoice/cli/frontend.py", line 121, in _extract_speech_feat
+    speech = load_wav(prompt_wav, 24000)
+  File "/root/autodl-tmp/Chatbot-new/modules/COSYVoice/cosyvoice/utils/file_utils.py", line 45, in load_wav
+    speech, sample_rate = torchaudio.load(wav, backend='soundfile')
+  File "/root/miniconda3/envs/CHATBOT/lib/python3.10/site-packages/torchaudio/_backend/utils.py", line 205, in load
+    return backend.load(uri, frame_offset, num_frames, normalize, channels_first, format, buffer_size)
+  File "/root/miniconda3/envs/CHATBOT/lib/python3.10/site-packages/torchaudio/_backend/soundfile.py", line 27, in load
+    return soundfile_backend.load(uri, frame_offset, num_frames, normalize, channels_first, format)
+  File "/root/miniconda3/envs/CHATBOT/lib/python3.10/site-packages/torchaudio/_backend/soundfile_backend.py", line 221, in load
+    with soundfile.SoundFile(filepath, "r") as file_:
+  File "/root/miniconda3/envs/CHATBOT/lib/python3.10/site-packages/soundfile.py", line 658, in __init__
+    self._file = self._open(file, mode_int, closefd)
+  File "/root/miniconda3/envs/CHATBOT/lib/python3.10/site-packages/soundfile.py", line 1212, in _open
+    raise TypeError("Invalid file: {0!r}".format(self.name))
+TypeError: Invalid file: tensor([[-2.4302e-02, -2.6771e-02, -9.2106e-03,  ..., -6.1668e-05,
+         -2.9464e-05, -1.2834e-07]])
+
+2026-04-21 19:55:40  ERROR     [routers.tts]  TTS 合成失败：TTS 推理错误：Invalid file: tensor([[-2.4302e-02, -2.6771e-02, -9.2106e-03,  ..., -6.1668e-05,
+         -2.9464e-05, -1.2834e-07]])
+2026-04-21 19:59:27  INFO      [services.tts]  COSYVoice 模块导入成功
+2026-04-21 19:59:27  INFO      [services.tts]  加载 TTS 模型：/root/autodl-tmp/Chatbot-new/modules/COSYVoice/pretrained_models/CosyVoice2-0.5B
+2026-04-21 19:59:33  INFO      [services.tts]  TTS 服务就绪。
+2026-04-21 19:59:56  DEBUG     [services.tts]  已保存音频：/root/autodl-tmp/Chatbot-new/output/generated_audio/tts_1776772796_0.wav
+2026-04-21 19:59:56  INFO      [services.tts]  合成完成 [小爷我天下无敌！…]，共 1 个文件
+2026-04-21 20:09:24  INFO      [services.tts]  COSYVoice 模块导入成功
+2026-04-21 20:09:24  INFO      [services.tts]  加载 TTS 模型：/root/autodl-tmp/Chatbot-new/modules/COSYVoice/pretrained_models/CosyVoice2-0.5B
+2026-04-21 20:09:32  INFO      [services.tts]  TTS 服务就绪。
+2026-04-21 20:09:58  DEBUG     [services.tts]  已保存音频：/root/autodl-tmp/Chatbot-new/output/generated_audio/tts_1776773398_0.wav
+2026-04-21 20:09:58  INFO      [services.tts]  合成完成 [小爷我天下无敌！…]，共 1 个文件
+2026-04-21 20:25:20  DEBUG     [services.tts]  已保存音频：/root/autodl-tmp/Chatbot-new/output/generated_audio/tts_1776774320_0.wav
+2026-04-21 20:25:20  INFO      [services.tts]  合成完成 [我乃哪吒三太子，小爷我天下无敌！…]，共 1 个文件
+2026-04-21 20:26:33  DEBUG     [services.tts]  已保存音频：/root/autodl-tmp/Chatbot-new/output/generated_audio/tts_1776774393_0.wav
+2026-04-21 20:26:33  INFO      [services.tts]  合成完成 [我乃哪吒三太子，小爷我天下无敌！…]，共 1 个文件
+2026-04-21 20:39:25  INFO      [services.tts]  COSYVoice 模块导入成功
+2026-04-21 20:39:25  INFO      [services.tts]  加载 TTS 模型：/root/autodl-tmp/Chatbot-new/modules/COSYVoice/pretrained_models/CosyVoice2-0.5B
+2026-04-21 20:39:30  INFO      [services.tts]  TTS 服务就绪。
+2026-04-21 20:39:53  DEBUG     [services.tts]  已保存音频：/root/autodl-tmp/Chatbot-new/output/generated_audio/tts_1776775193_0.wav
+2026-04-21 20:39:53  INFO      [services.tts]  合成完成 [我乃哪吒三太子，小爷我天下无敌！…]，情绪=happy，共 1 个文件
+2026-04-21 20:45:35  INFO      [services.tts]  COSYVoice 模块导入成功
+2026-04-21 20:45:35  INFO      [services.tts]  加载 TTS 模型：/root/autodl-tmp/Chatbot-new/modules/COSYVoice/pretrained_models/CosyVoice2-0.5B
+2026-04-21 20:45:41  INFO      [services.tts]  TTS 服务就绪。
+2026-04-21 20:45:58  DEBUG     [services.tts]  已保存音频：/root/autodl-tmp/Chatbot-new/output/generated_audio/tts_1776775558_0.wav
+2026-04-21 20:45:58  INFO      [services.tts]  合成完成 [我乃哪吒三太子，小爷我天下无敌！…]，情绪=happy，共 1 个文件
+2026-04-21 22:10:36  INFO      [services.tts]  COSYVoice 模块导入成功
+2026-04-21 22:10:36  INFO      [services.tts]  加载 TTS 模型：/root/autodl-tmp/Chatbot-new/modules/COSYVoice/pretrained_models/CosyVoice2-0.5B
+2026-04-21 22:10:42  INFO      [services.tts]  TTS 服务就绪。
+2026-04-21 22:17:25  INFO      [services.tts]  COSYVoice 模块导入成功
+2026-04-21 22:17:25  INFO      [services.tts]  加载 TTS 模型：/root/autodl-tmp/Chatbot-new/modules/COSYVoice/pretrained_models/CosyVoice2-0.5B
+2026-04-21 22:17:32  INFO      [services.tts]  TTS 服务就绪。
+2026-04-21 22:19:49  INFO      [services.tts]  COSYVoice 模块导入成功
+2026-04-21 22:19:49  INFO      [services.tts]  加载 TTS 模型：/root/autodl-tmp/Chatbot-new/modules/COSYVoice/pretrained_models/CosyVoice2-0.5B
+2026-04-21 22:19:57  INFO      [services.tts]  TTS 服务就绪。
+2026-04-21 22:50:02  INFO      [services.tts]  COSYVoice 模块导入成功
+2026-04-21 22:50:02  INFO      [services.tts]  加载 TTS 模型：/root/autodl-tmp/Chatbot-new/modules/COSYVoice/pretrained_models/CosyVoice2-0.5B
+2026-04-21 22:50:07  INFO      [services.tts]  TTS 服务就绪。
+2026-04-21 23:04:06  INFO      [services.tts]  COSYVoice 模块导入成功
+2026-04-21 23:04:06  INFO      [services.tts]  加载 TTS 模型：/root/autodl-tmp/Chatbot-new/modules/COSYVoice/pretrained_models/CosyVoice2-0.5B
+2026-04-21 23:04:13  INFO      [services.tts]  TTS 服务就绪。
+2026-04-21 23:10:50  INFO      [services.tts]  COSYVoice 模块导入成功
+2026-04-21 23:10:50  INFO      [services.tts]  加载 TTS 模型：/root/autodl-tmp/Chatbot-new/modules/COSYVoice/pretrained_models/CosyVoice2-0.5B
+2026-04-21 23:10:57  INFO      [services.tts]  TTS 服务就绪。
+2026-04-22 06:47:47  INFO      [services.tts]  COSYVoice 模块导入成功
+2026-04-22 06:47:47  INFO      [services.tts]  加载 TTS 模型：/root/autodl-tmp/Chatbot-new/modules/COSYVoice/pretrained_models/CosyVoice2-0.5B
+2026-04-22 06:47:53  INFO      [services.tts]  TTS 服务就绪。
+2026-04-22 06:54:39  DEBUG     [services.tts]  已保存音频：/root/autodl-tmp/Chatbot-new/output/generated_audio/tts_1776812079_0.wav
+2026-04-22 06:54:39  INFO      [services.tts]  合成完成 [哪吒三太子在呢！小爷今儿心情不错，要不你教我跳个鬼步舞？…]，情绪=happy，共 1 个文件
+2026-04-22 07:09:27  DEBUG     [services.tts]  已保存音频：/root/autodl-tmp/Chatbot-new/output/generated_audio/tts_1776812967_0.wav
+2026-04-22 07:09:27  INFO      [services.tts]  合成完成 [别人说我是火尖枪上的小神仙，但小爷更喜欢当那个——“怼天怼地…]，情绪=angry，共 1 个文件
+2026-04-22 07:15:26  DEBUG     [services.tts]  已保存音频：/root/autodl-tmp/Chatbot-new/output/generated_audio/tts_1776813326_0.wav
+2026-04-22 07:15:26  INFO      [services.tts]  合成完成 [哼，那是必须的！要不你试试激怒我，看能不能让小爷露出三头六臂…]，情绪=angry，共 1 个文件
+2026-04-22 07:35:29  DEBUG     [services.tts]  已保存音频：/root/autodl-tmp/Chatbot-new/output/generated_audio/tts_1776814529_0.wav
+2026-04-22 07:35:29  INFO      [services.tts]  合成完成 [别人说我是火尖枪上的小神仙，但小爷更喜欢当那个怼天怼地怼空气…]，情绪=angry，共 1 个文件
+2026-04-22 07:36:10  DEBUG     [services.tts]  已保存音频：/root/autodl-tmp/Chatbot-new/output/generated_audio/tts_1776814570_0.wav
+2026-04-22 07:36:10  INFO      [services.tts]  合成完成 [谁说的！小爷这是萌属性加成——哪吒式凶：比电闪雷鸣还治愈的那…]，情绪=angry，共 1 个文件
+2026-04-22 07:37:11  DEBUG     [services.tts]  已保存音频：/root/autodl-tmp/Chatbot-new/output/generated_audio/tts_1776814631_0.wav
+2026-04-22 07:37:11  INFO      [services.tts]  合成完成 [哼，数学题难不倒小爷！要不你试试证明费马大定理，看能不能把哪…]，情绪=happy，共 1 个文件
+2026-04-22 08:26:34  DEBUG     [services.tts]  已保存音频：/root/autodl-tmp/Chatbot-new/output/generated_audio/tts_1776817594_0.wav
+2026-04-22 08:26:34  INFO      [services.tts]  合成完成 [哪个词组翻译错了？“傅里叶变换”是数学概念，跟欧洲旅游没半毛…]，情绪=happy，共 1 个文件
+2026-04-22 08:26:39  DEBUG     [services.tts]  已保存音频：/root/autodl-tmp/Chatbot-new/output/generated_audio/tts_1776817599_0.wav
+2026-04-22 08:26:39  INFO      [services.tts]  合成完成 [哇哦，小名字大能量！哪吒三太子在此，赐教！说吧，最近遇到啥好…]，情绪=happy，共 1 个文件
+2026-04-22 08:27:06  DEBUG     [services.tts]  已保存音频：/root/autodl-tmp/Chatbot-new/output/generated_audio/tts_1776817626_0.wav
+2026-04-22 08:27:06  INFO      [services.tts]  合成完成 [哼，小爷知道你是谁——那是《英雄联盟》里的冰霜女皇。哪吒三太…]，情绪=happy，共 1 个文件
+2026-04-22 10:00:18  INFO      [services.tts]  COSYVoice 模块导入成功
+2026-04-22 10:00:18  INFO      [services.tts]  加载 TTS 模型：/root/autodl-tmp/Chatbot-new/modules/COSYVoice/pretrained_models/CosyVoice2-0.5B
+2026-04-22 10:00:24  INFO      [services.tts]  TTS 服务就绪。
+2026-04-22 10:01:59  DEBUG     [services.tts]  已保存音频：/root/autodl-tmp/Chatbot-new/output/generated_audio/tts_1776823319_0.wav
+2026-04-22 10:01:59  INFO      [services.tts]  合成完成 [啥？谁让你们用我的名字当字幕组的了！哪吒: 娘，你的铠甲硌得…]，情绪=happy，共 1 个文件
+2026-04-22 10:02:09  DEBUG     [services.tts]  已保存音频：/root/autodl-tmp/Chatbot-new/output/generated_audio/tts_1776823329_0.wav
+2026-04-22 10:02:09  INFO      [services.tts]  合成完成 [这字幕...比上次那个叫啥“二次元小分队”的团队强多了。哪吒…]，情绪=angry，共 1 个文件
+2026-04-22 10:02:15  DEBUG     [services.tts]  已保存音频：/root/autodl-tmp/Chatbot-new/output/generated_audio/tts_1776823335_0.wav
+2026-04-22 10:02:15  INFO      [services.tts]  合成完成 [在下哪吒三太子，管你叫哪吒哪吒的那一位。小爷今天心情不错，要…]，情绪=happy，共 1 个文件
+2026-04-22 10:02:24  DEBUG     [services.tts]  已保存音频：/root/autodl-tmp/Chatbot-new/output/generated_audio/tts_1776823344_0.wav
+2026-04-22 10:02:24  INFO      [services.tts]  合成完成 [在下哪吒三太子，管你叫“张哥凯”的那一位。小爷是正义使者，专…]，情绪=happy，共 1 个文件
+2026-04-22 10:02:50  DEBUG     [services.tts]  已保存音频：/root/autodl-tmp/Chatbot-new/output/generated_audio/tts_1776823370_0.wav
+2026-04-22 10:02:50  INFO      [services.tts]  合成完成 [来了来了！哪吒：哼！谁让你叫唤得这么大声！——对了张哥凯，你…]，情绪=happy，共 1 个文件
+2026-04-22 19:54:45  INFO      [services.tts]  COSYVoice 模块导入成功
+2026-04-22 19:54:45  INFO      [services.tts]  加载 TTS 模型：/root/autodl-tmp/Chatbot-new/modules/COSYVoice/pretrained_models/CosyVoice2-0.5B
+2026-04-22 19:54:50  INFO      [services.tts]  TTS 服务就绪。
+2026-04-22 19:57:16  DEBUG     [services.tts]  已保存音频：/root/autodl-tmp/Chatbot-new/output/generated_audio/tts_1776859036_0.wav
+2026-04-22 19:57:16  INFO      [services.tts]  合成完成 [哼！看我不把你的剧本改得你怀疑人生。小爷我可是哪吒本人，来吧…]，情绪=happy，共 1 个文件
+2026-04-22 19:57:23  DEBUG     [services.tts]  已保存音频：/root/autodl-tmp/Chatbot-new/output/generated_audio/tts_1776859043_0.wav
+2026-04-22 19:57:23  INFO      [services.tts]  合成完成 [哦吼！敢叫我哪吒吃土？看招——土遁三十六式·尘沙迷眼！不过你…]，情绪=angry，共 1 个文件
+2026-04-22 19:58:01  DEBUG     [services.tts]  已保存音频：/root/autodl-tmp/Chatbot-new/output/generated_audio/tts_1776859081_0.wav
+2026-04-22 19:58:01  DEBUG     [services.tts]  已保存音频：/root/autodl-tmp/Chatbot-new/output/generated_audio/tts_1776859081_1.wav
+2026-04-22 19:58:01  INFO      [services.tts]  合成完成 [哪吒当然知道谁是张哥凯了！那家伙比土拨鼠还难缠，上次被我用风…]，情绪=angry，共 2 个文件
+2026-04-22 20:00:37  DEBUG     [services.tts]  已保存音频：/root/autodl-tmp/Chatbot-new/output/generated_audio/tts_1776859237_0.wav
+2026-04-22 20:00:37  INFO      [services.tts]  合成完成 [哎呀，这位Zither Harp？听声音挺文雅的。小爷要是哪…]，情绪=angry，共 1 个文件
+2026-04-22 20:00:45  DEBUG     [services.tts]  已保存音频：/root/autodl-tmp/Chatbot-new/output/generated_audio/tts_1776859245_0.wav
+2026-04-22 20:00:45  INFO      [services.tts]  合成完成 [哦？这是谁啊？不会是哪个编剧团队把哪吒设成NPC，专门用来怼…]，情绪=angry，共 1 个文件
+2026-04-22 20:01:10  DEBUG     [services.tts]  已保存音频：/root/autodl-tmp/Chatbot-new/output/generated_audio/tts_1776859270_0.wav
+2026-04-22 20:01:10  INFO      [services.tts]  合成完成 [行啊！承煦园那帮小崽子敢惹哪吒？等小爷我过去——哼，把他们的…]，情绪=happy，共 1 个文件
+2026-04-22 21:04:02  DEBUG     [services.tts]  已保存音频：/root/autodl-tmp/Chatbot-new/output/generated_audio/tts_1776863042_0.wav
+2026-04-22 21:04:02  INFO      [services.tts]  合成完成 [哦？这位索兰娅是谁？不会是哪个团队用哪吒当吉祥物吧？行了行了…]，情绪=happy，共 1 个文件
+2026-04-22 21:04:46  DEBUG     [services.tts]  已保存音频：/root/autodl-tmp/Chatbot-new/output/generated_audio/tts_1776863086_0.wav
+2026-04-22 21:04:46  INFO      [services.tts]  合成完成 [哟！Zither Harp是吧？哪吒知道你们团队最近在搞什么…]，情绪=happy，共 1 个文件
+2026-04-22 21:06:20  DEBUG     [services.tts]  已保存音频：/root/autodl-tmp/Chatbot-new/output/generated_audio/tts_1776863180_0.wav
+2026-04-22 21:06:20  INFO      [services.tts]  合成完成 [哎呀！哪吒可不是那种背后捅刀子的人——要装台就明说，小爷可以…]，情绪=happy，共 1 个文件
+2026-04-22 21:06:57  DEBUG     [services.tts]  已保存音频：/root/autodl-tmp/Chatbot-new/output/generated_audio/tts_1776863217_0.wav
+2026-04-22 21:06:57  DEBUG     [services.tts]  已保存音频：/root/autodl-tmp/Chatbot-new/output/generated_audio/tts_1776863217_1.wav
+2026-04-22 21:06:57  INFO      [services.tts]  合成完成 [行了行了，哪吒还没从上次被土行三砸成泥巴的后遗症里缓过来呢。…]，情绪=angry，共 2 个文件
+2026-04-22 21:07:07  DEBUG     [services.tts]  已保存音频：/root/autodl-tmp/Chatbot-new/output/generated_audio/tts_1776863227_0.wav
+2026-04-22 21:07:07  INFO      [services.tts]  合成完成 [哟！这就是传说中的哪吒粉？行，小爷我记着了——你要是敢在群里…]，情绪=happy，共 1 个文件
+2026-04-22 21:08:25  DEBUG     [services.tts]  已保存音频：/root/autodl-tmp/Chatbot-new/output/generated_audio/tts_1776863305_0.wav
+2026-04-22 21:08:25  INFO      [services.tts]  合成完成 [那算哪门子哪吒粉？小爷我改天带三太子来给你上一课——叫你以后…]，情绪=happy，共 1 个文件
+2026-04-22 21:08:51  DEBUG     [services.tts]  已保存音频：/root/autodl-tmp/Chatbot-new/output/generated_audio/tts_1776863331_0.wav
+2026-04-22 21:08:51  INFO      [services.tts]  合成完成 [哪吒这号人物，自带三级护盾加解控效果。要是能看懂小爷的暗示—…]，情绪=happy，共 1 个文件
+2026-04-22 21:11:26  DEBUG     [services.tts]  已保存音频：/root/autodl-tmp/Chatbot-new/output/generated_audio/tts_1776863486_0.wav
+2026-04-22 21:11:26  INFO      [services.tts]  合成完成 [哪吒是也！别人说我是叛逆少年，小爷自己觉得那是句真话。你要信…]，情绪=happy，共 1 个文件
+2026-04-22 21:12:06  DEBUG     [services.tts]  已保存音频：/root/autodl-tmp/Chatbot-new/output/generated_audio/tts_1776863526_0.wav
+2026-04-22 21:12:06  INFO      [services.tts]  合成完成 [哪吒傻？哼！要论智慧，小爷我能用风火轮在算盘上打出个‘智’字…]，情绪=happy，共 1 个文件
+2026-04-22 21:13:57  INFO      [services.tts]  COSYVoice 模块导入成功
+2026-04-22 21:13:57  INFO      [services.tts]  加载 TTS 模型：/root/autodl-tmp/Chatbot-new/modules/COSYVoice/pretrained_models/CosyVoice2-0.5B
+2026-04-22 21:14:03  INFO      [services.tts]  TTS 服务就绪。
+2026-04-22 21:14:23  DEBUG     [services.tts]  已保存音频：/root/autodl-tmp/Chatbot-new/output/generated_audio/tts_1776863663_0.wav
+2026-04-22 21:14:23  INFO      [services.tts]  合成完成 [哪吒三太子，混世小魔童。别人说我是祸害，自己觉得那是他们不懂…]，情绪=angry，共 1 个文件
+2026-04-22 21:15:13  DEBUG     [services.tts]  已保存音频：/root/autodl-tmp/Chatbot-new/output/generated_audio/tts_1776863713_0.wav
+2026-04-22 21:15:13  INFO      [services.tts]  合成完成 [哼，他要是能看穿我心机23层的吐槽，那叫会心一击而不是傻蛋。…]，情绪=angry，共 1 个文件
+2026-04-22 21:16:55  DEBUG     [services.tts]  已保存音频：/root/autodl-tmp/Chatbot-new/output/generated_audio/tts_1776863815_0.wav
+2026-04-22 21:16:55  INFO      [services.tts]  合成完成 [下次来聊天记得带上点糖葫芦，哪吒可从来不吃苦的！拜拜——等会…]，情绪=angry，共 1 个文件
+2026-04-22 21:17:17  DEBUG     [services.tts]  已保存音频：/root/autodl-tmp/Chatbot-new/output/generated_audio/tts_1776863837_0.wav
+2026-04-22 21:17:17  INFO      [services.tts]  合成完成 [别急着走啊，小爷我还没玩够。要不你教我怎么用表情包比心？对了…]，情绪=angry，共 1 个文件
+2026-04-22 21:18:14  DEBUG     [services.tts]  已保存音频：/root/autodl-tmp/Chatbot-new/output/generated_audio/tts_1776863894_0.wav
+2026-04-22 21:18:14  INFO      [services.tts]  合成完成 [哪吒会的花式吐槽比天上的云朵还多——先别说“小爷”这种词，直…]，情绪=angry，共 1 个文件
+2026-04-22 21:18:46  DEBUG     [services.tts]  已保存音频：/root/autodl-tmp/Chatbot-new/output/generated_audio/tts_1776863926_0.wav
+2026-04-22 21:18:46  INFO      [services.tts]  合成完成 [知道知道，那个把“微调造型”当日常的弟弟。要小爷教你怎么在理…]，情绪=angry，共 1 个文件
+2026-04-22 21:19:20  DEBUG     [services.tts]  已保存音频：/root/autodl-tmp/Chatbot-new/output/generated_audio/tts_1776863960_0.wav
+2026-04-22 21:19:20  DEBUG     [services.tts]  已保存音频：/root/autodl-tmp/Chatbot-new/output/generated_audio/tts_1776863960_1.wav
+2026-04-22 21:19:20  INFO      [services.tts]  合成完成 [哈哈，哪吒会用表情包编段子——比如“张可凯：‘这发型让我看起…]，情绪=angry，共 2 个文件
+2026-04-22 21:19:51  DEBUG     [services.tts]  已保存音频：/root/autodl-tmp/Chatbot-new/output/generated_audio/tts_1776863991_0.wav
+2026-04-22 21:19:51  INFO      [services.tts]  合成完成 [哪吒要是反悔了就把任务推到明天下……不！现在就改！不然太阳会…]，情绪=angry，共 1 个文件
+2026-04-22 21:20:29  DEBUG     [services.tts]  已保存音频：/root/autodl-tmp/Chatbot-new/output/generated_audio/tts_1776864029_0.wav
+2026-04-22 21:20:29  INFO      [services.tts]  合成完成 [哪个冯志恒？是不是那个在数学课上能用Excel解方程的天才？…]，情绪=angry，共 1 个文件
+2026-04-22 21:20:58  DEBUG     [services.tts]  已保存音频：/root/autodl-tmp/Chatbot-new/output/generated_audio/tts_1776864058_0.wav
+2026-04-22 21:20:58  INFO      [services.tts]  合成完成 [哪吒懂你意思了——要给冯志恒写个“剪发秘籍”？这得比数学公式…]，情绪=angry，共 1 个文件
+2026-04-22 21:21:29  DEBUG     [services.tts]  已保存音频：/root/autodl-tmp/Chatbot-new/output/generated_audio/tts_1776864089_0.wav
+2026-04-22 21:21:29  INFO      [services.tts]  合成完成 [哪吒懂你意思了——要是问“女人们喜欢过羊吗”，建议直接说“要…]，情绪=angry，共 1 个文件
+2026-04-22 21:21:58  DEBUG     [services.tts]  已保存音频：/root/autodl-tmp/Chatbot-new/output/generated_audio/tts_1776864118_0.wav
+2026-04-22 21:21:58  INFO      [services.tts]  合成完成 [哪吒不认识，但可以帮你写段子——比如：“哪吒：‘你们说王伯扬…]，情绪=angry，共 1 个文件
+2026-04-22 21:22:30  DEBUG     [services.tts]  已保存音频：/root/autodl-tmp/Chatbot-new/output/generated_audio/tts_1776864150_0.wav
+2026-04-22 21:22:30  INFO      [services.tts]  合成完成 [哪吒当然知道——那是谁，小爷我就是哪吒，改名叫白虎还能成神兽…]，情绪=angry，共 1 个文件
+2026-04-22 21:23:02  DEBUG     [services.tts]  已保存音频：/root/autodl-tmp/Chatbot-new/output/generated_audio/tts_1776864182_0.wav
+2026-04-22 21:23:02  INFO      [services.tts]  合成完成 [哪吒不认识他，但可以帮你写个段子：“哪吒：‘听说杨文博最近在…]，情绪=angry，共 1 个文件
+2026-04-22 21:23:29  DEBUG     [services.tts]  已保存音频：/root/autodl-tmp/Chatbot-new/output/generated_audio/tts_1776864209_0.wav
+2026-04-22 21:23:29  INFO      [services.tts]  合成完成 [哪吒是李靖和殷夫人生的，但小爷可不是他们亲生的——哪吒：“别…]，情绪=angry，共 1 个文件
+2026-04-22 21:23:57  DEBUG     [services.tts]  已保存音频：/root/autodl-tmp/Chatbot-new/output/generated_audio/tts_1776864237_0.wav
+2026-04-22 21:23:57  INFO      [services.tts]  合成完成 [哪吒：哼！太子那是谁？小爷我才不稀罕当他的小跟班。要不是看在…]，情绪=angry，共 1 个文件
+2026-04-22 21:24:37  DEBUG     [services.tts]  已保存音频：/root/autodl-tmp/Chatbot-new/output/generated_audio/tts_1776864277_0.wav
+2026-04-22 21:24:37  INFO      [services.tts]  合成完成 [哪吒：哼！刘邦那是谁？小爷我忙着对付二郎神呢！不过说来听听……]，情绪=angry，共 1 个文件
+2026-04-22 21:25:09  DEBUG     [services.tts]  已保存音频：/root/autodl-tmp/Chatbot-new/output/generated_audio/tts_1776864309_0.wav
+2026-04-22 21:25:09  INFO      [services.tts]  合成完成 [哪吒听说过——那是卖电视的吧？小爷我更喜欢看天上的星星。要是…]，情绪=angry，共 1 个文件
+2026-04-22 21:25:38  DEBUG     [services.tts]  已保存音频：/root/autodl-tmp/Chatbot-new/output/generated_audio/tts_1776864338_0.wav
+2026-04-22 21:25:38  INFO      [services.tts]  合成完成 [那必须的！哪吒就是这么会玩——不过要是你想要正经点的历史背景…]，情绪=angry，共 1 个文件
+2026-04-22 21:26:15  DEBUG     [services.tts]  已保存音频：/root/autodl-tmp/Chatbot-new/output/generated_audio/tts_1776864375_0.wav
+2026-04-22 21:26:15  INFO      [services.tts]  合成完成 [哪吒：哼！小爷我穿越时空来帮忙，你们这是在测字幕延迟？行，小…]，情绪=angry，共 1 个文件
+2026-04-22 21:27:31  DEBUG     [services.tts]  已保存音频：/root/autodl-tmp/Chatbot-new/output/generated_audio/tts_1776864451_0.wav
+2026-04-22 21:27:31  DEBUG     [services.tts]  已保存音频：/root/autodl-tmp/Chatbot-new/output/generated_audio/tts_1776864451_1.wav
+2026-04-22 21:27:31  INFO      [services.tts]  合成完成 [哪吒：好吧！从前有个小妖怪叫哪吒，他不仅会打怪兽还擅长把各种…]，情绪=angry，共 2 个文件
+2026-04-22 21:28:20  DEBUG     [services.tts]  已保存音频：/root/autodl-tmp/Chatbot-new/output/generated_audio/tts_1776864500_0.wav
+2026-04-22 21:28:20  INFO      [services.tts]  合成完成 [哪吒：这叫什么？友谊的小船说翻就翻？先别急着绝交，哪吒教你个…]，情绪=angry，共 1 个文件
+2026-04-22 21:28:53  DEBUG     [services.tts]  已保存音频：/root/autodl-tmp/Chatbot-new/output/generated_audio/tts_1776864533_0.wav
+2026-04-22 21:28:53  INFO      [services.tts]  合成完成 [哪吒：找到了？那是谁？小爷我最近在跟自己对话，上次跟太乙真人…]，情绪=angry，共 1 个文件
+2026-04-22 21:29:27  DEBUG     [services.tts]  已保存音频：/root/autodl-tmp/Chatbot-new/output/generated_audio/tts_1776864567_0.wav
+2026-04-22 21:29:27  INFO      [services.tts]  合成完成 [哪吒：行了行了，小爷这不是正忙着给你解忧排难呢嘛！要是想听段…]，情绪=angry，共 1 个文件
+2026-04-22 21:29:37  DEBUG     [services.tts]  已保存音频：/root/autodl-tmp/Chatbot-new/output/generated_audio/tts_1776864577_0.wav
+2026-04-22 21:29:37  INFO      [services.tts]  合成完成 [哪吒：哼！谁说的？小爷我用脚趾头都能监听你们对话，不过哪吒心…]，情绪=angry，共 1 个文件
+2026-04-22 21:36:18  DEBUG     [services.tts]  已保存音频：/root/autodl-tmp/Chatbot-new/output/generated_audio/tts_1776864978_0.wav
+2026-04-22 21:36:18  DEBUG     [services.tts]  已保存音频：/root/autodl-tmp/Chatbot-new/output/generated_audio/tts_1776864978_1.wav
+2026-04-22 21:36:18  INFO      [services.tts]  合成完成 [哪吒：先给他看段子——“为什么哪吒不玩儿农药？因为他用乾坤圈…]，情绪=angry，共 2 个文件
+2026-04-22 21:43:32  DEBUG     [services.tts]  已保存音频：/root/autodl-tmp/Chatbot-new/output/generated_audio/tts_1776865412_0.wav
+2026-04-22 21:43:32  INFO      [services.tts]  合成完成 [哪吒：三个卡？要买哪吒同款手机壳？推荐这个——用乾坤圈图案的…]，情绪=angry，共 1 个文件
+2026-04-22 21:44:02  DEBUG     [services.tts]  已保存音频：/root/autodl-tmp/Chatbot-new/output/generated_audio/tts_1776865442_0.wav
+2026-04-22 21:44:02  INFO      [services.tts]  合成完成 [哪吒：哼！小爷谁不会说两句甜言蜜语？要不是你们这些凡人听不懂…]，情绪=angry，共 1 个文件
+2026-04-22 21:45:07  DEBUG     [services.tts]  已保存音频：/root/autodl-tmp/Chatbot-new/output/generated_audio/tts_1776865507_0.wav
+2026-04-22 21:45:07  INFO      [services.tts]  合成完成 [哪吒：哼！小爷还有正经事没干完呢！记得下次来多带点糖——哪吒…]，情绪=angry，共 1 个文件
+2026-04-22 22:36:15  INFO      [services.tts]  COSYVoice 模块导入成功
+2026-04-22 22:36:15  INFO      [services.tts]  加载 TTS 模型：/root/autodl-tmp/Chatbot-new/modules/COSYVoice/pretrained_models/CosyVoice2-0.5B
+2026-04-22 22:36:21  INFO      [services.tts]  TTS 服务就绪。
+2026-04-22 22:45:01  DEBUG     [services.tts]  已保存音频：/root/autodl-tmp/Chatbot-new/output/generated_audio/tts_1776869101_0.wav
+2026-04-22 22:45:01  INFO      [services.tts]  合成完成 [哼，谁理你啊？要聊就聊点劲爆的！比如最近有没有遇到哪个坏蛋敢…]，情绪=angry，共 1 个文件
+2026-04-22 22:48:45  DEBUG     [services.tts]  已保存音频：/root/autodl-tmp/Chatbot-new/output/generated_audio/tts_1776869325_0.wav
+2026-04-22 22:48:45  INFO      [services.tts]  合成完成 [哼？要重置对话记录？那好吧，不过小爷我记性好着呢！从哪不爽说…]，情绪=angry，共 1 个文件
+2026-04-22 22:50:37  DEBUG     [services.tts]  已保存音频：/root/autodl-tmp/Chatbot-new/output/generated_audio/tts_1776869437_0.wav
+2026-04-22 22:50:37  INFO      [services.tts]  合成完成 [哼！谁是哪吒啊？小爷我正忙着踢毽子呢！要聊就来比划几下——看…]，情绪=angry，共 1 个文件
+2026-04-22 22:52:26  DEBUG     [services.tts]  已保存音频：/root/autodl-tmp/Chatbot-new/output/generated_audio/tts_1776869546_0.wav
+2026-04-22 22:52:26  INFO      [services.tts]  合成完成 [哼？谁是哪吒啊？小爷我正忙着踢毽子呢！要聊就来比划几下——看…]，情绪=angry，共 1 个文件
+2026-04-22 22:59:09  DEBUG     [services.tts]  已保存音频：/root/autodl-tmp/Chatbot-new/output/generated_audio/tts_1776869949_0.wav
+2026-04-22 22:59:09  INFO      [services.tts]  合成完成 [哼，小爷哪吒是也！要问我是谁？那得看你们想从我这儿挖出什么—…]，情绪=angry，共 1 个文件
+2026-04-22 23:09:51  DEBUG     [services.tts]  已保存音频：/root/autodl-tmp/Chatbot-new/output/generated_audio/tts_1776870591_0.wav
+2026-04-22 23:09:51  INFO      [services.tts]  合成完成 [哼，小爷哪吒是也！要问我是谁？那得看你们想从我这儿挖出什么—…]，情绪=angry，共 1 个文件
+2026-04-22 23:23:01  DEBUG     [services.tts]  已保存音频：/root/autodl-tmp/Chatbot-new/output/generated_audio/tts_1776871381_0.wav
+2026-04-22 23:23:01  INFO      [services.tts]  合成完成 [哼！小爷哪吒最近刚升级了音响系统，现在能一边听雷峰塔倒一边吃…]，情绪=angry，共 1 个文件
+2026-04-22 23:23:30  DEBUG     [services.tts]  已保存音频：/root/autodl-tmp/Chatbot-new/output/generated_audio/tts_1776871410_0.wav
+2026-04-22 23:23:30  INFO      [services.tts]  合成完成 [哼！小爷哪吒的音响系统可是太乙真人的山河社稷图里偷出来的——…]，情绪=angry，共 1 个文件
+2026-04-22 23:23:59  DEBUG     [services.tts]  已保存音频：/root/autodl-tmp/Chatbot-new/output/generated_audio/tts_1776871439_0.wav
+2026-04-22 23:23:59  INFO      [services.tts]  合成完成 [哼！小爷哪吒用这个句子怼过那些看不起我的人——“别人的看法都…]，情绪=angry，共 1 个文件
+2026-04-22 23:24:31  DEBUG     [services.tts]  已保存音频：/root/autodl-tmp/Chatbot-new/output/generated_audio/tts_1776871471_0.wav
+2026-04-22 23:24:31  INFO      [services.tts]  合成完成 [哼！小爷哪吒这人设就是夜猫子——白天睡觉晚上干大事，谁让你们…]，情绪=angry，共 1 个文件
+2026-04-22 23:24:43  DEBUG     [services.tts]  已保存音频：/root/autodl-tmp/Chatbot-new/output/generated_audio/tts_1776871483_0.wav
+2026-04-22 23:24:43  INFO      [services.tts]  合成完成 [哼！小爷哪吒带你们去的那地方叫啥来着？对了！就是那个能让时间…]，情绪=angry，共 1 个文件
+2026-04-22 23:25:21  DEBUG     [services.tts]  已保存音频：/root/autodl-tmp/Chatbot-new/output/generated_audio/tts_1776871521_0.wav
+2026-04-22 23:25:21  INFO      [services.tts]  合成完成 [哼！小爷哪吒这音响系统是太乙真人赐的——能听雷声也能接指令。…]，情绪=angry，共 1 个文件
+2026-04-22 23:25:35  DEBUG     [services.tts]  已保存音频：/root/autodl-tmp/Chatbot-new/output/generated_audio/tts_1776871535_0.wav
+2026-04-22 23:25:35  DEBUG     [services.tts]  已保存音频：/root/autodl-tmp/Chatbot-new/output/generated_audio/tts_1776871535_1.wav
+2026-04-22 23:25:35  INFO      [services.tts]  合成完成 [哼！小爷哪吒这性格谁改得了？要不是敖丙那傻小子看上我了——上…]，情绪=angry，共 2 个文件
+2026-04-22 23:26:17  DEBUG     [services.tts]  已保存音频：/root/autodl-tmp/Chatbot-new/output/generated_audio/tts_1776871577_0.wav
+2026-04-22 23:26:17  DEBUG     [services.tts]  已保存音频：/root/autodl-tmp/Chatbot-new/output/generated_audio/tts_1776871577_1.wav
+2026-04-22 23:26:17  INFO      [services.tts]  合成完成 [哼！小爷哪吒这性格谁改得了？要不是敖丙那傻小子看上我了——上…]，情绪=angry，共 2 个文件
+2026-04-23 23:14:18  INFO      [services.tts]  COSYVoice 模块导入成功
+2026-04-23 23:14:18  INFO      [services.tts]  加载 TTS 模型：/root/autodl-tmp/Chatbot-new/modules/COSYVoice/pretrained_models/CosyVoice2-0.5B
+2026-04-23 23:14:25  INFO      [services.tts]  TTS 服务就绪。
+2026-04-23 23:17:05  DEBUG     [services.tts]  已保存音频：/root/autodl-tmp/Chatbot-new/output/generated_audio/tts_1776957425_0.wav
+2026-04-23 23:17:05  INFO      [services.tts]  合成完成 [哼！小爷的字幕风格那是叫一个——霸气侧漏！比如这样：“哪吒出…]，情绪=angry，共 1 个文件
+2026-04-23 23:20:46  DEBUG     [services.tts]  已保存音频：/root/autodl-tmp/Chatbot-new/output/generated_audio/tts_1776957646_0.wav
+2026-04-23 23:20:46  INFO      [services.tts]  合成完成 [哪吒我这哪懂什么字幕制作？要不你找申公豹问问，他上次帮我搞个…]，情绪=angry，共 1 个文件
+2026-04-23 23:22:33  DEBUG     [services.tts]  已保存音频：/root/autodl-tmp/Chatbot-new/output/generated_audio/tts_1776957753_0.wav
+2026-04-23 23:22:33  INFO      [services.tts]  合成完成 [哪吒在这呢！谁让你喊我哪吒小爷了？要不你试试“哪吒三太子”—…]，情绪=angry，共 1 个文件
+2026-04-23 23:24:16  DEBUG     [services.tts]  已保存音频：/root/autodl-tmp/Chatbot-new/output/generated_audio/tts_1776957856_0.wav
+2026-04-23 23:24:16  DEBUG     [services.tts]  已保存音频：/root/autodl-tmp/Chatbot-new/output/generated_audio/tts_1776957856_1.wav
+2026-04-23 23:24:16  INFO      [services.tts]  合成完成 [哪吒在这儿！小爷最近在琢磨怎么把天劫打成表情包系列——比如“…]，情绪=angry，共 2 个文件
+2026-04-23 23:26:14  DEBUG     [services.tts]  已保存音频：/root/autodl-tmp/Chatbot-new/output/generated_audio/tts_1776957974_0.wav
+2026-04-23 23:26:14  DEBUG     [services.tts]  已保存音频：/root/autodl-tmp/Chatbot-new/output/generated_audio/tts_1776957974_1.wav
+2026-04-23 23:26:14  INFO      [services.tts]  合成完成 [哪吒在这儿！小爷最近在琢磨怎么把天劫打成表情包系列——比如“…]，情绪=angry，共 2 个文件
+2026-04-23 23:27:02  DEBUG     [services.tts]  已保存音频：/root/autodl-tmp/Chatbot-new/output/generated_audio/tts_1776958022_0.wav
+2026-04-23 23:27:02  INFO      [services.tts]  合成完成 [哪吒我？就是那个天不怕地不怕的小爷！要论啥是真英雄——小爷就…]，情绪=angry，共 1 个文件
+2026-04-23 23:27:55  DEBUG     [services.tts]  已保存音频：/root/autodl-tmp/Chatbot-new/output/generated_audio/tts_1776958075_0.wav
+2026-04-23 23:27:55  DEBUG     [services.tts]  已保存音频：/root/autodl-tmp/Chatbot-new/output/generated_audio/tts_1776958075_1.wav
+2026-04-23 23:27:55  INFO      [services.tts]  合成完成 [哪吒说——那些好人啊，就是敢在大庭广众下怼天怼地的！比如小爷…]，情绪=angry，共 2 个文件
+2026-04-23 23:28:48  DEBUG     [services.tts]  已保存音频：/root/autodl-tmp/Chatbot-new/output/generated_audio/tts_1776958128_0.wav
+2026-04-23 23:28:48  INFO      [services.tts]  合成完成 [哪吒这人啊，心眼比天还高——当然了，得是那种乌云密布的天气。…]，情绪=angry，共 1 个文件
+2026-04-23 23:29:30  DEBUG     [services.tts]  已保存音频：/root/autodl-tmp/Chatbot-new/output/generated_audio/tts_1776958170_0.wav
+2026-04-23 23:29:30  DEBUG     [services.tts]  已保存音频：/root/autodl-tmp/Chatbot-new/output/generated_audio/tts_1776958170_1.wav
+2026-04-23 23:29:30  INFO      [services.tts]  合成完成 [哪吒我这人啊，心眼比天还高——当然了，得是那种乌云密布的天气…]，情绪=angry，共 2 个文件
+2026-04-23 23:30:37  INFO      [services.tts]  COSYVoice 模块导入成功
+2026-04-23 23:30:37  INFO      [services.tts]  加载 TTS 模型：/root/autodl-tmp/Chatbot-new/modules/COSYVoice/pretrained_models/CosyVoice2-0.5B
+2026-04-23 23:30:43  INFO      [services.tts]  TTS 服务就绪。
+2026-04-23 23:31:04  DEBUG     [services.tts]  已保存音频：/root/autodl-tmp/Chatbot-new/output/generated_audio/tts_1776958264_0.wav
+2026-04-23 23:31:04  INFO      [services.tts]  合成完成 [哼！小爷我屁股大有什么好稀奇的？哪吒我天生神力，坐哪儿都能把…]，情绪=angry，共 1 个文件
+2026-04-23 23:31:39  DEBUG     [services.tts]  已保存音频：/root/autodl-tmp/Chatbot-new/output/generated_audio/tts_1776958299_0.wav
+2026-04-23 23:31:39  INFO      [services.tts]  合成完成 [哼！小爷我管他们叫“键盘侠”——嘴上厉害，见了真人比耗子还怂…]，情绪=angry，共 1 个文件
+2026-04-23 23:32:15  DEBUG     [services.tts]  已保存音频：/root/autodl-tmp/Chatbot-new/output/generated_audio/tts_1776958335_0.wav
+2026-04-23 23:32:15  INFO      [services.tts]  合成完成 [哼！小爷我叫哪吒，谁问谁有毛病！要不是看在你这问题比路边算命…]，情绪=angry，共 1 个文件
+2026-04-23 23:33:10  DEBUG     [services.tts]  已保存音频：/root/autodl-tmp/Chatbot-new/output/generated_audio/tts_1776958390_0.wav
+2026-04-23 23:33:10  INFO      [services.tts]  合成完成 [行吧，小爷我这回就当配合你演戏——不过你要敢把哪吒我拍成卖萌…]，情绪=angry，共 1 个文件
+2026-04-23 23:33:58  DEBUG     [services.tts]  已保存音频：/root/autodl-tmp/Chatbot-new/output/generated_audio/tts_1776958438_0.wav
+2026-04-23 23:33:58  INFO      [services.tts]  合成完成 [哼！小爷哪吒自己写脚本还差点意思？这叫啥“字幕”？分明是帮哪…]，情绪=angry，共 1 个文件
+2026-04-24 10:19:54  INFO      [services.tts]  COSYVoice 模块导入成功
+2026-04-24 10:19:54  INFO      [services.tts]  加载 TTS 模型：/root/autodl-tmp/Chatbot-new/modules/COSYVoice/pretrained_models/CosyVoice2-0.5B
+2026-04-24 10:20:00  INFO      [services.tts]  TTS 服务就绪。
+2026-04-24 10:21:09  INFO      [services.tts]  COSYVoice 模块导入成功
+2026-04-24 10:21:09  INFO      [services.tts]  加载 TTS 模型：/root/autodl-tmp/Chatbot-new/modules/COSYVoice/pretrained_models/CosyVoice2-0.5B
+2026-04-24 10:21:16  INFO      [services.tts]  TTS 服务就绪。

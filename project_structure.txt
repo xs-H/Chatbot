@@ -1,0 +1,124 @@
+.
+├── JetsonSetup.sh
+├── __pycache__
+│   ├── config.cpython-310.pyc
+│   └── main.cpython-310.pyc
+├── code.zip
+├── config.py
+├── jetson_client.py
+├── logs
+│   ├── app.log
+│   ├── asr.log
+│   ├── chat.log
+│   ├── rag.log
+│   └── tts.log
+├── main.py
+├── modules
+│   ├── COSYVoice
+│   │   ├── CODE_OF_CONDUCT.md
+│   │   ├── FAQ.md
+│   │   ├── LICENSE
+│   │   ├── README.md
+│   │   ├── asset
+│   │   │   ├── cross_lingual_prompt.wav
+│   │   │   ├── dingding.png
+│   │   │   └── zero_shot_prompt.wav
+│   │   ├── cosyvoice
+│   │   │   ├── __init__.py
+│   │   │   ├── __pycache__
+│   │   │   ├── bin
+│   │   │   ├── cli
+│   │   │   ├── dataset
+│   │   │   ├── flow
+│   │   │   ├── hifigan
+│   │   │   ├── llm
+│   │   │   ├── tokenizer
+│   │   │   ├── transformer
+│   │   │   ├── utils
+│   │   │   └── vllm
+│   │   ├── docker
+│   │   │   └── Dockerfile
+│   │   ├── example.py
+│   │   ├── examples
+│   │   │   ├── grpo
+│   │   │   ├── libritts
+│   │   │   └── magicdata-read
+│   │   ├── pretrained_models
+│   │   │   ├── CosyVoice-300M
+│   │   │   ├── CosyVoice-300M-25Hz
+│   │   │   └── CosyVoice2-0.5B
+│   │   ├── requirements.txt
+│   │   ├── runtime
+│   │   │   ├── python
+│   │   │   └── triton_trtllm
+│   │   ├── third_party
+│   │   │   └── Matcha-TTS
+│   │   ├── tools
+│   │   │   ├── extract_embedding.py
+│   │   │   ├── extract_speech_token.py
+│   │   │   └── make_parquet_list.py
+│   │   ├── vllm_example.py
+│   │   └── webui.py
+│   └── Text2Vec
+│       ├── README.md
+│       ├── config.json
+│       ├── eval_results.txt
+│       ├── model.safetensors
+│       ├── pytorch_model.bin
+│       ├── special_tokens_map.json
+│       ├── tokenizer.json
+│       ├── tokenizer_config.json
+│       └── vocab.txt
+├── output
+├── project_structure.txt
+├── record.txt
+├── requirements.txt
+├── resource
+│   ├── database
+│   │   ├── NeZha.json
+│   │   ├── db_hash.txt
+│   │   ├── index.faiss
+│   │   └── index.pkl
+│   ├── datasets
+│   │   ├── dialogue1.json
+│   │   ├── dialogue2.json
+│   │   └── identity_nezha.json
+│   ├── reference
+│   │   ├── NeZha.txt
+│   │   ├── 哪吒视频.mp4
+│   │   ├── 基本资料
+│   │   │   ├── 角色台词.txt
+│   │   │   └── 角色描述.txt
+│   │   ├── 性格行为.txt
+│   │   ├── 情景模拟.txt
+│   │   ├── 成长故事.txt
+│   │   ├── 角色台词.txt
+│   │   └── 语言习惯.txt
+│   └── voice
+│       ├── NZ_angry.mp3
+│       └── NZ_happy.mp3
+├── routers
+│   ├── __pycache__
+│   │   ├── asr_router.cpython-310.pyc
+│   │   ├── chat_router.cpython-310.pyc
+│   │   └── tts_router.cpython-310.pyc
+│   ├── asr_router.py
+│   ├── chat_router.py
+│   └── tts_router.py
+├── services
+│   ├── __pycache__
+│   │   ├── asr_service.cpython-310.pyc
+│   │   ├── chat_service.cpython-310.pyc
+│   │   ├── rag_service.cpython-310.pyc
+│   │   └── tts_service.cpython-310.pyc
+│   ├── asr_service.py
+│   ├── chat_service.py
+│   ├── rag_service.py
+│   └── tts_service.py
+├── test_api.py
+└── utils
+    ├── __pycache__
+    │   └── logger.cpython-310.pyc
+    └── logger.py
+
+46 directories, 75 files

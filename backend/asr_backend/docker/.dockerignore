@@ -1,6 +1,0 @@
-# docker/.dockerignore
-__pycache__/
-*.pyc
-*.log
-.env
-playground/

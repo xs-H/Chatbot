@@ -1,9 +1,0 @@
-# python
-__pycache__/
-*.py[cod]
-
-# IDEs
-.idea/
-
-db.sqlite3
-playground/
